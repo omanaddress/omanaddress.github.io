@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2976.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>嵌入式Linux开发-根文件系统NFS网络挂载 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">嵌入式Linux开发-根文件系统NFS网络挂载</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <h2><a id="1__0" rel="nofollow"></a>1. 前言</h2> <p>根文件系统是Linux内核启动之后挂载的第一个文件系统，上篇文章里已经介绍过，如何使用busybox来制作根文件系统。这篇文章介绍根文件系统制作成功后，如何让内核找到文件系统，并完成挂载，进入到系统命令行终端。</p> <p>根文件系统支持从网络挂载和本地挂载两种方式：</p> <p>（1）如果是采用网络挂载就将路径设置为/dev/nfs，NFS是Linux下常用的网络文件系统，这种方式挂载一般是在系统开发阶段，方便修改调试代码，也就是将根文件系统放在PC机上，嵌入式开发板通过网络到PC机进行访问。</p> <p>（2）本地挂载就是让内核从SD卡、EMMC、光盘等设备里加载根文件系统，设备路径设置为/dev/sda、/dev/ram等等。具体设备节点名称是什么就填什么。本地挂载一般用在产品发布的时候，当整个系统开发完毕，就将PC机上的完整目录拷贝到本地存储设备里，让内核直接从本地加载，这样开启启动的速度会快很多，文件读写也快很多，不在经过网络传输。本地挂载不方便调试代码，一般开发阶段还是NFS方式比较方便。</p> <p>上面说的路径设置这些配置是在uboot里设置，uboot有一个环境变量专门用于给内核传参，当内核启动之后，会根据uboot传递的参数完成执行。</p> <p>当前采用的开发板是友善之臂的Tiny4412，内核、uboot、交叉编译器都采用官方光盘自带的文件。</p> <p><strong>如果设置内核为NFS网络挂载，uboot的环境变量设置格式如下：</strong></p> <pre><code class="prism language-bash">TINY4412<span class="token comment"># setenv bootargs root=/dev/nfs nfsroot=192.168.10.11:/home/wbyq/work/rootfs ip=192.168.10.123:192.168.10.11:192.168.10.1:255.255.255.0::eth0:off init=/linuxrc console=ttySAC0 lcd=S702</span> TINY4412<span class="token comment"># saveenv</span> TINY4412<span class="token comment"># reset</span></code></pre> <h2><a id="2_NFS_22" rel="nofollow"></a>2. NFS网络方式挂载</h2> <p>前提是先把根文件系统制作好才能继续这一步。当前的宿主机采用redhat6.3，这个系统比较老，但是功能是很齐全的，运行起来很流畅。要进行NFS网络挂载，需要先把PC机的网络与开发板的网络设置好，保证在同一个局域网内。当前的redhat6.3系统是跑在VM虚拟机里，接下来就对网络进行配置。</p> <p><strong>开发板NFS网络挂载的思路:</strong></p> <ol> <li>PC机开启NFS服务器,配置NFS共享的路径: 将rootfs共享出来.</li> <li>开发板当做NFS客户端,去挂载PC机共享的目录，完成文件系统的访问</li> </ol> <p><strong>（1）配置虚拟机网络</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/7eba4ea544f554c5a460a0cf2492ead8.jpg" alt="嵌入式Linux开发-根文件系统NFS网络挂载"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/1a70cb2b8544b4578b534d2e3fb77afd.jpg" alt="嵌入式Linux开发-根文件系统NFS网络挂载"></p> <p><strong>（2）配置PC机NFS服务器</strong></p> <pre><code class="prism language-bash"><span class="token punctuation">[</span>wbyq@wbyq rootfs<span class="token punctuation">]</span>$<span class="token function">sudo</span><span class="token function">vim</span> /etc/exports /home/wbyq/work/rootfs *<span class="token punctuation">(</span>insecure,rw,no_root_squash,sync<span class="token punctuation">)</span></code></pre> <p>编写个脚本方便启动NFS服务器: 可以放在用户目录下<br /> 比如:<code>nfs_restart.sh</code> 运用脚本要使用管理员权限,脚本改权限为可执行</p> <pre><code class="prism language-bash"><span class="token function">service</span> nfs restart<span class="token comment">#重启 NFS 服务器</span><span class="token function">service</span> iptables stop<span class="token comment">#关闭防火墙</span><span class="token function">ifconfig</span> eth0<span class="token number">192.168</span>.10.11<span class="token comment">#设置IP地址</span></code></pre> <p>查看系统网卡名称:<code>ifconfig</code></p> <p><strong>（3）运行脚本启动NFS服务器</strong></p> <pre><code class="prism language-bash"><span class="token punctuation">[</span>wbyq@wbyq ~<span class="token punctuation">]</span>$<span class="token function">sudo</span> ./nfs_restart.sh<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> password<span class="token keyword">for</span> wbyq:  关闭 NFS 守护进程：<span class="token punctuation">[</span>失败<span class="token punctuation">]</span> 关闭 NFS mountd：<span class="token punctuation">[</span>失败<span class="token punctuation">]</span> 关闭 NFS quotas：<span class="token punctuation">[</span>失败<span class="token punctuation">]</span> 关闭 NFS 服务：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 启动 NFS 服务：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 关掉 NFS 配额：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 启动 NFS mountd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 正在启动 RPC idmapd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 正在启动 RPC idmapd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 启动 NFS 守护进程：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span><span class="token punctuation">[</span>wbyq@wbyq ~<span class="token punctuation">]</span>$<span class="token function">sudo</span> ./nfs_restart.sh  关闭 NFS 守护进程：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 关闭 NFS mountd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 关闭 NFS quotas：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 关闭 NFS 服务：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 启动 NFS 服务：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 关掉 NFS 配额：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 启动 NFS mountd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 正在启动 RPC idmapd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 正在启动 RPC idmapd：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span> 启动 NFS 守护进程：<span class="token punctuation">[</span>确定<span class="token punctuation">]</span><span class="token punctuation">[</span>wbyq@wbyq ~<span class="token punctuation">]</span>$</code></pre> <p><strong>（4）设置UBOOT的环境变量</strong></p> <pre><code class="prism language-bash">进入到uboot的命令行，设置环境变量。<span class="token builtin class-name">set</span> bootargs<span class="token assign-left variable">root</span><span class="token operator">=</span>/dev/nfs<span class="token assign-left variable">nfsroot</span><span class="token operator">=</span><span class="token number">192.168</span>.10.11:/home/wbyq/work/rootfs<span class="token assign-left variable">ip</span><span class="token operator">=</span><span class="token number">192.168</span>.10.123:192.168.10.11:192.168.10.1:255.255.255.0::eth0:off<span class="token assign-left variable">init</span><span class="token operator">=</span>/linuxrc<span class="token assign-left variable">console</span><span class="token operator">=</span>ttySAC0<span class="token assign-left variable">lcd</span><span class="token operator">=</span>S702<span class="token builtin class-name">set</span> bootargs<span class="token assign-left variable">root</span><span class="token operator">=</span>/dev/nfs<span class="token assign-left variable">nfsroot</span><span class="token operator">=</span><span class="token operator">&lt;</span>服务器地址<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>NFS共享路径<span class="token operator">&gt;</span><span class="token assign-left variable">ip</span><span class="token operator">=</span><span class="token operator">&lt;</span>开发板IP<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>服务器地址<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>网关<span class="token operator">&gt;</span>:255.255.255.0::eth0:off<span class="token assign-left variable">init</span><span class="token operator">=</span>/linuxrc<span class="token assign-left variable">console</span><span class="token operator">=</span>ttySAC0<span class="token assign-left variable">lcd</span><span class="token operator">=</span>S702  执行示例: TINY4412<span class="token comment"># set bootargs root=/dev/nfs nfsroot=192.168.10.11:/home/wbyq/work/rootfs ip=192.168.10.123:192.168.10.11:192.168.10.1:255.255.255.0::eth0:off init=/linuxrc console=ttySAC0 lcd=S702</span> TINY4412<span class="token comment"># save</span> TINY4412<span class="token comment"># reset</span></code></pre> <p>重启之后开发板正常就会进入到Linux命令行：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/5d40b2019dd926e5e654998b1c2915b6.jpg" alt="嵌入式Linux开发-根文件系统NFS网络挂载"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/7303634e529c8cb9d74743465f7d4710.jpg" alt="嵌入式Linux开发-根文件系统NFS网络挂载"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/3e27b1e716cc196a6882b5b8d3fe46db.jpg" alt="嵌入式Linux开发-根文件系统NFS网络挂载"></p> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2975.htm">底层实现dropout——【torch学习笔记】</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2977.htm">SpringBoot分组校验及自定义校验注解</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3086.htm" title="基于Apache Hudi和Debezium构建CDC入湖管道">基于Apache Hudi和Debezium构建CDC入湖管道</a></li>
+                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-3070.htm" title="Unity怎么更换默认脚本编辑器VS">Unity怎么更换默认脚本编辑器VS</a></li>
+                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

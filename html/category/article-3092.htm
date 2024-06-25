@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3092.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>linux安装离线docker包教程,Centos7离线安装Docker - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">linux安装离线docker包教程,Centos7离线安装Docker</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>工作原因需要在客户现场离线安装docker，网上看了很多，官方文档也查了一下，总结如下：</p> <p>(已在客户现场成功安装，Centos7，其他linux版本没试过，感觉应该问题不大)</p> <p>1. 下载离线安装包</p> <p>提前找一台能上网的机器下载好离线安装包</p> <p>地址：https://download.docker.com/linux/static/stable/</p> <p>选择合适自己的版本。我这里用的是x86-64/docker-18.03.1-ce.tgz</p> <p>2. 安装</p> <p>安装包上传至服务器，解压缩：</p> <p>tar -zxvf docker-18.03.1-ce.tgz</p> <p>解压缩后的文件拷贝到对应目录：</p> <p>cp docker/* /usr/bin/</p> <p>3.注册docker服务</p> <p>新建一个文件vi&nbsp;docker.service 内容如下:</p> <p>[Unit]</p> <p>Description=Docker Application Container Engine</p> <p>Documentation=https://docs.docker.com</p> <p>After=network-online.target firewalld.service</p> <p>Wants=network-online.target</p> <p>[Service]</p> <p>Type=notify</p> <p># the default is not to use systemd for cgroups because the delegate issues still</p> <p># exists and systemd currently does not support the cgroup feature set required</p> <p># for containers run by docker</p> <p>ExecStart=/usr/bin/dockerd</p> <p>ExecReload=/bin/kill -s HUP $MAINPID</p> <p># Having non-zero Limit*s causes performance problems due to accounting overhead</p> <p># in the kernel. We recommend using cgroups to do container-local accounting.</p> <p>LimitNOFILE=infinity</p> <p>LimitNPROC=infinity</p> <p>LimitCORE=infinity</p> <p># Uncomment TasksMax if your systemd version supports it.</p> <p># Only systemd 226 and above support this version.</p> <p>#TasksMax=infinity</p> <p>TimeoutStartSec=0</p> <p># set delegate yes so that systemd does not reset the cgroups of docker containers</p> <p>Delegate=yes</p> <p># kill only the docker process, not all processes in the cgroup</p> <p>KillMode=process</p> <p># restart the docker process if it exits prematurely</p> <p>Restart=on-failure</p> <p>StartLimitBurst=3</p> <p>StartLimitInterval=60s</p> <p>[Install]</p> <p>WantedBy=multi-user.target</p> <p>将docker.service 拷贝到对应目录下：</p> <p>cp docker.service /usr/lib/systemd/system/</p> <p>4.启动和验证</p> <p>启动docker服务：</p> <p>systemctl start docker</p> <p>验证是否成功:</p> <p>##这里就比较随意，用一些常用的docker命令</p> <p>docker -v</p> <p>docker --help</p> <p>5. docker 常用命令</p> <p># 查看docker 镜像</p> <p>docker images</p> <p># 查看docker所有容器</p> <p>docker ps -a</p> <p># 运行中的容器</p> <p>docker ps</p> <p># 运行一个新容器</p> <p>docker run</p> <p># 启动|停止|重启 已经存在的容器</p> <p>docker start|stop|restart</p> <p># 导出镜像</p> <p>docker save –o myapp.tar imageName (–o输出到文件)</p> <p># 导入镜像</p> <p>docker load –i myapp.tar</p> <p># 删除镜像</p> <p>docker rmi [镜像名称或ID]</p> <p># 删除容器</p> <p>docker rm [容器名称]</p> <p># 进入容器</p> <p>docker exec –it [容器名称] /bin/bash</p> <p># 查看容器日志</p> <p>docker logs –f [容器名称]</p> <p>来源：oschina</p> <p>链接：https://my.oschina.net/u/3477333/blog/3081526</p> </div> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3091.htm">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3093.htm">Android 自定义方形验证码输入框，仿滴滴、小篮单车</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
+                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
+                        <li class="py-2"><a href="/html/category/article-3063.htm" title="kafka生产者发送消息可靠性">kafka生产者发送消息可靠性</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3105.htm" title="elasticsearch7.2深度分页实现(查询全部数据)">elasticsearch7.2深度分页实现(查询全部数据)</a></li>
+                        <li class="py-2"><a href="/html/category/article-3083.htm" title="kafka消费者执行异常重复消费_Kafka消费者的使用和原理">kafka消费者执行异常重复消费_Kafka消费者的使用和原理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3103.htm" title="Oracle with使用方法以及递归">Oracle with使用方法以及递归</a></li>
+                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-3100.htm" title="docker system全新命令集">docker system全新命令集</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

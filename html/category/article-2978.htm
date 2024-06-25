@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2978.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Vuex的五大模块 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Vuex的五大模块</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h1> <a id="_0" rel="nofollow"></a>前言</h1> <p>相信大家在学习组件通信时，多个组件之间进行通信，会存在父传子，子传父，兄弟传兄弟等等情况的发生，多个组件互相通信容易造成逻辑混乱，数据不好管理，复用性差的情况，而Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化；总结一句话就是：Vuex是用来集中管理组件依赖的数据，很好的解决了组件之间通信麻烦不易维护的缺点；下面我将结合Vue.js官网带领大家深入学习Vuex的五大模块；<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/f3b9a3407affc5fb5ae9c205bc0937ed.jpg" alt="Vuex的五大模块"></p> <div class="toc"> <h3>文章の目录</h3> <ul> <li><a href="#_0" rel="nofollow">前言</a></li> <li><a href="#state_5" rel="nofollow">state模块</a></li> <li><a href="#actions_8" rel="nofollow">actions模块</a></li> <li><a href="#mutations_10" rel="nofollow">mutations模块</a></li> <li><a href="#getters_12" rel="nofollow">getters模块</a></li> <li><a href="#store_14" rel="nofollow">store模块</a></li> <li><a href="#_22" rel="nofollow">写在最后</a></li> </ul> </div> <h1> <a id="state_5" rel="nofollow"></a>state模块</h1> <p>如上原理图所示，其中的state模块是用来定义和存放数据的，如果使用次数不多，可以使用$store.state.数据名去读取state中存放的数据；其中的store是Vuex模块的管理者，无论调用dispatch还是commit都需要store。多次使用建议用mapState引入，然后在computed中用…展开使用，mapState本身是一个函数，调用传递一个数组，要用哪像直接将名字写到数组里就行，他的返回值是一个对象，对象里存的就是想要用到的数据的计算属性使用：直接写this.数据名字就行；</p> <h1> <a id="actions_8" rel="nofollow"></a>actions模块</h1> <p>actions模块用于响应组件中的动作一般代码的逻辑写在actions中，比如我需要点击一个按钮500毫秒以后提交给下一个模块操作，此时可以给commit操作写在一个定时器里面，500毫秒以后再调用commit方法；</p> <h1> <a id="mutations_10" rel="nofollow"></a>mutations模块</h1> <p>此模块用于修改state模块中的数据，actions模块调用commit方法就能直接将数据传到mutations模块中，mutations模块可以根据收到的数据，直接修改state模块中储存的数据；</p> <h1> <a id="getters_12" rel="nofollow"></a>getters模块</h1> <p>此模块用于对state的中存储的数据进行加工处理，有点类似于computed计算属性；</p> <h1> <a id="store_14" rel="nofollow"></a>store模块</h1> <p>store如上原理图所示，是用于管理其它模块的，在调用dispatch和commit方法时，都需要使用$store;<br /><strong>dispatch</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/fe070e0e46cd9716eb393bd84446ad65.jpg" alt="Vuex的五大模块"><br /><strong>commit</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221229/aa9c5dad0a282ff9f8df01c8877c0e3e.jpg" alt="Vuex的五大模块"></p> <h1> <a id="_22" rel="nofollow"></a>写在最后</h1> <blockquote> <p>????(❁´◡`❁)您的<font color="red" size="3">点赞</font>????➕<font color="red" size="3">评论</font>????➕<font color="red" size="3">收藏</font>⭐是作者创作的最大动力????</p> </blockquote></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2977.htm">SpringBoot分组校验及自定义校验注解</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2979.htm">Java中List.contains(Object object)方法使用_java</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3100.htm" title="docker system全新命令集">docker system全新命令集</a></li>
+                        <li class="py-2"><a href="/html/category/article-3066.htm" title="源码级别的广播与监听实现">源码级别的广播与监听实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-3084.htm" title="审视Scrum Master的检查清单">审视Scrum Master的检查清单</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                        <li class="py-2"><a href="/html/category/article-3070.htm" title="Unity怎么更换默认脚本编辑器VS">Unity怎么更换默认脚本编辑器VS</a></li>
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3093.htm" title="Android 自定义方形验证码输入框，仿滴滴、小篮单车">Android 自定义方形验证码输入框，仿滴滴、小篮单车</a></li>
+                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                        <li class="py-2"><a href="/html/category/article-3085.htm" title="MySQL在日期中添加“半年间隔”的不同方式是什么？">MySQL在日期中添加“半年间隔”的不同方式是什么？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

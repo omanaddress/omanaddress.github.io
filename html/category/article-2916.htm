@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2916.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Java实现 LeetCode 733 图像渲染（DFS） - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Java实现 LeetCode 733 图像渲染（DFS）</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <h2> <a id="733__0" rel="nofollow"></a>733. 图像渲染</h2> <p>有一幅以二维整数数组表示的图画，每一个整数表示该图画的像素值大小，数值在 0 到 65535 之间。</p> <p>给你一个坐标 (sr, sc) 表示图像渲染开始的像素值（行 ，列）和一个新的颜色值 newColor，让你重新上色这幅图像。</p> <p>为了完成上色工作，从初始坐标开始，记录初始坐标的上下左右四个方向上像素值与初始坐标相同的相连像素点，接着再记录这四个方向上符合条件的像素点与他们对应四个方向上像素值与初始坐标相同的相连像素点，……，重复该过程。将所有有记录的像素点的颜色值改为新的颜色值。</p> <p>最后返回经过上色渲染后的图像。</p> <p>示例 1:</p> <p>输入:</p> <pre><code class="prism language-java">image <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> sr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> sc <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> newColor <span class="token operator">=</span> <span class="token number">2</span> 输出<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> 解析<span class="token operator">:</span>  在图像的正中间，<span class="token punctuation">(</span>坐标<span class="token punctuation">(</span>sr<span class="token punctuation">,</span>sc<span class="token punctuation">)</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 在路径上所有符合条件的像素点的颜色都被更改成<span class="token number">2</span>。 注意，右下角的像素没有更改为<span class="token number">2</span>， 因为它不是在上下左右四个方向上与初始点相连的像素点。 </code></pre> <p>注意:</p> <p>image 和 image[0] 的长度在范围 [1, 50] 内。<br /> 给出的初始点将满足 0 &lt;= sr &lt; image.length 和 0 &lt;= sc &lt; image[0].length。<br /> image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535]内。</p> <pre><code class="prism language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">floodFill</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> image<span class="token punctuation">,</span> <span class="token keyword">int</span> sr<span class="token punctuation">,</span> <span class="token keyword">int</span> sc<span class="token punctuation">,</span> <span class="token keyword">int</span> newColor<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>  		<span class="token keyword">int</span> tar <span class="token operator">=</span> image<span class="token punctuation">[</span>sr<span class="token punctuation">]</span><span class="token punctuation">[</span>sc<span class="token punctuation">]</span><span class="token punctuation">;</span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>newColor <span class="token operator">==</span> tar<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 			<span class="token keyword">return</span> image<span class="token punctuation">;</span> 		<span class="token punctuation">}</span> 		 		<span class="token function">fill</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> sr<span class="token punctuation">,</span> sc<span class="token punctuation">,</span> newColor<span class="token punctuation">,</span> tar<span class="token punctuation">)</span><span class="token punctuation">;</span>  		<span class="token keyword">return</span> image<span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  	<span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">fill</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> image<span class="token punctuation">,</span> <span class="token keyword">int</span> sr<span class="token punctuation">,</span> <span class="token keyword">int</span> sc<span class="token punctuation">,</span> <span class="token keyword">int</span> newColor<span class="token punctuation">,</span> <span class="token keyword">int</span> tar<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>sr <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> sc <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> sr <span class="token operator">&gt;=</span> image<span class="token punctuation">.</span>length <span class="token operator">||</span> sc <span class="token operator">&gt;=</span> image<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length <span class="token operator">||</span> image<span class="token punctuation">[</span>sr<span class="token punctuation">]</span><span class="token punctuation">[</span>sc<span class="token punctuation">]</span> <span class="token operator">!=</span> tar<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 			<span class="token keyword">return</span><span class="token punctuation">;</span> 		<span class="token punctuation">}</span>  		image<span class="token punctuation">[</span>sr<span class="token punctuation">]</span><span class="token punctuation">[</span>sc<span class="token punctuation">]</span> <span class="token operator">=</span> newColor<span class="token punctuation">;</span>  		<span class="token function">fill</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> sr <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> sc<span class="token punctuation">,</span> newColor<span class="token punctuation">,</span> tar<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token function">fill</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> sr<span class="token punctuation">,</span> sc <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> newColor<span class="token punctuation">,</span> tar<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token function">fill</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> sr <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> sc<span class="token punctuation">,</span> newColor<span class="token punctuation">,</span> tar<span class="token punctuation">)</span><span class="token punctuation">;</span> 		<span class="token function">fill</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> sr<span class="token punctuation">,</span> sc <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> newColor<span class="token punctuation">,</span> tar<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2915.htm">在vue中手写一个文字的轮播功能</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2917.htm">Java时间 之 Instant</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3110.htm" title="Vue刷新页面数据持久化">Vue刷新页面数据持久化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3064.htm" title="Java NIO 选择器 Selector_在线工具">Java NIO 选择器 Selector_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3119.htm" title="Cpp的异常处理Exception Handling-笔记">Cpp的异常处理Exception Handling-笔记</a></li>
+                        <li class="py-2"><a href="/html/category/article-3085.htm" title="MySQL在日期中添加“半年间隔”的不同方式是什么？">MySQL在日期中添加“半年间隔”的不同方式是什么？</a></li>
+                        <li class="py-2"><a href="/html/category/article-3063.htm" title="kafka生产者发送消息可靠性">kafka生产者发送消息可靠性</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3066.htm" title="源码级别的广播与监听实现">源码级别的广播与监听实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3111.htm" title="vue实现拖拽窗口功能_vue.js">vue实现拖拽窗口功能_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-3078.htm" title="pandas的apply函数常见用法总结">pandas的apply函数常见用法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

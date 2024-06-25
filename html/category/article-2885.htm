@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2885.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Django 获取请求参数 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Django 获取请求参数</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				  			 <div id="log-box">  				<div id="catalog"><ul id="catalog-ul"> <li><i class="be be-arrowright"></i> <a href="#title-0" title="　　HttpRequest中方法使用">　　HttpRequest中方法使用</a></li> </ul><span class="log-zd"><span class="log-close"><a title="隐藏目录"><i class="be be-cross"></i><strong>目录</strong></a></span></span></div>  			</div> <div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <h2>　　引言</h2> <p>　　我们在使用python做接口测试的时候，通常使用的是requests库。而大家都知道还有一个request东西，很多人对requests与request两个东西傻傻分不清。下面我简单来介绍一下。</p> <h2>　　Requests与Request</h2> <p>　　本文所讲python3，因为python2于2020年已经停更。那requests和request有什么区别呢？</p> <p>1.requests是python3的一个http请求库，request是urllib库的一个方法，所以一个是库，一个是方法。<strong><br /></strong></p> <p>urllib具体使用：</p> <ul> <li>　　　　urllib.request 用于打开和读取URL,</li> <li>　　　　urllib.error 用于处理前面request引起的异常,</li> <li>　　　　urllib.parse 用于解析URL,</li> <li>　　　　urllib.robotparser用于解析robots.txt文件</li> </ul> <p>2.python3网络请求主要使用urllib,requests,urllib3，其实requests底层就是urllib3，所以urllib3没有单独使用，直接使用requests更加简洁，但功能没urllib强大。还有一点就是python3.3后urllib2已经不能再用，只能用urllib.request来代替。</p> <p>所以python3主要使用urllib和requests去请求接口。</p> <h2>　　Django 获取请求参数原理</h2> <p>　　上面我简单介绍了requests库与request方法的区别，而在django中，是如何获取请求参数呢？</p> <p>请记住一点：requests是用来发送请求的，在django中request是用来获取请求参数的。</p> <p>使用形式：</p> <p>发送请求: requests.post()</p> <p>django获取请求参数：request.POST.get()</p> <p>那么问题来了，django视图函数中的request到底哪里来的？</p> <p>views每个方法的参数都是request，那么问题来了，request为何物？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/86ca25e8f37624cb9a8a307a71f4e5fd.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <h2>　　HttpRequest对象</h2> <p>　　当请求一个页面时，Django 把请求的 metadata 数据包装成一个 HttpRequest 对象，然后 Django 加载合适的 view 方法，把这个 HttpRequest 对象作为第一个参数传给 view 方法。任何 view 方法都应该返回一个 HttpResponse 对象。</p> <p>&nbsp;<img decoding="async" src="http://img.555519.xyz/uploads/20230108/9f28d9580ca795074a890491a6098430.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;</p> <span class="directory"></span><h4 id="title-0">　　HttpRequest中方法使用</h4> <p>　　HttpRequest 对象表示来自某客户端的一个单独的 HTTP 请求。HttpRequest 对象是 Django 自动创建的。</p> <p>它的属性有很多，可以参考 DjangoBook，比较常用的有以下几个：</p> <p>&nbsp;1. method 请求方法，如：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/00f96267b324599c296054667e0c9715.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;</p> <p>&nbsp;这里不介绍了，具体可以参考官方文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.djangoproject.com/zh-hans/2.2/ref/request-response/#django.http.HttpRequest"  rel="nofollow">https://docs.djangoproject.com/zh-hans/2.2/ref/request-response/#django.http.HttpRequest</a></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/101d5ff95a93128253a3c0de6e9ad057.jpg" alt="Django 获取请求参数"></p> <p><strong>2.获取url中的请求参数</strong></p> <p>需求：假设用户访问127.0.0.1/user/1/2，你想获取1，2。应该怎么操作呢？</p> <p>(1)未命名参数(位置参数)</p> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp"># 在项目下的urls.py下增加设置： url(r'^user/(\d+)/(\d+)$',views.index)  # 在user.views的index视图中： def index(request,a,b):            # 接受的参数按顺序的     return HttpResponse("获得数据 %s %s"%(a,b)) </code></pre> </p></div> <p>&nbsp;</p> <p>(2)命名参数(关键字参数)</p> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp"># 在项目下的urls.py下增加设置： url(r'^user/(?P&lt;category&gt;\d+)/(?P&lt;id&gt;\d+)$',views.index)  # 在user.views的index视图中： def index(request,id,category):            # 接受的参数可以不用按顺序的     return HttpResponse("获得数据 %s %s"%(category,id)) </code></pre> </p></div> <p>输出结果均是&nbsp; 获得数据 1 2</p> <p>另一种形式：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/d80f825fbded8649e068c3009fe38c50.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;</p> <p>结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/dff6dbed100a2b7dc8c89da75f305b6c.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;</p> <p><strong>3.获取查询字符串</strong></p> <p>&nbsp;需求：获取127.0.0.1:8000/user?id=1&amp;pid=99的查询字符串的值</p> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp"># 在项目下的urls.py下增加设置： url(r'^user/$',views.index)  # 在user.views的index视图中： def index(request):     id = request.GET.get("id")     pid = request.GET.get("pid")     return HttpResponse("获得数据 %s %s"%(id,pid)) </code></pre> </p></div> <p>　　<span style="color:#ff0000;"><strong>注意：查询字符串的获取与请求方式无关：不管是&nbsp;<code>GET</code>&nbsp;还是&nbsp;<code>POST</code>请求，都可以通过<code>request.GET</code>&nbsp;属性来获取！！！</strong></span></p> <p><strong>4.获取表单数据</strong></p> <p><strong><img decoding="async" src="http://img.555519.xyz/uploads/20230108/6eb9550872cb15499f11015170e612e3.jpg" alt="Django 获取请求参数"></strong></p> <p>&nbsp;</p> <p><span style="color:#ff0000;">&nbsp;　　<strong>注意：<code>request.POST</code>&nbsp;只能用来获取POST方式的请求体表单数据！</strong></span></p> <p>使用postman请求</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/9c8ac55953a0f3446439ce0480a490e3.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;</p> <p>控制台日志：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/a4bfcc00a7401f7b7091c21bdca55025.jpg" alt="Django 获取请求参数"></p> <p>&nbsp;<strong>5.获取非表单类型</strong></p> <ul> <li> <code>request.body</code>属性：获取非表单类型的请求体数据，如：JSON、XML等，获取到的数据类型为<strong><code>bytes</code></strong>类型</li> <li>获取数据后，自己解析数据取出参数</li> </ul> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp">def index(request):     json_str = request.body     json_str = json_str.decode()  # python3.6及以上不用这一句代码     dict_data = json.loads(json_str)  # loads把str转换为dict，dumps把dict转换为str     id = dict_data.get("id")     pid = dict_data.get("pid")     return HttpResponse("获得数据 %s %s"%(id,pid))</code></pre> </p></div> <p>再看一个接口：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/c3fcbee8be5b660898bb89452283b525.jpg" alt="Django 获取请求参数"></p> <p>接口路径：/v1/add_user，使用postman模拟一下</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/c3193fd32199ddfa9dae4b396d34814b.jpg" alt="Django 获取请求参数"></p> <p>看看官方怎么说的：</p> <p>&nbsp;<img decoding="async" src="http://img.555519.xyz/uploads/20230108/a44061fea979b7df300e59a1dc7f263b.jpg" alt="Django 获取请求参数"></p> <p>截图中大致意思是如果请求数据是原始数据或非表单数据，可以使用httprequest.body来访问，也就是request.body方法。方法就介绍到这里，这些都是最常用的。</p> <h2>　　附录</h2> <p>获取请求头的内容：</p> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp">CONTENT_LENGTH – The length of the request body (as a string). CONTENT_TYPE – The MIME type of the request body. HTTP_ACCEPT – Acceptable content types for the response. HTTP_ACCEPT_ENCODING – Acceptable encodings for the response. HTTP_ACCEPT_LANGUAGE – Acceptable languages for the response. HTTP_HOST – The HTTP Host header sent by the client. HTTP_REFERER – The referring page, if any. HTTP_USER_AGENT – The client’s user-agent string. QUERY_STRING – The query string, as a single (unparsed) string. REMOTE_ADDR – The IP address of the client. REMOTE_HOST – The hostname of the client. REMOTE_USER – The user authenticated by the Web server, if any. REQUEST_METHOD – A string such as "GET" or "POST". SERVER_NAME – The hostname of the server. SERVER_PORT – The port of the server (as a string). </code></pre> </p></div> <p>&nbsp;</p> <p>获取请求头内容的用META</p> <p>示例：</p> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp">def index(request):     ip = request.META.get("REMOTE_ADDR")     return HttpResponse("你的ip地址是%s"%ip) </code></pre> </p></div> <p>&nbsp;</p> <p>获取自定义请求头的内容</p> <p>用postman增加一个自定义的请求头，key=id，value=1。那么应该怎么取呢？</p> <p>代码如下：</p> <div class="cnblogs_Highlighter"> <pre><code class="language-csharp">def index(request):     id = request.META.get("HTTP_ID")     return HttpResponse("你的id:%s"%id) </code></pre> </p></div> <p><span style="color:#ff0000;"><strong>　　注意：获取自定义的请求头属性值时，需要添加前缀&nbsp;<code>HTTP_</code>&nbsp;并转成大写，作为键来获取值</strong></span></p> <p>&nbsp;<img decoding="async" src="http://img.555519.xyz/uploads/20230108/8226b4c2bcb928ec8c69d6134c0ab3ea.jpg" alt="Django 获取请求参数"></p> </div></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2884.htm">Python正则的贪婪匹配和非贪婪匹配写法</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2886.htm">关于IPC和PTH用户权限问题,psexec拒绝访问(Access Denied)的原因_在线工具</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3100.htm" title="docker system全新命令集">docker system全新命令集</a></li>
+                        <li class="py-2"><a href="/html/category/article-3087.htm" title="C# DataTable去重，根据列名去重保留其他列">C# DataTable去重，根据列名去重保留其他列</a></li>
+                        <li class="py-2"><a href="/html/category/article-3093.htm" title="Android 自定义方形验证码输入框，仿滴滴、小篮单车">Android 自定义方形验证码输入框，仿滴滴、小篮单车</a></li>
+                        <li class="py-2"><a href="/html/category/article-3089.htm" title="SpringMVC中RequestMapping注解【作用、出现的位置、属性】">SpringMVC中RequestMapping注解【作用、出现的位置、属性】</a></li>
+                        <li class="py-2"><a href="/html/category/article-3084.htm" title="审视Scrum Master的检查清单">审视Scrum Master的检查清单</a></li>
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

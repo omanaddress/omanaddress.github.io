@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3017.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>docker存储目录详解 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">docker存储目录详解</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="1%E3%80%81docker%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%84%E5%AD%90%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3-toc" style="margin-left:0px;"><a href="#1%E3%80%81docker%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%84%E5%AD%90%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3" rel="nofollow">1、docker存储目录下各子目录详解</a></p> <p id="2%E3%80%81image%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3-toc" style="margin-left:0px;"><a href="#2%E3%80%81image%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3" rel="nofollow">2、image目录详解</a></p> <hr id="hr-toc"/> <p>本次以Centos7.4版本为例，本地镜像的存储目录：<strong><strong>/var/lib/docker/</strong></strong></p> <h1 id="1%E3%80%81docker%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%90%84%E5%AD%90%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3">1、docker存储目录下各子目录详解</h1> <p>[root@localhost ~]#<strong><strong>cd /var/lib/docker</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b107c57fee88a8faca26475d80363357.jpg"></strong></strong></strong></strong></p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/cd36ebe181e5437f3421132f6507e5da.jpg"></p> <p><strong><strong>containers</strong></strong> 【里面都是容器，每启动一个容器便会在这里记录】</p> <blockquote> <ul> <li><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/061153b11142e8c89ea4b3878989cc70.jpg"></li> </ul> <ul> <li><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/efbccfc2879725e7b8c689e4024fb815.jpg"></li> </ul> </blockquote> <blockquote> <ul> <li><strong><strong>image</strong></strong><strong></strong><strong></strong><strong></strong> 【默认里面只有一个overlay2目录】</li> </ul> <p><strong><strong>/var/lib/docker/image/overlay2/</strong></strong><strong></strong><strong><strong>【存储镜像管理数据的目录，以使用的存储驱动</strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong><strong>命名，这是Centos系统，使用的驱动为overlay2】</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/fd735e33f153206ba655c262b42bcde9.jpg"></strong></strong></strong></strong></p> </blockquote> <blockquote> <p><strong><strong>network</strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong><strong>【docker的网关、容器的IP地址等信息】</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/4c6d5df94747925ea1ec09fb099a4d95.jpg"></strong></strong></strong></strong></p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/53d4d4182a23f1afb95c80bcebd309df.jpg"></p> </blockquote> <blockquote> <ul> <li><strong><strong>overlay2</strong></strong><strong></strong><strong></strong><strong><strong>【Docker存储驱动，常见的有overlay、overlay2、aufs】</strong></strong></li> <li><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/023279caa50f11a744b5a77265e6d599.jpg"></li> <li> <p>每启动一个容器就会有一个docker存储挂载，如上所示，他们是共用宿主机的存储，也就是这些docker存储的挂载除了挂载点不一样其他的都一样。<strong><strong>下面是关于存储挂载的测试：</strong></strong></p> </li> <li> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/4662361ab0fda40f2f518e54ee52f3a3.jpg"></p> <p>[root@localhost ~]#<strong><strong>dd if=/dev/zero of=/root/qq bs=1M count=5000</strong></strong><strong></strong></p> </li> </ul> <p><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【生成5G<strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>&nbsp;&nbsp;&nbsp;的qq测试文件】</strong></strong></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[root@localhost ~]#<strong><strong>docker cp /root/qq bc391cabe426://test1</strong></strong><strong><strong>【cp到容器里</strong></strong>】</p> <p style="margin-left:.0001pt;text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/166fe7e31163effa64263949df1d1fee.jpg"></p> <p>&nbsp;所有容器都共用一个存储，当一个容器有数据变化，那么连接容器的所有存储的挂载信息都会更新产生变化。</p> </blockquote> <blockquote> <p><strong><strong>volumes</strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong><strong>【卷管理】</strong></strong></p> </blockquote> <h1 id="2%E3%80%81image%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3">2、image目录详解</h1> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b17b079fd8f3faddc6d500fca490b76f.jpg"></p> <ul> <li>/var/lib/docker/image/overlay2/<strong><strong>distribution</strong></strong>:<strong><strong>从远端拉到本地的镜像相关元数据</strong></strong></li> <li>/var/lib/docker/image/overlay2/<strong><strong>imagedb</strong></strong>:<strong></strong><strong></strong><strong></strong><strong><strong>镜像数据库</strong></strong></li> </ul> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b241c33cddc45b448d99a6d8b839ba20.jpg"></p> <p>/var/lib/docker/image/overlay2/imagedb/<strong><strong>content</strong></strong>：</p> <p>每一个镜像都会配置digest，也就是镜像ID。Content目录里会看到一个sha256的目录，进入到该目录下，看到都是以镜像ID命名的文件，docker images看到的镜像ID的前12位就来自这个文件。</p> <p>/var/lib/docker/image/overlay2/imagedb/<strong><strong>metadata</strong></strong>：（略）</p> <ul> <li>/var/lib/docker/image/overlay2/<strong><strong>layerdb</strong></strong>:<strong></strong><strong><strong>镜像每个layer的元数据</strong>，Layer &nbsp;层，分层</strong></li> </ul> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/0e1ce83f5904807ad36f08e4e54855f7.jpg"></p> <p><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/var/lib/docker/image/overlay2/layerdb/</strong><strong>mounts</strong></strong><strong><strong>：</strong></strong></p> <p>每启动一个容器，该目录都会将容器的container ID记录下来，当容器被停止了，container ID依旧存在，当容器被删除了，container ID才会被清除。</p> <p><strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/var/lib/docker/image/overlay2/layerdb/</strong><strong>sha256</strong></strong><strong><strong>：</strong></strong></p> <p><strong><strong><strong><strong><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220610/b3702bcd0cb37fc1a095e98d13caba0c.jpg"></strong></strong></strong></strong></p> <p>只记录镜像的信息，不记录容器的信息，当镜像有添加或删除时，此目录的信息会有更新</p> <ul> <li>/var/lib/docker/image/overlay2/<strong><strong>repositories.json</strong></strong>:<strong></strong><strong><strong>镜像的相关信息</strong></strong></li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;记录了镜像的tag、镜像ID等信息</p> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3016.htm">【Electron】在 WSL2 中 打包 electron Linux 版本应用及运行 &#8211; E不小心 _在线工具</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3018.htm">win11系统网络发现已关闭怎么办</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                        <li class="py-2"><a href="/html/category/article-3068.htm" title="KCP协议：从TCP到UDP家族QUIC/KCP/ENET">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></li>
+                        <li class="py-2"><a href="/html/category/article-3061.htm" title="Bootstrap Blazor Table 组件手动刷新组件数据详解">Bootstrap Blazor Table 组件手动刷新组件数据详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3072.htm" title="KestrelServer详解自定义一个迷你版的KestrelServer">KestrelServer详解自定义一个迷你版的KestrelServer</a></li>
+                        <li class="py-2"><a href="/html/category/article-3082.htm" title="vue elementui点击按钮新增输入框">vue elementui点击按钮新增输入框</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
+                        <li class="py-2"><a href="/html/category/article-3097.htm" title="vue 动态样式绑定">vue 动态样式绑定</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

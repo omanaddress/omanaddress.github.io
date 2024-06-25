@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2915.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>在vue中手写一个文字的轮播功能 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">在vue中手写一个文字的轮播功能</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; &nbsp; 最近在中控项目中遇到一个问题，就是需要轮播显示数据，网上给的教程都是定高的，所以就自己写了一个，效果如下：</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="331" src="http://img.555519.xyz/uploads/20230113/13fa9dade8c07ebeab9a2a9abd93fbcc.jpg"></p> <p>对于这种轮播的功能，其实应该根据是否定高去分为两种情况用不同的方案去处理。</p> <p>一、&nbsp;不定高轮播</p> <p>&nbsp; &nbsp; &nbsp; 我在看了很多博客之后发现他们给的方案都是定高的，这种你可能一搜一大把，我就只分享别人没有说过或者不容易找到的情况吧。我暂且将轮播的部分称为轮播区域，将轮播区域之外的地方成为外部吧。</p> <p>定高的情况下我选择的是使用vue中的:style动态改变轮播区域的transform属性，如果你需要上下滚动就调整translateY，如果需要左右滚动就调整translateX属性，然后在你从后台拉取数据之后设置一个定时器，每隔多久去改变多少的translateY(或translateX)的值,这一部分可以控制滚动的速度。代码如下：</p> <pre class="has"><code>&lt;div ref="scroll" :style="pos"&gt;     &lt;ul&gt;         &lt;li class="fcd7e" v-for="item in list" :key="item.index"&gt;             {<!-- -->{item}}         &lt;/li&gt;     &lt;/ul&gt; &lt;/div&gt;  // js部分 export default {     data() {         return: {             list: ['周杰伦','蔡徐坤','李现','马蓉','马云','马化腾'],             height: 0, // 轮播区域的高度             yPos: 0,  // 轮播到了多少距离         }     },     computed: {         pos() {           return { transform: `translateY(${this.yPos}px` }; // 计算属性改变style         }     }，     mounted() {         this.initScroll()  // 通常不是在mounted中调用initScroll()这个方法，而是获取list后     },     methods: {         initScroll() {            this.$nextTick(() =&gt; {                 this.height = this.$refs.scroll.offsetHeight;                 setInterval(() =&gt; {                     if (this.yPos &gt; -this.height / 2) {                         this.yPos = this.yPos - 1;                     } else {                     this.yPos = 0;                     }                 }, 50);            });         }     } }</code></pre> <p>&nbsp; &nbsp; &nbsp; 然后你需要调整一下外部样式，给其一个宽高，overflow设为hidden; 当然你可以将上面的代码微调一下，让其变成左右滑动，还可以改变速度，也可以添加鼠标移动到轮播上面时停止定时器，然后鼠标移出时打开定时器，这样做出一个鼠标移到上面停止的效果。</p> <p>二、&nbsp;定高轮播</p> <p>由于不定高轮播中，我们是需要一直改变transform的值，性能会不好。比如在我们公司的，为了图便宜买了一个配置很差的电视机，就感觉像滚不动一样。所以在定高轮播中，我们需要其他方案。这里我研究了三套方案，但其他作者可能都写过了，所以就简单记录一下吧。</p> <p>&nbsp; &nbsp; &nbsp; 1. 使用&lt;marquee&gt;标签，性能很好，但会存在滚了之后存在大量留白的情况，所以不推荐。</p> <p>&nbsp; &nbsp; &nbsp; 2.使用css原生动画</p> <p>&nbsp; &nbsp; &nbsp; 3.使用vue动画</p> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2914.htm">RMI反序列化学习</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2916.htm">Java实现 LeetCode 733 图像渲染（DFS）</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3087.htm" title="C# DataTable去重，根据列名去重保留其他列">C# DataTable去重，根据列名去重保留其他列</a></li>
+                        <li class="py-2"><a href="/html/category/article-3079.htm" title="在Git中进行忽略文件操作详解_在线工具">在Git中进行忽略文件操作详解_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3110.htm" title="Vue刷新页面数据持久化">Vue刷新页面数据持久化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
+                        <li class="py-2"><a href="/html/category/article-3109.htm" title="C++内存泄漏的定位方法总结">C++内存泄漏的定位方法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-3090.htm" title="Uniapp实现自定义组件">Uniapp实现自定义组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

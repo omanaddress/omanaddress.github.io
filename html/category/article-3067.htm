@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3067.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>SpringBoot如何整合spring-retry来实现接口请求重试 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">SpringBoot如何整合spring-retry来实现接口请求重试</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <h2>一、重试机制</h2> <p>由于网络不稳定或网络抖动经常会造成接口请求失败的情况，当我们再去尝试就成功了，这就是重试机制。</p> <p><strong><span style="color:#fe2c24;">本文首发于Java潘老师个人博客</span></strong>：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.panziye.com/java/3293.html"  rel="nofollow">SpringBoot整合spring-retry组件实现重试机制</a></p> <p>其主要目的就是要尽可能地提高请求成功的概率，但一般情况下，我们请求第一次失败，代码运行就抛出异常结束了，如果想再次请求可能还需要手工操作，这非常地不方便，可行性也不佳。因此，Spring框架提供了对重试机制支持，并且在Spring Cloud中可以与Hystrix结合使用，可以避免访问到已经不正常的实例。</p> <h2>二、重试机制要素</h2> <p>重试机制要素如下：</p> <ul> <li>限制重试次数</li> <li>每次重试的时间间隔</li> <li>最终失败结果的报警或事物回滚</li> <li>在特定失败异常事件情况下选择重试</li> </ul> <h2>三、重试机制注意事项</h2> <p>对于非幂等性的方法我们要慎用重试机制，可能会造成意料之外的后果。<br /><em>所谓幂等性：</em>就是用户对于同一操作发起的一次请求或者多次请求的结果是一致的，不会因为多次点击而产生了副作用。</p> <h2>四、SpringBoot整合spring-retry</h2> <p>下面我们就来看下，我们应该如何使用SpringBoot来整合spring-retry组件实现重试机制。</p> <h3>1）添加依赖</h3> <p>首先我们在SpringBoot项目中的<code>pom.xml</code>添加相关依赖，如下：</p> <pre><code>&lt;!-- 重试相关依赖包 --&gt; &lt;dependency&gt;     &lt;groupId&gt;org.springframework.retry&lt;/groupId&gt;     &lt;artifactId&gt;spring-retry&lt;/artifactId&gt;     &lt;version&gt;1.2.4.RELEASE&lt;/version&gt; &lt;/dependency&gt;   &lt;dependency&gt;     &lt;groupId&gt;org.aspectj&lt;/groupId&gt;     &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;     &lt;version&gt;1.9.4&lt;/version&gt; &lt;/dependency&gt;</code></pre> <h3>2）添加@EnableRetry注解</h3> <p>在主启动类Application上添加@EnableRetry注解，实现对重试机制的支持</p> <pre><code>@SpringBootApplication @EnableRetry public class RetryApplication {       public static void main(String[] args) {           SpringApplication.run(RetryApplication.class, args);     }   }</code></pre> <p>注意：@EnableRetry也可以使用在配置类、ServiceImpl类、方法上</p> <h3>3）添加@Retryable注解</h3> <p>我们针对需要实现重试的方法上添加<code>@Retryable</code>注解，使该方法可以实现重试，这里我列出ServiceImpl中的一个方法：</p> <pre><code>@Service public class RetryServiceImpl implements RetryService {       @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000,multiplier = 1.5))     public String testRetry() throws Exception {           System.out.println("开始执行代码："+ LocalTime.now());         int code = 0;         // 模拟一直失败         if(code == 0){            // 这里可以使自定义异常，@Retryable中value需与其一致             throw new Exception("代码执行异常");         }         System.out.println("代码执行成功");         return "success";     } }</code></pre> <p>说明：@Retryable配置元数据情况：<br /> value ：针对指定抛出的异常类型，进行重试，这里指定的是Exception<br /> maxAttempts ：配置最大重试次数，这里配置为3次（包含第一次和最后一次）<br /> delay： 第一次重试延迟间隔，这里配置的是2s<br /> multiplier ：每次重试时间间隔是前一次几倍，这里是1.5倍</p> <h3>4）Controller测试代码</h3> <pre><code>@RestController @RequestMapping("/test") public class TestController {     @Autowired     private RetryService retryService;       @GetMapping("/retry")     public String testRetry() throws Exception {         return retryService.testRetry();     } }</code></pre> <h3>5）发送请求</h3> <p>发送请求后，我们发现后台打印情况，确实重试了3次，并且在最后一次重试失败的情况下，才抛出异常，具体如下（可以注意下时间间隔）：</p> <p style="text-align:center;"><a href="https://www.panziye.com/wp-content/uploads/2021/06/2021062306235916.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" alt="SpringBoot整合spring-retry组件实现重试机制" src="http://img.555519.xyz/uploads3/20220821/3d3f90f3b5d8c750a4d8e7df74794a12.jpg"></a></p> <h3>6）补充：@Recover</h3> <p>一般情况下，我们重试最大设置的次数后，仍然失败抛出异常，我们会通过全局异常处理类进行统一处理，但是我们其实也可以自行处理，可以通过<code>@Recover</code>注解来实现，具体如下：</p> <pre><code>@Service public class RetryServiceImpl implements RetryService {       @Retryable(value = Exception.class, maxAttempts = 3, backoff = @Backoff(delay = 2000,multiplier = 1.5))     public String testRetry() throws Exception {           System.out.println("开始执行代码："+ LocalTime.now());         int code = 0;         if(code == 0){             // 这里可以使自定义异常，@Retryable中value需与其一致             throw new Exception("代码执行异常");         }         System.out.println("代码执行成功");         return "success";     }       /**      * 最终重试失败处理      * @param e      * @return      */     @Recover     public String recover(Exception e){           System.out.println("代码执行重试后依旧失败");         return "fail";     } }</code></pre> <p>注意：<br /> 1）@Recover的方法中的参数异常类型需要与重试方法中一致<br /> 2）该方法的返回值类型与重试方法保持一致<br /> 再次测试如下（发现不会再抛出异常）：</p> <p style="text-align:center;"><a href="https://www.panziye.com/wp-content/uploads/2021/06/2021062306310489.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" alt="SpringBoot整合spring-retry组件实现重试机制" src="http://img.555519.xyz/uploads3/20220821/2702a242d8e572c407d648d6925b8313.jpg"></a></p> <p><strong><span style="color:#fe2c24;">本文首发于Java潘老师个人博客</span></strong>：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.panziye.com/java/3293.html"  rel="nofollow">SpringBoot整合spring-retry组件实现重试机制</a></p> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3066.htm">源码级别的广播与监听实现</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3068.htm">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
+                        <li class="py-2"><a href="/html/category/article-3075.htm" title="springboot Jar包 秒部署到Linux服务器运行">springboot Jar包 秒部署到Linux服务器运行</a></li>
+                        <li class="py-2"><a href="/html/category/article-3079.htm" title="在Git中进行忽略文件操作详解_在线工具">在Git中进行忽略文件操作详解_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3110.htm" title="Vue刷新页面数据持久化">Vue刷新页面数据持久化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3093.htm" title="Android 自定义方形验证码输入框，仿滴滴、小篮单车">Android 自定义方形验证码输入框，仿滴滴、小篮单车</a></li>
+                        <li class="py-2"><a href="/html/category/article-3084.htm" title="审视Scrum Master的检查清单">审视Scrum Master的检查清单</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3098.htm" title="vue的自动化路由+分模块管理+路由懒加载">vue的自动化路由+分模块管理+路由懒加载</a></li>
+                        <li class="py-2"><a href="/html/category/article-3073.htm" title="R语言学习笔记之lm函数">R语言学习笔记之lm函数</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3040.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>pyhton深度学习基于pytorch——创建Tensor和修改Tensor形状 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">pyhton深度学习基于pytorch——创建Tensor和修改Tensor形状</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p>如果对Tensor的概念理解不清楚请参考我的上一篇文章。</p> <p>先介绍Tensor的.add()和.add_()方法：</p> <p>1）不修改自身数据，如x.add(y),x的数据不变，返回一个新的tensor。<br /> （2）修改自身数据，如x.add_(y)(运行符带下划线后缀)，运算结果存在x中，x被修改。</p> <pre><code class="language-python">import torch   x=torch.tensor([1,2]) y=torch.tensor([3,4]) z=x.add(y) print(z) print(x) x.add_(y) print(x)</code></pre> <p>运行结果：<br /> tensor([4, 6])<br /> tensor([1, 2])<br /> tensor([4, 6])&nbsp;</p> <h2>一、创建Tensor</h2> <pre><code class="language-python">import torch #根据list数据生成tensor aa=torch.Tensor([1,2,3,4,5,6]) print(aa) #tensor([1., 2., 3., 4., 5., 6.]) #根据指定形状生成tensor bb=torch.Tensor(2,3) print(bb) # tensor([[0., 0., 0.], #         [0., 0., 0.]]) #根据给定的tensor的形状 t=torch.Tensor([[1,2,3],[4,5,6]]) #查看tensor的形状 t.size() #shape与size()等价方式 t.shape #根据已有形状创建tensor cc=torch.Tensor(t.size()) print(cc) # tensor([[8.4490e-39, 9.6429e-39, 9.2755e-39], #         [1.0286e-38, 9.0919e-39, 8.9082e-39]])  #根据一定规则，自动生成tensor的一些例子。  # 生成一个单位矩阵 a=torch.eye(2, 2) print(a) # tensor([[1., 0.], #         [0., 1.]]) # 自动生成全是0的矩阵 b=torch.zeros(2, 3) print(b) # tensor([[0., 0., 0.], #         [0., 0., 0.]]) # 根据规则生成数据 c=torch.linspace(1, 10, 4) print(c) #tensor([ 1.,  4.,  7., 10.]) # 生成满足均匀分布随机数 d=torch.rand(2, 3) print(d) # tensor([[0.0198, 0.5116, 0.3734], #         [0.0397, 0.4600, 0.7310]]) # 生成满足标准分布随机数 f=torch.randn(2, 3) print(f) # tensor([[ 0.7431, -1.1317, -0.0973], #         [ 0.1756,  0.2788,  0.2570]]) # 返回所给数据形状相同，值全为0的张量 e=torch.zeros_like(torch.rand(2, 3)) print(e) # tensor([[0., 0., 0.], #         [0., 0., 0.]])</code></pre> <p><span style="color:#ed7976;">创建的tensor中的数据都是float。</span></p> <p>创建tensor使用了tensor()和Tensor()两种方法。</p> <p><span style="background-color:#fe2c24;">注意torch.Tensor与torch.tensor的几点区别</span><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①torch.Tensor是torch.empty和torch.tensor之间的一种混合，但是，当传入数据时，torch.Tensor使用全局默认dtype（FloatTensor），torch.tensor从数据中推断数据类型。<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②torch.tensor(1)返回一个固定值1，而torch.Tensor(1)返回一个大小为1的张量，它是随机初始化的值。</p> <pre><code class="language-python">import torch t1=torch.Tensor(1) t2=torch.tensor(1) print("t1的值{},t1的数据类型{}".format(t1,t1.type())) print("t2的值{},t2的数据类型{}".format(t2,t2.type()))</code></pre> <p>结果：</p> <p>t1的值tensor([3.5731e-20]),t1的数据类型torch.FloatTensor<br /> t2的值1,t2的数据类型torch.LongTensor</p> <p><span style="background-color:#fe2c24;">3.5731e-20是随机生成的大小为1的张量。</span></p> <h2>二、修改Tensor形状</h2> <p class="img-center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20221228/39f66730541720daa47de8927fe16426.jpg"></p> <pre><code class="language-python">import torch  #coco # 生成一个形状为2x3的矩阵 torch.manual_seed(1) x = torch.randn(2, 3) print(x) # tensor([[ 0.6614,  0.2669,  0.0617], #         [ 0.6213, -0.4519, -0.1661]]) # 查看矩阵的形状 x.size()  # 结果为torch.Size([2, 3]) # 查看x的维度 x.dim()  # 结果为2 # 把x变为3x2的矩阵 x.view(3, 2) # 把x展平为1维向量 y = x.view(-1) print(y) # tensor([ 0.6614,  0.2669,  0.0617,  0.6213, -0.4519, -0.1661]) y.shape print(y.shape) # 添加一个维度 z = torch.unsqueeze(y, 0) #输出是6 # 查看z的形状 z.size()  # 结果为torch.Size([1, 6]) # 计算Z的元素个数 z.numel()  # 结果为6</code></pre> <p><span style="color:#fe2c24;">【说明】torch.view与torch.reshpae的异同</span><br /> ①reshape()可以由torch.reshape(),也可由torch.Tensor.reshape()调用。view()只可由torch.Tensor.view()来调用。<br /> ②对于一个将要被view的Tensor，新的size必须与原来的size与stride兼容。否则，在view之前必须调用contiguous()方法。<br /> ③同样也是返回与input数据量相同，但形状不同的tensor。若满足view的条件，则不会copy，若不满足，则会copy<br /> ④<span style="color:#ed7976;">如果您只想重塑张量，请使用torch.reshape。 如果您还关注内存使用情况并希望确保两个张量共享相同的数据，请使用torch.view。</span></p> <p><u>使用contiguous()&nbsp;</u><br /> 如果想要断开这两个变量之间的依赖（x本身是contiguous的），就要使用contiguous()针对x进行变化，感觉上就是我们认为的深拷贝。</p> <p>&nbsp;当调用contiguous()时，会强制拷贝一份tensor，让它的布局和从头创建的一模一样，但是两个tensor完全没有联系。</p> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3039.htm">vue中同时监听多个参数的实现_vue.js</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3041.htm">Zookeeper 基本概念</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3074.htm" title="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3066.htm" title="源码级别的广播与监听实现">源码级别的广播与监听实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3067.htm" title="SpringBoot如何整合spring-retry来实现接口请求重试">SpringBoot如何整合spring-retry来实现接口请求重试</a></li>
+                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
+                        <li class="py-2"><a href="/html/category/article-3113.htm" title="java计算器页面的实现">java计算器页面的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

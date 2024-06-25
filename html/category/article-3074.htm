@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3074.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<p>命令（Command）模式是指将请求封装成为一个对象，使发出请求和执行请求的责任分割开，方便将命令对象进行存储、传递、调用、增加与管理。</p> <p>也就是将发送者、接收者和调用命令封装成独立的对象，来供客户端调用。属于行为模式的一种。</p> <h2 id="一命令模式介绍">一、命令模式介绍</h2> <p>命令模式将发送者与接受者完全解耦，发送者与接收者之间没有直接的联系，发送者只需要如何发送请求，而不需要关心请求是如何完成的。下面就来看看命令模式的结构和实现：</p> <h3 id="11-命令模式的结构">1.1 命令模式的结构</h3> <p>将调用者和实现者进行分离，其结构如下所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/fb4ced5ac789568fa4980ecdbcad9e77.jpg" alt="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现"></p> <ul> <li><code>Command</code>：抽象命令角色，声明执行命令的接口</li> <li><code>Command1、Command2</code>：具体命令角色，是抽象命令角色的具体实现类</li> <li><code>ReceiverA、ReceiverB</code>：具体实现，具体命令对象的真正实现者</li> <li><code>Invoker</code>：调用者，处理命令、实现命令的具体操作者，负责对外提供命令服务</li> <li><code>Client</code>：客户端</li> </ul> <h3 id="12-命令模式的实现">1.2 命令模式的实现</h3> <p>根据上面的结构图，可以实现如下代码：</p> <pre><code class="language-java">/**  * @description: 抽象命令类  * @author: wjw  * @date: 2022/4/5  */ public interface Command {      public abstract void execute(); } /**  * @description: 命令具体实现类1  * @author: wjw  * @date: 2022/4/5  */ public class Command1 implements Command{      private ReceiverA receiverA = new ReceiverA();      @Override     public void execute() {         receiverA.action();     } } /**  * @description: 命令具体实现类2  * @author: wjw  * @date: 2022/4/5  */ public class Command1 implements Command{      private ReceiverA receiverA = new ReceiverA();      @Override     public void execute() {         receiverA.action();     } } /**  * @description: 接收者类A  * @author: wjw  * @date: 2022/4/5  */ public class ReceiverA {      public void action() {         System.out.println("我是ReceiverA");     } } /**  * @description: 具体实现者  * @author: wjw  * @date: 2022/4/5  */ public class ReceiverB {      public void action() {         System.out.println("我是ReceiverB");     } } /**  * @description: 命令调用者  * @author: wjw  * @date: 2022/4/5  */ public class Invoker {      private Command command;      public Invoker(Command command) {         this.command = command;     }      public void setCommand(Command command) {         this.command = command;     }      public void call() {         System.out.println("调用者执行命令command");         command.execute();     } } /**  * @description: 客户端  * @author: wjw  * @date: 2022/4/5  */ public class Client {      public static void main(String[] args) {         Command command1 = new Command1();         Invoker invoker1 = new Invoker(command1);         invoker1.call();     } }</code></pre> <p>最后的客户端运行结果为：</p> <pre><code>调用者执行命令command 我是ReceiverA</code></pre> <p>下面来看看命令模式的应用场景</p> <h2 id="二命令模式的应用场景">二、命令模式的应用场景</h2> <h3 id="21-spring-框架中的-jdbctemplate">2.1 Spring 框架中的 JdbcTemplate</h3> <p>本文选取的Spring版本是5.3.1，来看看<code>JdbcTemplate</code>类中的<code>query()</code>方法：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/aef68fa7be9a9128e74db2faaf25ae1b.jpg" alt="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现"></p> <p>我们看到，上面的<code>query()</code>方法中定义了一个内部类<code>QueryStatementCallback</code>，并实现了<code>StatementCallback</code>接口，点开查看详细内容：</p> <pre><code class="language-java">@FunctionalInterface public interface StatementCallback&lt;T&gt; {     //唯一的抽象方法     @Nullable     T doInStatement(Statement var1) throws SQLException, DataAccessException; }</code></pre> <p>回到<code>query()</code>方法中，我们发现最后返回的<code>execute(new QueryStatementCallback())</code>中是将内部类<code>QueryStatementCallback</code>当做参数进行返回。这里<code>QueryStatementCallback</code>就相当于命令模式中的具体命令对象，而<code>StatementCallback</code>则是抽象命令对象。比如还有其他具体命令实现类，比如<code>BatchUpdateStatementCallback</code>、<code>ExecuteStatementCallback</code>等等：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6b27715dc5c407705e7ae5f65f24e2ff.jpg" alt="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现"></p> <p>看看<code>execute()</code>方法，为了方便理解，代码做了精简：</p> <pre><code class="language-java">@Nullable private &lt;T&gt; T execute(StatementCallback&lt;T&gt; action, boolean closeResources) throws DataAccessException {     Assert.notNull(action, "Callback object must not be null");     Connection con = DataSourceUtils.getConnection(this.obtainDataSource());     Statement stmt = null;      Object var12;     try {         stmt = con.createStatement();         this.applyStatementSettings(stmt);         //执行doInStatement方法         T result = action.doInStatement(stmt);         this.handleWarnings(stmt);         //赋值为var12         var12 = result;     } catch (SQLException var10) {        //...     } finally {       //...     } 	//最后返回statementCallback对象     return var12; }</code></pre> <p>根据上面的代码，可以梳理整个执行流程：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7920050850c7926d1adb034afaac34ad.jpg" alt="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现"></p> <p>实际上<code>JdbcTemplate</code>这个类是调用者（Invoker）、实现者（Receiver）和具体命令实现（Concrete Command）的集合，<code>statementCallback</code>则是命令的抽象接口。</p> <h2 id="三命令模式实战">三、命令模式实战</h2> <p>模拟在餐厅中点餐交给初始烹饪的场景，在该场景中点餐人员只需要把需要点的各种菜系交给服务员，服务员再把各项菜品交给厨师进行烹饪。如下图所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/1aed6254f7ee8d06b4172b66d1c2f9db.jpg" alt="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现"></p> <p>我们先分析一下，命令是菜品具体实现是菜系，命令实现是厨师，调用者是服务员。所以该场景下的命令模式结构应该为：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f32c399247fd5a35f42fded19329113e.jpg" alt="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现"></p> <p>代码目录结构为：</p> <pre><code>├─src │  ├─main │  │  ├─java │  │  │  └─cn │  │  │      └─ethan │  │  │          └─design │  │  │              └─command │  │  │                  │  Waiter.java │  │  │                  │ │  │  │                  ├─cook │  │  │                  │  │  ICook.java │  │  │                  │  │ │  │  │                  │  └─impl │  │  │                  │          GuangDongCook.java │  │  │                  │          JiangSuCook.java │  │  │                  │          ShanDongCook.java │  │  │                  │          SiChuangCook.java │  │  │                  │ │  │  │                  └─cuisine │  │  │                      │  ICuisine.java │  │  │                      │ │  │  │                      └─impl │  │  │                              GuangDongCuisine.java │  │  │                              JiangSuCuisine.java │  │  │                              ShanDongCuisine.java │  │  │                              SiChuangCuisine.java │  │  │ │  │  └─resources │  └─test │      └─java │          └─cn │              └─ethan │                  └─disign │                          ApiTest.java</code></pre> <p>具体代码如下：</p> <ol> <li><strong>抽象命令者及其具体实现</strong></li> </ol> <pre><code class="language-java">/**  * @description: 抽象命令接口（八大菜系）  * @author: wjw  * @date: 2022/4/5  */ public interface ICuisine {      /**烹调公共接口*/     void cook(); } /**  * @description: 具体命令实现（广东菜）  * @author: wjw  * @date: 2022/4/5  */ public class GuangDongCuisine implements ICuisine {      private ICook cook;      public GuangDongCuisine(ICook cook) {         this.cook = cook;     }      @Override     public void cook() {         cook.doCooking();     } } /**  * @description: 命令具体实现（江苏菜）  * @author: wjw  * @date: 2022/4/5  */ public class JiangSuCuisine implements ICuisine {      private ICook cook;      public JiangSuCuisine(ICook cook) {         this.cook = cook;     }      @Override     public void cook() {         cook.doCooking();     } } /**  * @description: 具体命令实现（山东菜）  * @author: wjw  * @date: 2022/4/5  */ public class ShanDongCuisine implements ICuisine {      private ICook cook;      public ShanDongCuisine(ICook cook) {         this.cook = cook;     }      @Override     public void cook() {         cook.doCooking();     } } /**  * @description: 具体命令实现（四川菜）  * @author: wjw  * @date: 2022/4/5  */ public class SiChuangCuisine implements ICuisine {      private ICook cook;      public SiChuangCuisine(ICook cook) {         this.cook = cook;     }      @Override     public void cook() {         cook.doCooking();     } }</code></pre> <ol start="2"> <li><strong>抽象实现者及其具体实现</strong></li> </ol> <pre><code class="language-java">/**  * @description: 抽象实现者接口  * @author: wjw  * @date: 2022/4/5  */ public interface ICook {      /**厨师烹调*/     void doCooking(); } /**  * @description: 具体实现者（广东厨师）  * @author: wjw  * @date: 2022/4/5  */ public class GuangDongCook implements ICook {      private Logger logger = LoggerFactory.getLogger(GuangDongCook.class);      @Override     public void doCooking() {         logger.info("广东厨师，会做广东菜");     } } /**  * @description: 具体实现类（江苏厨师）  * @author: wjw  * @date: 2022/4/5  */ public class JiangSuCook implements ICook {      private Logger logger = LoggerFactory.getLogger(JiangSuCook.class);      @Override     public void doCooking() {         logger.info("江苏厨师，会烧江苏菜");     } } /**  * @description: 具体实现类（山东厨师）  * @author: wjw  * @date: 2022/4/5  */ public class ShanDongCook implements ICook {      private Logger logger = LoggerFactory.getLogger(ShanDongCook.class);      @Override     public void doCooking() {         logger.info("山东厨师会烧山东菜");     } } /**  * @description: 具体实现类（四川厨师）  * @author: wjw  * @date: 2022/4/5  */ public class SiChuangCook implements ICook {      private Logger logger = LoggerFactory.getLogger(SiChuangCook.class);      @Override     public void doCooking() {         logger.info("四川厨师会烧四川菜");     } }</code></pre> <ol start="3"> <li><strong>调用者及客户端</strong></li> </ol> <pre><code class="language-java">/**  * @description: 调用者(服务员)  * @author: wjw  * @date: 2022/4/5  */ public class Waiter {      private Logger logger = LoggerFactory.getLogger(Waiter.class);      private List&lt;ICuisine&gt; cuisineList = new ArrayList&lt;&gt;();      public void order(ICuisine cuisine) {         cuisineList.add(cuisine);     }      public synchronized void placeOrder() {         for (ICuisine cuisine : cuisineList) {             cuisine.cook();         }         cuisineList.clear();     } } /**  * @description: 客户端  * @author: wjw  * @date: 2022/4/5  */ public class ApiTest {      @Test     public void test_command() {         //菜和厨师命令实现         ICuisine guangDongCuisine = new GuangDongCuisine(new GuangDongCook());         ICuisine shanDongCuisine = new ShanDongCuisine(new ShanDongCook());         ICuisine siChuangCuisine = new SiChuangCuisine(new SiChuangCook());         ICuisine jiangSuCuisine = new JiangSuCuisine(new JiangSuCook());          //调用者进行点单         Waiter waiter = new Waiter();         waiter.order(guangDongCuisine);         waiter.order(shanDongCuisine);         waiter.order(siChuangCuisine);         waiter.order(jiangSuCuisine);          //下单操作         waiter.placeOrder();      } }</code></pre> <p>最终测试结果如下：</p> <pre><code>23:16:40.512 [main] INFO  c.e.d.c.cook.impl.GuangDongCook - 广东厨师，会做广东菜 23:16:40.518 [main] INFO  c.e.d.command.cook.impl.ShanDongCook - 山东厨师会烧山东菜 23:16:40.518 [main] INFO  c.e.d.command.cook.impl.SiChuangCook - 四川厨师会烧四川菜 23:16:40.518 [main] INFO  c.e.d.command.cook.impl.JiangSuCook - 江苏厨师，会烧江苏菜</code></pre> <h2 id="参考资料">参考资料</h2> <p>《重学Java设计模式》</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://c.biancheng.net/view/1380.html"  target="_blank" rel="nofollow">http://c.biancheng.net/view/1380.html</a></p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3073.htm">R语言学习笔记之lm函数</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3075.htm">springboot Jar包 秒部署到Linux服务器运行</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3083.htm" title="kafka消费者执行异常重复消费_Kafka消费者的使用和原理">kafka消费者执行异常重复消费_Kafka消费者的使用和原理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3067.htm" title="SpringBoot如何整合spring-retry来实现接口请求重试">SpringBoot如何整合spring-retry来实现接口请求重试</a></li>
+                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
+                        <li class="py-2"><a href="/html/category/article-3119.htm" title="Cpp的异常处理Exception Handling-笔记">Cpp的异常处理Exception Handling-笔记</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3096.htm" title="win11系统如何修改日期格式">win11系统如何修改日期格式</a></li>
+                        <li class="py-2"><a href="/html/category/article-3062.htm" title=".NET混合开发解决方案5 WebView2运行时与分发应用_在线工具">.NET混合开发解决方案5 WebView2运行时与分发应用_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3066.htm" title="源码级别的广播与监听实现">源码级别的广播与监听实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-3091.htm" title="进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

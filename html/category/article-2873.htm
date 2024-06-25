@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2873.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>数据库基础知识详解三：MVCC、范式以及表连接方式 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">数据库基础知识详解三：MVCC、范式以及表连接方式</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<p>写在文章前：本系列文章用于博主自己归纳复习一些基础知识，同时也分享给可能需要的人，因为水平有限，肯定存在诸多不足以及技术性错误，请大佬们及时指正。</p> <h2 id="8mvcc">8.MVCC</h2> <p><strong>多版本并发控制（Multi-Version Concurrency Control, MVCC）</strong>，MVCC在数据表中每行记录后面都保存有两个隐藏的列，用来存储<strong>更新信息的事务号：DB_TRX_ID</strong>和一个<strong>回滚指针：DB_ROLL_PTR</strong>（指向该行数据上一次修改前的数据，存储在undo log中）。</p> <p><strong>系统版本号</strong>：每开始一个新的事务，系统版本号就会自动递增）。（更新包括增删改）</p> <p><strong>更新事务号</strong>：更新一个数据行时的事务版本号（事务版本号：事务开始时的系统版本号。）</p> <p><strong>各种操作具体实现</strong>：</p> <ul> <li><strong>插入操作</strong>时，记录创建版本号。</li> <li><strong>删除操作</strong>时，记录删除版本号。</li> <li><strong>更新操作</strong>时，先记录删除版本号，再新增一行记录创建版本号。</li> <li><strong>查询操作</strong>时，要符合以下条件才能被查询出来：删除的版本号未定义或大于当前事务版本号（删除操作是在当前事务启动之后做的）。创建的版本号小于或等于当前事务版本号（创建操作是事务完成或者在事务启动之前完成）</li> </ul> <p>通过版本号减少了锁的争用，提高了系统性能。可以实现提交读和可重复读两种隔离级别，未提交读级别无需使用MVCC。</p> <p><strong>快照读</strong>：使用MVCC读取的是快照中的数据，这样可以减少加锁带来的开销。</p> <p><strong>当前读</strong>：读取的是最新的数据，需要加锁。</p> <blockquote> <p>问题：<strong>MVCC不是有类似生成快照的机制吗，为什么不能解决幻读？</strong></p> </blockquote> <p>我们设计一个实际案例：现在假设事务A的版本号为200：</p> <pre><code class="language-sql">select * from user, -- 其他操作 update user set level=1 where age&gt;0, select * from user</code></pre> <p>在事务A执行第一次select的语句时，假设查询出了三个用户。然后在事务A执行中间的其他操作时，事务B插入了一条新的用户数据，因为事务B的版本号为300，所以假设此时事务A查询，因为该行数据创建的版本号大于自己的版本号，所以不会被查询出。</p> <p>但是由于此时事务A刚好执行了下一条更新语句，而且恰好新插入的那行数据满足更新条件，它的更新版本号被修改为事务A的版本号，这导致事务A的第二次查询操作会查询出这条别的事务新插入的数据，这就造成了幻读的问题。</p> <p>MySQL是使用MVCC+Next Key Lock来解决幻读问题的，关于Next-Key Lock可以看博主数据库基础知识一的介绍。</p> <h2 id="9数据库的范式">9.数据库的范式</h2> <p>讲解数据库的范式之前，补充一下数据库中的基本概念：</p> <ul> <li><strong>主键</strong>：关系型数据库中的一条记录中有若干个属性，若其中某一个属性组(注意是组)能唯一标识一条记录，该属性组就可以成为一个主键（一张表只有一个，不允许重复，不允许为空）。</li> <li><strong>外键</strong>：外键用于与另一张表的关联。是能确定另一张表记录的字段，用于保持数据的一致性。成绩表中的学号不是成绩表的主键，但它和学生表中的学号相对应，并且学生表中的学号是学生表的主键，则称成绩表中的学号是学生表的外键（一张表可以有多个，可以有重复的，可以是空值）。</li> <li><strong>元组</strong>：可以理解为数据表的某一行属性：可以理解为数据表的某一列，属性名就是列的字段。</li> <li><strong>候选码</strong>：某一属性组能唯一标识一个元组而其子集不能，则称该属性组为候选码。若有多个候选码，选择其中一个为主码。</li> <li><strong>主属性</strong>：候选码包含的属性（一个或多个）。</li> <li><strong>非主属性</strong>：顾名思义，就是候选码不包括的属性。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/36031f57f0ba99b04ad5ccad0ec82e88.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> <p><strong>范式</strong>：</p> <ul> <li> <p><strong>第一范式（1NF，Normal Form）</strong>：属性不应该是可分的。举例：如果将“电话”作为一个属性（即数据表中的一列），是不符合1NF的，因为电话这个属性可以分解为家庭电话和移动电话。如果将“移动电话”作为一个属性，就符合1NF。</p> </li> <li> <p><strong>第二范式（2NF）</strong>：每个<strong>非主属性完全依赖于主属性集（候选键集）</strong>。B完全依赖于A，就是说A中的所有属性唯一决定B，属性少了就不能唯一决定，属性多了则有冗余（叫依赖不叫完全依赖）。</p> <p>举例：（学号，课程名）这个主属性集可以唯一决定成绩，但是对于学生姓名这个属性，（学号，课程名）这个属性集就是冗余的，所以学生姓名不完全依赖于（学号，课程名）这一属性集。</p> <blockquote> <p><strong>问题：那如何使其满足2NF？</strong></p> </blockquote> <p>可以通过分解来满足 2NF：将（学号，课程名，成绩）做成一张表；（学号，学生姓名）做成另一张表，避免大量的数据冗余； 满足1NF后，要求表中的所有列，都必须依赖于主键，而不能有任何一列与主键没有关系，也就是说一个表只描述一件事情。</p> </li> <li> <p><strong>第三范式（3NF）</strong>：在 2NF 的基础上，非主属性<strong>不传递依赖于主属性</strong>。</p> <p><strong>传递依赖</strong>：如果C依赖于B，B依赖于A，那么C传递依赖于A。3NF在2NF的基础上，消除了非主属性之间的依赖。</p> <p>比如一个表中，主属性有（学号），非主属性有（姓名，院系，院长名），可以看到院长名这个非主属性依赖于院系，传递依赖于学号。要求：表中的每一列只与主键直接相关而不是间接相关，（表中的每一列只能依赖于主键）。</p> <p>使一个2NF变成3NF的方法同样是分解，方法类似1NF变为2NF，这里不再赘述。</p> </li> </ul> <p><strong>不符合范式会出现哪些异常？</strong></p> <ul> <li><strong>冗余数据</strong>：某些同样的数据多次出现（如学生姓名）。</li> <li><strong>修改异常</strong>：修改了一个记录中的信息，另一个记录中相同的信息却没有修改。</li> <li><strong>删除异常</strong>：删除一个信息，那么也会丢失其它信息（删除一个课程，丢失了一个学生的信息）。</li> <li><strong>插入异常</strong>：无法插入（插入一个还没有课程信息的学生）。</li> </ul> <h2 id="10表连接方式">10.表连接方式</h2> <p>先创建两张简单的数据表以作后续的演示：</p> <table> <thead> <tr> <th></th> <th></th> </tr> </thead> <tbody> <tr> <td>学生表</td> <td><img decoding="async" src="https://img-blog.csdnimg.cn/bdadadc4d4864d5a8c22f5522cd7a264.png#pic_center" alt="在这里插入图片描述" loading="lazy"/></td> </tr> <tr> <td>成绩表</td> <td><img decoding="async" src="https://img-blog.csdnimg.cn/a76e058b52fb479f812bf9e38d6e5480.png#pic_center" alt="在这里插入图片描述" loading="lazy"/></td> </tr> </tbody> </table> <p><strong>内连接（Inner Join）</strong>：仅将两个表中满足连接条件的行组合起来作为结果集</p> <ul> <li><strong>自然连接</strong>：只考虑属性相同的元组对。</li> </ul> <p>示例：</p> <pre><code class="language-mysql">select * from student natural join grade;</code></pre> <p>结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a16fc9ccb1f8f508c90aa53721e5e780.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> <p>没有给任何的条件，数据库自动把两张数据表各行有相同属性的行（元组）连接在了一起。</p> <ul> <li><strong>等值/连接</strong>：给定条件进行查询。</li> </ul> <p>示例：</p> <pre><code class="language-mysql">select * from student,grade where student.sno=grade.sno;</code></pre> <p>结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bd39fe3c0016687023a48bd8ddb5acb7.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> <p><strong>外连接（Outer Join）</strong></p> <ul> <li> <p><strong>左连接</strong>：左边表的所有数据都有显示出来，右边的表数据只显示共同有的那部分（就比如说成绩表和课程表连接，只显示两边有学号相等的，如果某一边的学号另一边没出现，那就不显示），没有对应的部分补NULL。</p> <p>示例：</p> <pre><code class="language-mysql">select * from student left outer join grade on student.sno=grade.sno;</code></pre> <p>结果：</p> </li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9b75253ee8e02e1eb9008da8356593e7.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> <ul> <li> <p><strong>右连接</strong>：和左连接相反。</p> <p>示例：</p> <pre><code class="language-mysql">select * from student left outer join grade on student.sno=grade.sno;</code></pre> <p>结果：</p> </li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3f4ec15bda095f5a757d35412ee2a549.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> <ul> <li> <p><strong>全外连接（Full Outer Join）</strong>：查询出左表和右表所有数据，但是去除两表的重复数据。</p> <p>示例：</p> <p>原本SQL语句只应该需要类似：</p> <pre><code class="language-mysql">select * from student full outer join grade  on student.sno=grade.sno;</code></pre> <p>但因为MySQL不支持这样的全外连接，所以我们使用UNION来达到全外连接的效果：</p> <pre><code class="language-mysql">select * from student left join grade on student.sno=grade.sno union select * from student right join grade on student.sno=grade.sno;</code></pre> <p>结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f5bf7cc9a65be82ec7dba72d9411e627.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> </li> </ul> <p><strong>交叉连接（Cross Join）</strong>：返回两表的笛卡尔积（对于所含数据分别为m、n的表，返回m*n的结果）。</p> <p>示例：</p> <pre><code class="language-mysql">select * from student,grade;</code></pre> <p>结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e5bb723abce376c489e47e9e328feefa.jpg" alt="数据库基础知识详解三：MVCC、范式以及表连接方式"></p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2872.htm">八、C++ 类型强转</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2874.htm">mysqlbinlog 命令解析binlog文件</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3071.htm" title="springboot中emoji表情配置及springboot数据源配置区别">springboot中emoji表情配置及springboot数据源配置区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-3100.htm" title="docker system全新命令集">docker system全新命令集</a></li>
+                        <li class="py-2"><a href="/html/category/article-3096.htm" title="win11系统如何修改日期格式">win11系统如何修改日期格式</a></li>
+                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3097.htm" title="vue 动态样式绑定">vue 动态样式绑定</a></li>
+                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
+                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
+                        <li class="py-2"><a href="/html/category/article-3117.htm" title="redis在CentOs服务器上的安装和设置开机自启动">redis在CentOs服务器上的安装和设置开机自启动</a></li>
+                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

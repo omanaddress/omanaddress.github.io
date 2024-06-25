@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3079.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>在Git中进行忽略文件操作详解_在线工具 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">在Git中进行忽略文件操作详解_在线工具</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				</p> <div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"  rel="nofollow">1、忽略文件说明</a></li> <li><a href="#2%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%9F%E5%88%99"  rel="nofollow">2、忽略文件的原则</a></li> <li><a href="#3gitignore%E5%BF%BD%E7%95%A5%E8%A7%84%E5%88%99"  rel="nofollow">3、<code>.gitignore</code>忽略规则</a></li> <li> <a href="#4%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"  rel="nofollow">4、忽略文件的三种方式</a></p> <ul> <li><a href="#1%E5%BF%BD%E7%95%A5%E5%8D%95%E4%B8%AA%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E8%BF%9C%E7%A8%8B%E5%85%B1%E7%94%A8"  rel="nofollow">（1）忽略单个仓库中的文件（远程共用）</a></li> <li><a href="#2%E5%BF%BD%E7%95%A5%E5%8D%95%E4%B8%AA%E4%BB%93%E5%BA%93%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8"  rel="nofollow">（2）忽略单个仓库中的文件（本地使用）</a></li> <li><a href="#3%E5%85%A8%E5%B1%80%E5%BF%BD%E7%95%A5"  rel="nofollow">（3）全局忽略</a></li> </ul> </li> </ul> </div> <h2 id="1忽略文件说明">1、忽略文件说明</h2> <p>有些时候，你必须把某些文件放到Git工作目录中，但又不能提交它们到本地版本库，通常都是些自动生成的文件、日志文件、系统缓存文件、编译过程中创建的临时文件，或者保存了数据库密码的配置文件、人隐私文件等等，每次执行<code>git status</code>命令时，都会显示<code>Untracked files ...（未被跟踪）</code>，有强迫症的童鞋心里肯定不爽。</p> <p>正常来说，这些文件都是不应该被提交到版本库，倘若一不留神提交到版本库，要么泄露机密信息，要么造成经济损失，要么对团队其他人工作造成不便。</p> <p>好在Git考虑到了大家的感受，这个问题解决起来也很简单，在Git工作区的根目录下创建一个特殊的<code>.gitignore</code>文件，然后把要忽略的文件名填进去，并且把<code>.gitignore</code>文件提交到本地版本库中。之后Git就会自动忽略这些文件，再运行<code>git  status</code>命令时就不对其进行检测了。</p> <blockquote> <p>即："并不是所有的牛奶都叫特仑苏"，在<strong>版本控制系统</strong>中也有相似的表达，那就是"并不是所有的文件都需要提交到本地版本库"。</p> </blockquote> <h2 id="2忽略文件的原则">2、忽略文件的原则</h2> <ol> <li>忽略操作系统自动生成的文件,保持项目在不同操作系统中的纯粹性和整洁度。</li> <li>忽略编译生成的中间文件、可执行文件等，比如Java编译产生的<code>.class</code>文件，<br /> 即：忽略工具软件自动生成的文件，避免因个性化配置而产生的工作障碍。</li> <li>忽略自己带有敏感信息的配置文件，比如存放口令的配置文件。</li> </ol> <blockquote> <p>目标：只提交必要文件，忽略无用文件，尽可能考虑多种情况，不给他人制造麻烦。</p> </blockquote> <h2 id="3gitignore忽略规则">3、<code>.gitignore</code>忽略规则</h2> <p><strong>文件 <code>.gitignore</code> 的格式规范如下：</strong></p> <ul> <li>所有空行或者以 <code>#</code> 开头的行都会被 Git 忽略。</li> <li>可以使用标准的<code>glob</code>模式匹配，它会递归地应用在整个工作区中。</li> <li>匹配模式可以以（<code>/</code>）开头，防止递归。</li> <li>匹配模式最后跟<code>/</code>说明要忽略的是目录。</li> <li>要忽略指定模式以外的文件或目录，可以在模式前加上叹号（<code>!</code>）取反。</li> </ul> <p><strong>所谓的<code>glob</code>模式是指<code>shell</code>所使用的简化了的正则表达式。</strong></p> <ul> <li>以＃开头的行用作注释。</li> <li>星号（<code>*</code>）匹配零个或多个任意字符。</li> <li> <code>[abc]</code>匹配任何一个列在方括号中的字符 （这个例子要么匹配一个<code>a</code>，要么匹配一个<code>b</code>，要么匹配一个 <code>c</code>）；</li> <li>问号（<code>?</code>）只匹配一个任意字符。</li> <li>如果在方括号中使用短划线分隔两个字符， 表示所有在这两个字符范围内的都可以匹配（比如 <code>[0-9]</code> 表示匹配所有 0 到 9 的数字）。</li> <li>使用两个星号（<code>**</code>）表示匹配任意中间目录，比如 <code>a/**/z</code> 可以匹配 <code>a/z</code> 、 <code>a/b/z</code> 或 <code>a/b/c/z</code> 等。</li> </ul> <p><strong>我们再看一个 <code>.gitignore</code> 文件的例子：</strong></p> <pre><code class="language-shell"># 1.忽略public下的所有目录及文件 /public/*  # 2.不忽略/public/assets，就是特例的意思，assets文件不忽略 !/public/assets  # 3.忽略具体的文件 index.html  # 4.忽略所有的java文件 *.java  # 5.忽略 a.java b.java [ab].java  # 6.忽略 doc/ 目录及其所有子目录下的 .pdf 文件 doc/**/*.pdf  # 7.忽略 doc/notes.txt，但不忽略 doc/server/arch.txt doc/*.txt  # 8.忽略任何目录下名为 build 的文件夹 build/  # 9.只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO文件 /TODO </code></pre> <blockquote> <p>提示：要养成一开始就为你的新仓库设置好<code>.gitignore</code>文件的习惯，以免将来误提交这类无用的文件。</p> </blockquote> <h2 id="4忽略文件的三种方式">4、忽略文件的三种方式</h2> <p>有鉴于此，我们应该寻求一种机制来规避这种事故的发生，在 <code>git</code> 版本控制系统中一般有三种不同的解决方案。</p> <p>最常用也是最简单的当属 <code>.gitignore</code> 文件。</p> <h3 id="1忽略单个仓库中的文件远程共用">（1）忽略单个仓库中的文件（远程共用）</h3> <p>该方式是在工作中最常用的方式，配置方法是在仓库的根目录下新建 <code>.gitignore</code> 文件，在文件里配置忽略规则，同时把 <code>.gitignore</code> 文件加入版本管理。之后可以同步该配置到远程仓库，其他开发者可更新该文件到本地仓库，与其他克隆仓库共享同一套忽略规则。</p> <p><code>.gitignore</code>文件对其所在的目录，及所在目录的全部子目录均有效。</p> <p><strong>1）查看当前Git工作目录中文件状态。</strong></p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         hello.java         local.txt         test.java         xyj-sha_hs.py         xyj-sun_wk.py         xyj-zhu_bj.py  nothing added to commit but untracked files present (use "git add" to track) </code></pre> <p>可以看到有6个未被追踪的文件。</p> <p><strong>2）在Git仓库的根目录下新建一个名为<code>.gitignore</code>的文件。</strong></p> <p>因为是点开头，没有文件名，没办法直接在Windows系统中直接创建，要通过Git Bash客户端，用Linux系统的方式新建<code>.gitignore</code>文件。</p> <pre><code class="language-bash"># 创建.gitignore文件。 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ touch .gitignore  # 查看本地版本库中是否成功创建.gitignore文件。 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ ll -a total 12 drwxr-xr-x 1 L 197121 0  4月 10 11:52 ./ drwxr-xr-x 1 L 197121 0  4月  2 21:54 ../ drwxr-xr-x 1 L 197121 0  4月 10 11:51 .git/ -rw-r--r-- 1 L 197121 0  4月 10 11:52 .gitignore -rw-r--r-- 1 L 197121 0  4月  4 10:37 hello.java -rw-r--r-- 1 L 197121 0  4月 10 11:46 local.txt -rw-r--r-- 1 L 197121 0  4月  4 01:20 test.java -rw-r--r-- 1 L 197121 0  4月  4 10:38 xyj-sha_hs.py -rw-r--r-- 1 L 197121 0  4月  4 10:38 xyj-sun_wk.py -rw-r--r-- 1 L 197121 0  4月  4 10:38 xyj-zhu_bj.py </code></pre> <p><strong>3）将需要忽略的文件写入<code>.gitignore</code>文件中。</strong></p> <p>提示：每个文件或者正则匹配占一行。</p> <pre><code class="language-bash"># 配置.gitignore文件内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ echo "xyj-*.py" &gt; .gitignore  # 查看.gitignore文件内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ cat .gitignore xyj-*.py  </code></pre> <p><strong>4）将<code>.gitignore</code>文件提交到本地版本库。</strong></p> <pre><code class="language-bash"># 1.查看当前Git工作目录中文件状态 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         .gitignore	# 文件名都为红色         hello.java         local.txt         test.java  nothing added to commit but untracked files present (use "git add" to track)  # 我们可以看到，xyj开头的文件已经被忽略掉了，但只是在本地起作用。  # 2.追踪.gitignore文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git add .gitignore  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Changes to be committed:   (use "git restore --staged &lt;file&gt;..." to unstage)         new file:   .gitignore	# 文件名为绿色  Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         hello.java	# 文件名都为红色         local.txt         test.java  # 3.提交.gitignore文件到本地版本库 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git commit -m 'create ignore file' [master d3ceba8] create ignore file  1 file changed, 1 insertion(+)  create mode 100644 .gitignore  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         hello.java	# 文件名都为红色         local.txt         test.java </code></pre> <p>这样就完成可忽略文件的整个过程了。</p> <h3 id="2忽略单个仓库中的文件本地使用">（2）忽略单个仓库中的文件（本地使用）</h3> <p>用这种方式配置忽略文件，不会同步该设置至远程仓库，只在本机起作用。</p> <p>配置方法是直接编辑Git仓库根目录下的<code>.git/info/exclude</code>文件，把要忽略的规则直接写入，这个方法只在本机当前仓库起效，不会对其他的克隆仓库起效。</p> <p><strong>1）查看当前Git工作目录中文件状态。</strong></p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         hello.java	# 文件名都为红色         local.txt         test.java  nothing added to commit but untracked files present (use "git add" to track) </code></pre> <p>可以看到有3个未被追踪的文件。</p> <p><strong>2）编辑Git仓库根目录下的<code>.git/info/exclude</code>文件，配置忽略。</strong></p> <pre><code class="language-bash"># 1.我们先来查看一下.git/info/exclude文件的默认内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ cat .git/info/exclude # git ls-files --others --exclude-from=.git/info/exclude # Lines that start with '#' are comments. # For a project mostly in C, the following would be a good set of # exclude patterns (uncomment them if you want to use them): # *.[oa] # *~  # 2.配置忽略文件，把local.txt文件进行忽略 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ echo "local.txt" &gt;&gt; .git/info/exclude  L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ cat .git/info/exclude # git ls-files --others --exclude-from=.git/info/exclude # Lines that start with '#' are comments. # For a project mostly in C, the following would be a good set of # exclude patterns (uncomment them if you want to use them): # *.[oa] # *~ local.txt </code></pre> <p><strong>3）再次查看当前Git工作目录中文件状态。</strong></p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         hello.java         test.java  nothing added to commit but untracked files present (use "git add" to track) </code></pre> <p>我们可以看到<code>local.txt</code>文件被忽略了。</p> <h3 id="3全局忽略">（3）全局忽略</h3> <p>忽略规则由本机所有仓库共用（也就是对本机的所有Git仓库都起作用），配置方法如下：</p> <p><strong>Linux中，这时把全局要忽略的文件列表<code>.gitignore</code>放当前用户根目录下（ <code>~/.gitconfig</code> ）：</strong></p> <pre><code>git config --global core.excludesfile '~/.gitignore' </code></pre> <p><strong>Windows中，这时把全局要忽略的文件列表<code>.gitignore</code>放当前用户根目录下：</strong></p> <pre><code>git config --global core.excludesfile "%USERPROFILE%\.gitignore（可自定义）" </code></pre> <p>我们以Windows系统为例：</p> <p><strong>1）查看当前Git工作目录中文件状态。</strong></p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master Untracked files:   (use "git add &lt;file&gt;..." to include in what will be committed)         hello.java         test.java </code></pre> <p><strong>2）创建<code>.gitignore</code>忽略文件。</strong></p> <p>我们可以复制用户根目录下的<code>.gitconfig</code>文件，并改名为<code>.gitignore</code>文件。</p> <p>注意：</p> <ul> <li> <code>.gitconfig</code>文件可以改成其他名称，如<code>.gitignore_global</code>，这样好区分工作目录中的<code>.gitignore</code>忽略文件。</li> <li> <code>.gitconfig</code>文件也可以使用<code>.txt</code>格式的文本文件代替，例如<code>gitignore_global.txt</code> </li> </ul> <p>如下：</p> <pre><code class="language-bash"># 复制文件，生成gitignore_global.txt文件 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ cp /c/Users/L/.gitconfig /c/Users/L/gitignore_global.txt  # 查看gitignore_global.txt文件是否生成 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ ll /c/Users/L/.git* -rw-r--r-- 1 L 197121 90  4月  5 20:52 /c/Users/L/.gitconfig -rw-r--r-- 1 L 197121 90  4月  5 20:59 /c/Users/L/gitignore_global.txt  # 清空gitignore_global.txt文件中的内容 L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ echo "" &gt; /c/Users/L/gitignore_global.txt </code></pre> <p><strong>3）将忽略文件配置到Git全局配置文件<code>.gitconfig</code>文件中。</strong></p> <p>通过如下命令进行配置。</p> <pre><code class="language-bash">git config --global core.excludesfile /c/Users/L/gitignore_global.txt </code></pre> <p>执行命令后，查看<code>.gitconfig</code>文件内容，如下：</p> <pre><code class="language-bash">[user] 	name = sun_wk 	email = sun_wk@126.com # 下面两行是生成的 [core] 	excludesfile = C:/Users/L/gitignore_global.txt </code></pre> <blockquote> <p>提示：如果之前配置<code>global</code>级别的配置签名，<code>.gitconfig</code>文件就已经被创建。</p> </blockquote> <p>至此之后，所有Git仓库都会自动应用这个<code>gitignore_global.txt</code>文件中，所配置忽略的文件。</p> <blockquote> <p>当然本例子是存放于 当前用户的根目录下，你可以改成其他路径，但是不推荐。</p> </blockquote> <p><strong>4）把需要忽略的文件加入到<code>gitignore_global.txt</code>文件中。</strong></p> <p>把<code>gitignore_global.txt</code>文件中的内容清空，之后添加要忽略的文件。</p> <p><code>gitignore_global.txt</code>文件内容如下：</p> <pre><code class="language-bash"># 忽略所有.java文件，也可以单个文件写 *.java </code></pre> <p><strong>5）查看<code>learngit</code>仓库工作目录文件状态。</strong></p> <pre><code class="language-bash">L@DESKTOP-T2AI2SU MINGW64 /j/git-repository/learngit (master) $ git status On branch master nothing to commit, working tree clean </code></pre> <p>可以看到<code>hello.java</code>和<code>test.java</code>两个未被追踪的文件被忽略掉了。</p> <blockquote> <p>提示：其实可以直接将<code>gitignore_global.txt</code>文件中的内容直接写到<code>.gitconfig</code>文件中，效果也一样的。只不过这样会比较混乱一点，还是推荐上面详细叙述的方法来设置Git全局忽略文件。</p> </blockquote> <blockquote> <p>参考：</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.liaoxuefeng.com/wiki/896043488029600/900004590234208"  target="_blank"  rel="nofollow">https://www.liaoxuefeng.com/wiki/896043488029600/900004590234208</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://zhuanlan.zhihu.com/p/60752662"  target="_blank"  rel="nofollow">https://zhuanlan.zhihu.com/p/60752662</a></li> </ul> </blockquote> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3078.htm">pandas的apply函数常见用法总结</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3080.htm">通过覆盖的HTML元素<div>传递鼠标单击</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-3067.htm" title="SpringBoot如何整合spring-retry来实现接口请求重试">SpringBoot如何整合spring-retry来实现接口请求重试</a></li>
+                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3089.htm" title="SpringMVC中RequestMapping注解【作用、出现的位置、属性】">SpringMVC中RequestMapping注解【作用、出现的位置、属性】</a></li>
+                        <li class="py-2"><a href="/html/category/article-3064.htm" title="Java NIO 选择器 Selector_在线工具">Java NIO 选择器 Selector_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3082.htm" title="vue elementui点击按钮新增输入框">vue elementui点击按钮新增输入框</a></li>
+                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3084.htm" title="审视Scrum Master的检查清单">审视Scrum Master的检查清单</a></li>
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2913.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Tensorflow迁移学习加载预训练模型并修改变量shape和value的方法 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Tensorflow迁移学习加载预训练模型并修改变量shape和value的方法</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <blockquote> <p>迁移学习在深度学习中是经常被使用的方法，指的是在一个任务中预训练的模型被用于另一个任务的模型训练，以加快模型训练，减少资源消耗。<br /> 然而网络搜索相关的话题，基本上只涉及加载预训练模型的特定变量值的方法，即不涉及预训练模型某个变量与当前任务网络对应变量shape改变的处理。<br /> 在具体的语音合成多说话人模型迁移学习得到单说话人模型的任务中，就涉及到了迁移变量改变shape的情况，将解决方法如下列出。</p> </blockquote> <div class="toc"> <h3>文章目录</h3> <ul> <li> <ul> <li><a href="#__10" rel="nofollow">一. 问题来源</a></li> <li><a href="#__20" rel="nofollow">二. 相关接口</a></li> <li><a href="#__43" rel="nofollow">三. 解决方法</a></li> </ul> </li> </ul> </div> <h2> <a id="__10" rel="nofollow"></a>一. 问题来源</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp;语音合成多说话人模型迁移学习得到单说话人模型的任务中，涉及了迁移变量改变shape的情况。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;一个不可避免的是，多说话人模型中由于存在speaker embedding变量，并往往与其他变量拼接作为模块的输入，在单人模型中，speaker embedding不存在，且对应模块内部部分变量的维度也必然改变。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;另外，在实际处理时发现，由于之前多人建模与单人建模的文本字符输入表symbol list存在差异，导致预训练模型中的char embeddings变量在单人模型中不能直接使用。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;种种情况，涉及的都是变量shape发生了变化，但是预训练模型中该变量的一部分值仍然可用。我们当然可以直接舍弃该变量已有值，重新训练，但是很多情况下没有必要。通过实践，来讲讲在Tensorflow框架下该问题的解决方法。</p> <h2> <a id="__20" rel="nofollow"></a>二. 相关接口</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp;网络搜索“迁移学习”或者“加载预训练模型”等，能够找到一些方法。比如，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.zhihu.com/question/320608293"  rel="nofollow">tensorflow新模型怎么加载老数据？</a>中，涉及到如下接口：</p> <pre><code class="prism language-[python]">#新网络结构的搭建 ......   #利用预训练模型给新网络变量赋值时，忽略变量v3 restore_variable_list = tf.contrib.framework.get_variables_to_restore(exclude=["v3",])  saver = tf.train.Saver(restore_variable_list) saver.restore(sess, old_checkpoint_path) </code></pre> <p>&nbsp; &nbsp; &nbsp; &nbsp;需要注意的是，以上代码调用之前，需要先搭建新的网络结构，而get_variables_to_restore就是列出了新网络中的所有变量，变量是tf.Variable类型，这时候还没有加载预训练模型中的值。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;而在<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/jiongnima/article/details/86632517"  rel="nofollow">干货！如何修改在TensorFlow框架下训练保存的模型参数名称</a>中，涉及如下接口：</p> <pre><code class="prism language-[python]">#得到预训练模型中所有的参数（名字，形状）元组 for var_name, var_shape in tf.train.list_variables(old_checkpoint_path):  		#得到上述参数的值         var = tf.train.load_variable(old_checkpoint_path, var_name)  </code></pre> <p>&nbsp; &nbsp; &nbsp; &nbsp;与前一例子相比，本例代码不需要先搭建新的网络结构，直接从预训练模型中遍历所有变量，取得其名称、形状和值。注意var也就是值，是numpy.array格式的。本例链接中提到，可以通过tf.Variable(var)修改变量值后重新构建变量，但是在实际应用中，在我们已经构建好了新的网络结构之后，再通过tf.Variable构建的是新的变量了，即使手动赋予变量相同的名字。</p> <h2> <a id="__43" rel="nofollow"></a>三. 解决方法</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp;首先确立问题的前提，我们有了一个预训练模型，并且构建了新的网络结构，但是该网络某个变量与预训练模型中的变量shape不一致。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;我们假定这两个变量同名，如char_embeddings，并且预训练模型中该变量shape为[30, 128]，表示支持30个字符[a-z, @, #, %, &amp;]输入，每个字符用128维表示。新的网络中我们只支持29个字符[a-z, @, #, %]，这样新网络中，变量char_embeddings的shape为[29, 128]，此时，加载预训练模型，同名变量赋值显然会报错。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;在实际操作时，我们首先通过（二）中的两类接口，获取两个网络结构不一致变量的完整名称及其shape。注意此时可以观察到，每个变量对应的两个变量char_embeddings/Adam和char_embeddings/Adam_1的shape也有相同的差异，这些变量也需要对应修改。</p> <p>&nbsp; &nbsp; &nbsp; &nbsp;然后通过上述list_variable和load_variable接口获取预训练模型特定接口的值，并进行修改，本例中使用var=var[:-1, :]就可以从原[30,128]中获取前29个字符的预训练值，临时保存。然后在新的网络结构搭建好之后，调用get_variables_to_restore获取当前网络的所有变量，像上例一中一样，忽略待修改变量以便在后续操作中restore其他变量。而待修改变量，通过tf.convert_to_tensor及tf.assign操作，将临时保存的修改值赋予当前网络对应变量，在restore操作后通过session.run进行实际赋值。详细代码如下：</p> <pre><code class="prism language-[python]">#保存待修改变量名与修改后的变量值 map_name_newval = {} for var_name, var_shape in tf.train.list_variables(old_checkpoint_path):  		if var_name.find('char_embeddings'):         		var = tf.train.load_variable(old_checkpoint_path, var_name)          		map_name_newval[val_name] = var[:-1, :] #修改值  #当前网络结构区分直接恢复预训练值的变量与修改变量 var_list = tf.contrib.framework.get_variables_to_restore()  restore_var_list = [] map_vname_op = {} for v in var_list: 		v_name = v.name.split(':')[0] #两种方式取得的模型名称有一点差异 		if v_name in map_name_newval: 				new_val = tf.convert_to_tensor(map_name_newval[v_name]) 				v_assign = tf.assign(v, new_val) #给当前网络中的特定变量赋新值操作 				map_vname_op[v.name] = v_assign 		else: 				restore_val_list.append(v)  #实际变量赋值操作 with tf.Session() as sess: 		saver = tf.train.Saver(val_list=restore_variable_list) 		saver.restore(sess, old_checkpoint_path) 		for vname, op in map_vname_op.items(): 				sess.run(op) </code></pre> <p>&nbsp; &nbsp; &nbsp; &nbsp;本例中修改值比较简单，但是无论如何修改，整体的思路和流程都是一样的。</p> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2912.htm">Hibernate框架的使用(二)</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2914.htm">RMI反序列化学习</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3075.htm" title="springboot Jar包 秒部署到Linux服务器运行">springboot Jar包 秒部署到Linux服务器运行</a></li>
+                        <li class="py-2"><a href="/html/category/article-3091.htm" title="进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></li>
+                        <li class="py-2"><a href="/html/category/article-3073.htm" title="R语言学习笔记之lm函数">R语言学习笔记之lm函数</a></li>
+                        <li class="py-2"><a href="/html/category/article-3079.htm" title="在Git中进行忽略文件操作详解_在线工具">在Git中进行忽略文件操作详解_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3117.htm" title="redis在CentOs服务器上的安装和设置开机自启动">redis在CentOs服务器上的安装和设置开机自启动</a></li>
+                        <li class="py-2"><a href="/html/category/article-3081.htm" title="你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。">你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。</a></li>
+                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2963.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<h2>1、简单工厂：</h2> <p>第一步：创建一个文章接口，需要实现阅读和写作的功能。</p> <div class="ay1code"> <pre class="brush:plain;">type Article interface {  	ReadArticle() string  	WriteArticle(contents string) string  }</pre> </div> <p>第二步：创建 中文书 和 英文书 两个“类”，并且分别实现两种方法。（注：golang种没有类，只有组合。应贺总强调，特别说明）</p> <div class="ay1code"> <pre class="brush:plain;">type ChineseArticle struct{}  type EnglishArticle struct{}    func (c *ChineseArticle) ReadArticle() string {  	return "这是中文字符"  }  func (c *EnglishArticle) ReadArticle() string {  	return "this's English chars"  }  func (c *ChineseArticle) WriteArticle(contents string) string {  	return "写入了文章"  }  func (c *EnglishArticle) WriteArticle(contents string) string {  	return "wirted words"  }</pre> </div> <p>第三步：使用断言方式分配不同的参数，应该需要使用什么样的方法去实例化具体的类</p> <div class="ay1code"> <pre class="brush:plain;">func SFactory(lan string) (art Article) {  	switch lan {  	case "Chinese":  		art = &amp;ChineseArticle{}  	case "English":  		art = &amp;EnglishArticle{}  	default:  		art = &amp;ChineseArticle{}  	}  	return art  }</pre> </div> <p>第四步:使用</p> <div class="ay1code"> <pre class="brush:plain;">func main() {  	a := SFactory("Chinese")//这样，我实例化中文书还是英文书都可以了  	fmt.Println(a.ReadArticle())  }</pre> </div> <h3>总体结构如下图：</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/f8b7553da224c9c41fadde4759cc0da1.jpg"></p> <h2>2、方法工厂：</h2> <p>第一步：同上， 来一个文章接口</p> <div class="ay1code"> <pre class="brush:plain;">type Article interface {  	ReadArticle() string  	WriteArticle(contents string) string  }</pre> </div> <p>第二步:来两种书。<code>需要实例化的类</code>。并且实现接口</p> <div class="ay1code"> <pre class="brush:plain;">type ChineseArticle struct{}  type EnglishArticle struct{}  //实现读写接口  func (c *ChineseArticle) ReadArticle() string {  	return "读书了"  }  func (c *EnglishArticle) ReadArticle() string {  	return "reading books"  }  func (c *ChineseArticle) WriteArticle(contents string) string {  	return "写书了"  }  func (c *EnglishArticle) WriteArticle(contents string) string {  	return "wirting books"  }</pre> </div> <p>第三步：创建两个用来创建“类”的“类”，以及其方法</p> <div class="ay1code"> <pre class="brush:plain;">type CreateEnglish struct{}  type CreateChinese struct{}  //方法工厂的核心。  func (cdb *CreateEnglish) CreateArticle() (len *EnglishArticle, err error) {  	len = &amp;EnglishArticle{}  	return len, nil  }  func (cdb *CreateChinese) CreateArticle() (len *ChineseArticle, err error) {  	len = &amp;ChineseArticle{}  	return len, nil  }</pre> </div> <p>第四步：使用</p> <div class="ay1code"> <pre class="brush:plain;">func main() {  	a := &amp;CreateChinese{}  	art, _ := a.CreateArticle()  	fmt.Println(art.WriteArticle("123"))  }</pre> </div> <p>总体结构如下：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/5d7328c31ee1df81e3b5d04afc421085.jpg"></p> <h2>抽象工厂</h2> <p>第一步：创建一个<code>book</code>，然后再创建一个能够创建book的<code>BookCompany</code>接口。</p> <div class="ay1code"> <pre class="brush:plain;">type BookCompany interface {  	Create() Book  }  type Book interface {  	ReadBook() string  	WriteBook() string  }</pre> </div> <p>第二步:创建两<code>book</code> 并且实现它</p> <div class="ay1code"> <pre class="brush:plain;">type EnglishBook struct{}  type ChineseBook struct{}  //实现book的功能  func (c *EnglishBook) ReadBook() string {  	return "reading a english book"  }  func (c *ChineseBook) ReadBook() string {  	return "读中文书"  }  func (c *EnglishBook) WriteBook() string {  	return "i'am writing"  }  func (c *ChineseBook) WriteBook() string {  	return "我在创作中"  }</pre> </div> <p>第三步：创建两个印刷厂</p> <div class="ay1code"> <pre class="brush:plain;">type BeiJinCompany struct{}  type ShanghaiCompany struct{}  //一个印刷场刷英语书，一个刷中文书  func (c *BeiJinCompany) Create() Book {  	return &amp;EnglishBook{}  }  func (c *ShanghaiCompany) Create() Book {  	return &amp;ChineseBook{}  }</pre> </div> <p>第四步：用起来</p> <div class="ay1code"> <pre class="brush:plain;">func main() {  	var f BookCompany  	f = new(BeiJinCompany)  	book := f.Create()  	fmt.Println(book.ReadBook())  }</pre> </div> <p>整体效果如下：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/3745ee7b789c04302daf3effc71ad53b.jpg"></p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2962.htm">从模型复杂度角度来理解过拟合现象</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2964.htm">Wireshark入门到超神-第一章-过滤器-数据包解析</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3111.htm" title="vue实现拖拽窗口功能_vue.js">vue实现拖拽窗口功能_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-3109.htm" title="C++内存泄漏的定位方法总结">C++内存泄漏的定位方法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3119.htm" title="Cpp的异常处理Exception Handling-笔记">Cpp的异常处理Exception Handling-笔记</a></li>
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3081.htm" title="你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。">你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

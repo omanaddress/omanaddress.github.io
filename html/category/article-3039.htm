@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3039.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>vue中同时监听多个参数的实现_vue.js - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">vue中同时监听多个参数的实现_vue.js</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">如何同时监听多个参数</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">data中定义一个对象</a></li> <li><a href="#_lab2_0_1" rel="nofollow">完整代码</a></li> </ul> <li><a href="#_label1" rel="nofollow">vue事件监听,条件判断</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow">事件监听 v-on</a></li> <li><a href="#_lab2_1_3" rel="nofollow">条件判断</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>如何同时监听多个参数</h2> <p>vue使用watch同时监听多个参数，其中有任意一个参数发生改变时，都会被监听到需要使用到计算属性computed与监听watch</p> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>data中定义一个对象</h3> <div class="ay1code"> <pre class="brush:js;">data(){      return{          obj:{              name:'xpf',              gender:'male',              age:24      }      }  }</pre> </div> <ul> <li> <code>computed</code>中：将需要监听的参数放入一个新变量中</li> </ul> <div class="ay1code"> <pre class="brush:js;">computed:{      'newParams':function(){          const {name,age} = this.obj          return {name,age}      }      },</pre> </div> <ul> <li> <code>watch</code>中：监听新的变量</li> </ul> <div class="ay1code"> <pre class="brush:js;">watch:{      newParams:function(){          alert(1)      }  },</pre> </div> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>完整代码</h3> <div class="ay1code"> <pre class="brush:xhtml;">&lt;!DOCTYPE html&gt;  &lt;html lang="en"&gt;  &lt;head&gt;      &lt;meta charset="UTF-8"&gt;      &lt;title&gt;watch同时监听多个属性&lt;/title&gt;      &lt;script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"&gt;&lt;/script&gt;  &lt;/head&gt;  &lt;body&gt;      &lt;div id="app"&gt;          &lt;div @click="changeObj"&gt;点我&lt;/div&gt;      &lt;/div&gt;          &lt;script&gt;          new Vue({              el:'#app',              data(){                  return{                      obj:{                          name:'xpf',                          gender:'male',                          age:24                      }                  }              },              computed:{                  'newParams':function(){                      const {name,age} = this.obj                      return {name,age}                  }                  },              watch:{                  newParams:function(){                      alert(1)                  }              },              methods:{                  changeObj(){                      // this.obj.name = 'xx'                      this.obj.age = 21                  }              }          })      &lt;/script&gt;  &lt;/body&gt;  &lt;/html&gt;</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>vue事件监听,条件判断</h2> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>事件监听 v-on</h3> <p>语法糖@</p> <p><strong>1. 基本的使用法法</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">    &lt;div id="add"&gt;          点击次数{{counter}}           &lt;button @click = "add"&gt;+&lt;/button&gt; &lt;!--v-on:click = "" 语法糖  --&gt;          &lt;button @click = "dec"&gt;-&lt;/button&gt;      &lt;/div&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">    &lt;script src="../js/vue.js"&gt;&lt;/script&gt;      &lt;script&gt;          const add = new Vue({              el:'#add',              data:{                  counter:0              },              methods:{                  add:function(){                      console.log('添加了');                      this.counter++                  },                  dec:function(){                      console.log('减少了');                      this.counter--                  }              }          })        &lt;/script&gt;</pre> </div> <p><strong>2. 事件监听带参数的使用方法</strong></p> <p>不带参数，写函数时，小括号可写可不写</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click = "one"&gt;按钮1&lt;/button&gt;  &lt;button @click = "one()"&gt;按钮2&lt;/button&gt;</pre> </div> <p>带有参数时，写函数时，小括号要写，传进的参数也要写</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click = "two"&gt;按钮2&lt;/button&gt; &lt;!-- 默认输出 浏览器生产的event事件对象 --&gt;  &lt;button @click = "two()"&gt;按钮3&lt;/button&gt; &lt;!-- 输出 undefind --&gt;  &lt;button @click = "two(123)"&gt;按钮4&lt;/button&gt;  &lt;!-- 输出 123  --&gt;</pre> </div> <p>即带参数有带event</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click = "three(123,$event) "&gt;按钮5&lt;/button&gt;</pre> </div> <p>在小括号里添加$event可即添加参数又添加event事假</p> <p><strong>3.事件对象的修饰符</strong></p> <ul> <li> <code>.stop</code>相当于事件对象的stopPropagaton，阻止冒泡事件</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div @click = "one"&gt;父亲        &lt;button @click.stop = "two"&gt;儿子&lt;/button&gt;      &lt;/div&gt;</pre> </div> <ul> <li> <code>.prevent</code>阻止默认事件 preventDefault</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;a href="https://www.baidu.com/"   @click.prevent = "two"&gt;百度一下&lt;/a&gt;</pre> </div> <ul> <li> <code>keyup</code>监听某个键盘键帽</li> <li> <code>.enter</code>只监听回车键</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;input type="text" @keyup= "two"&gt;  &lt;input type="text" @keyup.enter = "two"&gt;</pre> </div> <ul> <li> <code>.once</code>只监听一次</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button @click.once = "two"&gt;按钮&lt;/button&gt;</pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>条件判断</h3> <p><strong>1.v-if的基本使用</strong></p> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div id="add"&gt;      &lt;div v-if = "true"&gt;{{message}}&lt;/div&gt;      &lt;div v-if = "false"&gt;{{name}}&lt;/div&gt;         &lt;div v-if = "isShow"&gt;        &lt;h2&gt;ccc&lt;/h2&gt;        &lt;h2&gt;ccc&lt;/h2&gt;        &lt;h2&gt;ccc&lt;/h2&gt;        &lt;h2&gt;ccc&lt;/h2&gt;      &lt;/div&gt;</pre> </div> <p>为true显示，为false隐藏，可设置一个变量isShow来控制</p> <p><strong>2.v-if和v-else使用</strong></p> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div id="add"&gt;      &lt;h2 v-if = "isShow"&gt;我是你爸爸&lt;/h2&gt;      &lt;h2 v-else&gt;不，我才是你爸爸&lt;/h2&gt;    &lt;/div&gt;</pre> </div> <p>两者只能显示一个当变量isShow为true时，else隐藏，同理相反</p> <p><strong>3.v-if和v-else-if和v-lese使用</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;h2 v-if = "message &gt;=90"&gt; 优秀 &lt;/h2&gt;   &lt;h2 v-else-if = "message &gt;=80"&gt; 良好 &lt;/h2&gt;   &lt;h2 v-else-if = "message &gt;=70"&gt; 及格 &lt;/h2&gt;   &lt;h2 v-else&gt; 不及格 &lt;/h2&gt;</pre> </div> <p>3个结合可读性差，不建议</p> <p>可在computed里封装一个函数</p> <div class="ay1code"> <pre class="brush:js;"> computed: {          result(){            let num = " "            if (this.message &gt;=90) {              num = '优秀'            }else if(this.message &gt;= 80){              num = '良好'            }else{              num = "不及格"            }            return num          }        }</pre> </div> <p>在调用，可读性较好 </p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3038.htm">python的eval和json.loads(),json.dumps()</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3040.htm">pyhton深度学习基于pytorch——创建Tensor和修改Tensor形状</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3113.htm" title="java计算器页面的实现">java计算器页面的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3074.htm" title="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                        <li class="py-2"><a href="/html/category/article-3086.htm" title="基于Apache Hudi和Debezium构建CDC入湖管道">基于Apache Hudi和Debezium构建CDC入湖管道</a></li>
+                        <li class="py-2"><a href="/html/category/article-3063.htm" title="kafka生产者发送消息可靠性">kafka生产者发送消息可靠性</a></li>
+                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3089.htm" title="SpringMVC中RequestMapping注解【作用、出现的位置、属性】">SpringMVC中RequestMapping注解【作用、出现的位置、属性】</a></li>
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2902.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>一个高频问题：异步操作会创建线程吗？ - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">一个高频问题：异步操作会创建线程吗？</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<p>这个问题在微信上被别人问过好多次，想来想去觉得有必要统一解答下，先说下我的答案：<strong>可能会，也有可能不会</strong>。</p> <p>要想寻找答案，需要从<code>异步处理</code> 的底层框架说起。</p> <h2 id="一异步底层是什么">一：异步底层是什么</h2> <p><code>异步</code> 从设计层面上来说它就是一个<code>发布订阅者</code> 模式，毕竟它的底层用到了<code>端口完成队列</code>，可以从<code>IO完成端口内核对象</code> 所提供的三个方法中有所体现。</p> <ol> <li>CreateIoCompletionPort</li> </ol> <p>可以粗看下签名：</p> <pre><code class="language-C#"> HANDLE WINAPI CreateIoCompletionPort(   _In_     HANDLE    FileHandle,   _In_opt_ HANDLE    ExistingCompletionPort,   _In_     ULONG_PTR CompletionKey,   _In_     DWORD     NumberOfConcurrentThreads );</code></pre> <p>这个方法主要是将<code>文件句柄</code> 和<code>IO完成端口内核对象</code> 进行绑定，其中的<code>NumberOfConcurrentThreads</code> 表示完成端口最多允许 running 的线程上限。</p> <ol start="2"> <li>PostQueuedCompletionStatus</li> </ol> <p>再看签名：</p> <pre><code class="language-C#"> BOOL WINAPI PostQueuedCompletionStatus(   _In_     HANDLE       CompletionPort,   _In_     DWORD        dwNumberOfBytesTransferred,   _In_     ULONG_PTR    dwCompletionKey,   _In_opt_ LPOVERLAPPED lpOverlapped );</code></pre> <p>这个函数的作用就是将一个<code>包</code> 通过<code>内核对象</code> 丢给<code>驱动设备程序</code> ，由后者与硬件交互，比如<code>文件</code>。</p> <ol start="3"> <li>GetQueuedCompletionStatus</li> </ol> <p>看签名：</p> <pre><code class="language-C#"> BOOL GetQueuedCompletionStatus(   [in]  HANDLE       CompletionPort,         LPDWORD      lpNumberOfBytesTransferred,   [out] PULONG_PTR   lpCompletionKey,   [out] LPOVERLAPPED *lpOverlapped,   [in]  DWORD        dwMilliseconds );</code></pre> <p>这个方法尝试从<code>IO完成端口内核对象</code> 中提取 IO 包，如果没有提取到，那么就会无限期等待，直到提取为止。</p> <p>对上面三个方法有了概念之后，接下来看下结构图：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/95f4878bf0862f18ea2158f445e4851f.jpg" alt="一个高频问题：异步操作会创建线程吗？"></p> <p>这张图非常言简意赅，不过只画了<code>端口完成队列</code>, 其实还有三个与IO线程有关的队列，分别为：<code>等待线程队列</code>，<code>已释放队列</code>,<code>已暂停队列</code>，接下来我们稍微解读一下。</p> <p>当<code>线程t1</code> 调用<code>GetQueuedCompletionStatus</code> 时，假使此刻<code>任务队列q1</code> 无任务， 那么<code>t1</code> 会卡住并自动进去<code>等待线程队列</code> ，当某个时刻<code>q1</code> 进了任务（由驱动程序投递的），此时操作系统会将<code>t1</code> 激活来提取<code>q1</code> 的任务执行，同时将<code>t1</code> 送到<code>已释放队列</code>中。</p> <p>这个时候就有两条路了。</p> <ol> <li>遇到 Sleep 或者 lock 情况。</li> </ol> <p>如果 t1 在执行的时候，遇到了<code>Sleep</code> 或者<code>lock</code> 锁时需要被迫停止，此时系统会将 t1 线程送到<code>已暂停线程队列</code> 中，如果都 sleep 了，那<code>NumberOfConcurrentThreads</code> 就会变为 0 ，此时就会遇到无人可用的情况，那怎么办呢？只能让系统从<code>线程池</code> 中申请更多的线程来从<code>q1</code> 队列中提取任务，当某个时刻，<code>已暂停线程队列</code> 中的线程激活，那么它又回到了<code>已释放队列</code> 中继续执行任务，当任务执行完之后，再次调用<code>GetQueuedCompletionStatus</code> 方法进去<code>等待线程队列</code>。</p> <p>当然这里有一个问题，某一个时刻<code>等待线程队列</code> 中的线程数会暂时性的超过<code>NumberOfConcurrentThreads</code> 值，不过问题也不大。</p> <p>说了这么多理论是不是有点懵， 没关系，接下来我结合 windbg 和 coreclr 源码一起看下。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/cd8590809d8cb7b7bc255193ab4cc61a.jpg" alt="一个高频问题：异步操作会创建线程吗？"></p> <p>以我的机器来说，<code>IO完成端口内核对象</code> 默认最多允许<code>12</code> 个 running 线程，当遇到 sleep 时看看会不会突破<code>12</code> 的限制，上代码：</p> <pre><code class="language-C#">     class Program     {         static void Main(string[] args)         {             for (int i = 0; i &lt; 2000; i++)             {                 Task.Run(async () =&gt;                 {                     await GetString();                 });             }              Console.ReadLine();         }          public static int counter = 0;          static async Task&lt;string&gt; GetString()         {             var httpClient = new HttpClient();              var str = await httpClient.GetStringAsync("http://cnblogs.com");              Console.WriteLine($"counter={++counter}, 线程：{Thread.CurrentThread.ManagedThreadId},str.length={str.Length}");              Thread.Sleep(1000000);              return str;         }     }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/375b05bed5d9290b1c828b8dbf58daae.jpg" alt="一个高频问题：异步操作会创建线程吗？"></p> <p>从图中看，已经破掉了<code>12</code> 的限制，那是不是 30 呢？ 可以用 windbg 帮忙确认一下。</p> <pre><code class="language-C#"> 0:059&gt; !tp CPU utilization: 3% Worker Thread: Total: 13 Running: 0 Idle: 13 MaxLimit: 2047 MinLimit: 12 Work Request in Queue: 0 -------------------------------------- Number of Timers: 1 -------------------------------------- Completion Port Thread:Total: 30 Free: 0 MaxFree: 24 CurrentLimit: 30 MaxLimit: 1000 MinLimit: 12</code></pre> <p>从最后一行看，没毛病，<code>IO完成端口线程</code> 确实是<code>30</code> 个。</p> <blockquote> <p>在这种情况，异步操作一定会创建线程来处理</p> </blockquote> <ol start="2"> <li>遇到耗时操作</li> </ol> <p>所谓的耗时操作，大体上是大量的序列化，复杂计算等等，这里我就用<code>while(true)</code> 模拟，因为所有线程都没有遇到暂停事件，所以理论上不会突破<code>12</code> 的限制，接下来稍微修改一下<code>GetString()</code> 方法。</p> <pre><code class="language-C#">         static async Task&lt;string&gt; GetString()         {             var httpClient = new HttpClient();              var str = await httpClient.GetStringAsync("http://cnblogs.com");              Console.WriteLine($"counter={++counter},时间:{DateTime.Now}, 线程：{Thread.CurrentThread.ManagedThreadId},str.length={str.Length}");              while (true) { }              return str;         }</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/68d8ca71047080079895b3616f1c3ae8.jpg" alt="一个高频问题：异步操作会创建线程吗？"></p> <p>对比图中的时间，过了30s也无法突破 12 的限制，毕竟这些线程都是 running 状态并都在<code>已释放队列</code>中，这也就造成了所谓的<code>请求无响应</code> 的尴尬情况。</p> <h2 id="二直面问题">二：直面问题</h2> <p>如果明白了上面我所说的，那么<code>异步操作会不会创建线程 ？</code> 问题，我的答案是<code>有可能会也有可能不会</code>，具体还是取决于上面提到了两种 callback 逻辑。</p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2901.htm">netty系列之:netty中的核心解码器json_在线工具</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2903.htm">我到今天才知道SQL92和SQL99</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3098.htm" title="vue的自动化路由+分模块管理+路由懒加载">vue的自动化路由+分模块管理+路由懒加载</a></li>
+                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                        <li class="py-2"><a href="/html/category/article-3063.htm" title="kafka生产者发送消息可靠性">kafka生产者发送消息可靠性</a></li>
+                        <li class="py-2"><a href="/html/category/article-3068.htm" title="KCP协议：从TCP到UDP家族QUIC/KCP/ENET">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></li>
+                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3061.htm" title="Bootstrap Blazor Table 组件手动刷新组件数据详解">Bootstrap Blazor Table 组件手动刷新组件数据详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                        <li class="py-2"><a href="/html/category/article-3066.htm" title="源码级别的广播与监听实现">源码级别的广播与监听实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

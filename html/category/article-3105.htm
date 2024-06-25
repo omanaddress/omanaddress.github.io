@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3105.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>elasticsearch7.2深度分页实现(查询全部数据) - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">elasticsearch7.2深度分页实现(查询全部数据)</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p>用过es的朋友应该都了解es的分页模式总共有两种，一种是from,size模式，也就是常说的浅分页，这种分页模式使用起来很简单，和mysql的十分类似，但是这种方式的最大弊端是，在集群模式下，如果查询的分页数很深，很容易造成查询效率极慢甚至内存的异出的问题，解决这个问题就要提到深分页，深分页的大概思路是每一页查询会给你返回一个scrollId，类似于一个游标，记录本次查询的位置，下次使用这个有游标再去查下一页的数据，所有不会出现跨度大，查询数据多导致溢出的问题，但是它也有一个弊端就是不支持跳页。还有就是es默认的查询（也就是不加from,size）是会返回第一页10条数据，而我最近正在使用es做一个导出的功能，那么很明显默认返回一页的数据不是很友好，所有正好使用深分页可以解决。废话少说，上代码，先说下from,size的方法，这里都是使用HighLevelRestClient实现的。</p> <pre><code class="language-java">  // comprehensiveQueryEventVO是我封装的一个查询条件实体对象，这里是封装查询条件 private SearchSourceBuilder getSearchSourceBuilder(ComprehensiveQueryEventVO comprehensiveQueryEventVO){         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();         if (comprehensiveQueryEventVO.getPageNum() != null &amp;&amp; comprehensiveQueryEventVO.getPageSize() != null) {             sourceBuilder.from((comprehensiveQueryEventVO.getPageNum()-1)*comprehensiveQueryEventVO.getPageSize());             sourceBuilder.size(comprehensiveQueryEventVO.getPageSize());         } SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();         if (comprehensiveQueryEventVO.getPageNum() != null &amp;&amp; comprehensiveQueryEventVO.getPageSize() != null) {             sourceBuilder.from((comprehensiveQueryEventVO.getPageNum()-1)*comprehensiveQueryEventVO.getPageSize());             sourceBuilder.size(comprehensiveQueryEventVO.getPageSize());         }         // 拼接动态查询条件         if (StringUtils.isNotEmpty(comprehensiveQueryEventVO.getEventCode())) {             boolBuilder.must(QueryBuilders.termQuery("eventCode", comprehensiveQueryEventVO.getEventCode()));         }         return sourceBuilder; }   /**      * 查询封装，带分页      * @param searchSourceBuilder      * @param pageNum      * @param pageSize      * @param s      * @param &lt;T&gt;      * @return      * @throws IOException      */     public &lt;T&gt; PageInfo&lt;T&gt; search(SearchSourceBuilder searchSourceBuilder, int pageNum, int pageSize, Class&lt;T&gt; s) throws Exception {         Document declaredAnnotation = (Document )s.getDeclaredAnnotation(Document.class);         if(declaredAnnotation == null){             throw new Exception(String.format("class name: %s can not find Annotation [Document], please check", s.getName()));         }         String indexName = declaredAnnotation.index();         SearchRequest searchRequest = new SearchRequest(indexName);         searchRequest.source(searchSourceBuilder);         SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);         SearchHits hits = searchResponse.getHits();         JSONArray jsonArray = new JSONArray();         for (SearchHit hit : hits) {             String sourceAsString = hit.getSourceAsString();             JSONObject jsonObject = JSON.parseObject(sourceAsString);             jsonArray.add(jsonObject);         }         log.info("返回总数为：" + hits.getTotalHits());         int total = (int)hits.getTotalHits().value;          // 封装分页         List&lt;T&gt; list = jsonArray.toJavaList(s);         PageInfo&lt;T&gt; page = new PageInfo&lt;&gt;();         page.setList(list);         page.setPageNum(pageNum);         page.setPageSize(pageSize);         page.setTotal(total);         page.setPages(total== 0 ? 0: (total%pageSize == 0 ? total / pageSize : (total / pageSize) + 1));         page.setHasNextPage(page.getPageNum() &lt; page.getPages());         return page;     }</code></pre> <p>下面看下深分页如何实现，深分页做的导出查询，所以不需要返回分页信息，只需要返回一个集合，但是集合内部的查询是使用深分页的方式一页一页查询的，所以注意查询条件中不要封装from, to参数</p> <pre><code>/**      * 查询封装，返回集合--不分页      * @param searchSourceBuilder      * @param s      * @param &lt;T&gt;      * @return      * @throws IOException      */     public &lt;T&gt; List&lt;T&gt; search(SearchSourceBuilder searchSourceBuilder, Class&lt;T&gt; s) throws Exception {         Document declaredAnnotation = (Document)s.getDeclaredAnnotation(Document.class);         if(declaredAnnotation == null){             throw new Exception(String.format("class name: %s can not find Annotation [Document], please check", s.getName()));         }         String indexName = declaredAnnotation.index();          final Scroll scroll = new Scroll(TimeValue.timeValueMinutes(1L));         SearchRequest searchRequest = new SearchRequest(indexName);         searchRequest.source(searchSourceBuilder);         searchRequest.scroll(scroll);         SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);          String scrollId = searchResponse.getScrollId();         SearchHit[] searchHits = searchResponse.getHits().getHits();         long totalHits = searchResponse.getHits().getTotalHits().value;         log.info("es查询集合总数为{}", totalHits);          JSONArray jsonArray = new JSONArray();         while (searchHits != null &amp;&amp; searchHits.length &gt; 0) {             for (SearchHit hit : searchResponse.getHits().getHits()) {                 String sourceAsString = hit.getSourceAsString();                 JSONObject jsonObject = JSON.parseObject(sourceAsString);                 jsonArray.add(jsonObject);             }             SearchScrollRequest scrollRequest = new SearchScrollRequest(scrollId);             scrollRequest.scroll(scroll);             searchResponse = restHighLevelClient.scroll(scrollRequest, RequestOptions.DEFAULT);             scrollId = searchResponse.getScrollId();             searchHits = searchResponse.getHits().getHits();         }          // 清除滚屏         if (scrollId != null) {             ClearScrollRequest clearScrollRequest = new ClearScrollRequest();             clearScrollRequest.addScrollId(scrollId);             ClearScrollResponse clearScrollResponse = restHighLevelClient.clearScroll(clearScrollRequest, RequestOptions.DEFAULT);             boolean succeeded = clearScrollResponse.isSucceeded();         }          // 封装集合         List&lt;T&gt; list = jsonArray.toJavaList(s);         return list;     }</code></pre> <p>好了，今天的分享就到这里，希望对你有帮助</p> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3104.htm">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-3106.htm">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3091.htm" title="进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></li>
+                        <li class="py-2"><a href="/html/category/article-3093.htm" title="Android 自定义方形验证码输入框，仿滴滴、小篮单车">Android 自定义方形验证码输入框，仿滴滴、小篮单车</a></li>
+                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                        <li class="py-2"><a href="/html/category/article-3113.htm" title="java计算器页面的实现">java计算器页面的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3071.htm" title="springboot中emoji表情配置及springboot数据源配置区别">springboot中emoji表情配置及springboot数据源配置区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3062.htm" title=".NET混合开发解决方案5 WebView2运行时与分发应用_在线工具">.NET混合开发解决方案5 WebView2运行时与分发应用_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3068.htm" title="KCP协议：从TCP到UDP家族QUIC/KCP/ENET">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></li>
+                        <li class="py-2"><a href="/html/category/article-3105.htm" title="elasticsearch7.2深度分页实现(查询全部数据)">elasticsearch7.2深度分页实现(查询全部数据)</a></li>
+                        <li class="py-2"><a href="/html/category/article-3074.htm" title="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

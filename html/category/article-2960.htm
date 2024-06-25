@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2960.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Golang redis(六)redigo 发布订阅模式 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Golang redis(六)redigo 发布订阅模式</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <h4> <a id="_0" rel="nofollow"></a>发布订阅</h4> <p>使用Send，Flush和Receive方法实现Pub / Sub</p> <pre><code>c.Send("SUBSCRIBE", "example") c.Flush() for {     reply, err := c.Receive()     if err != nil {         return err     }     // process pushed message } </code></pre> <p>PubSubConn封装Conn以实现订阅者提供简便方法。Subscribe，PSubscribe，Unsubscribe和PUnsubscribe方法发送和刷新订阅。receive方法将推送的消息转换对应的类型</p> <pre><code>psc := redis.PubSubConn{Conn: c} psc.Subscribe("example") for {     switch v := psc.Receive().(type) {     case redis.Message:         fmt.Printf("%s: message: %s\n", v.Channel, v.Data)     case redis.Subscription:         fmt.Printf("%s: %s %d\n", v.Channel, v.Kind, v.Count)     case error:         return v     } } </code></pre> <h4> <a id="PubSubConn_37" rel="nofollow"></a>PubSubConn</h4> <p>定义</p> <pre><code>type PubSubConn struct {     Conn Conn } </code></pre> <p>提供的方法：</p> <p>1.Close 关闭连接<br /><code>func (c PubSubConn) Close() error</code></p> <p>2.PSubscribe PSubscribe发布<br /><code>func (c PubSubConn) PSubscribe(channel ...interface{}) error</code></p> <p>3.PUnsubscribe 取消发布， 如果没有给定， 则取消所有<br /><code>func (c PubSubConn) PUnsubscribe(channel ...interface{}) error</code></p> <p>4.Ping 指定的数据向服务器发送PING 调用此方法时，连接必须至少订阅一个通道或模式<br /><code>func (c PubSubConn) Ping(data string) error</code></p> <p>5.Receive 获取消息<br /><code>func (c PubSubConn) Receive() interface{}</code></p> <p>6.ReceiveWithTimeout 带有超时时间的获取消息函数<br /><code>func (c PubSubConn) ReceiveWithTimeout(timeout time.Duration) interface{}</code></p> <p>7.Subscribe 订阅<br /><code>func (c PubSubConn) Subscribe(channel ...interface{}) error</code></p> <p>8.Unsubscribe 取消订阅<br /><code>func (c PubSubConn) Unsubscribe(channel ...interface{}) error</code></p> <p>示例程序：</p> <pre><code>package main  import (    "context"    "fmt"    "time"     "github.com/gomodule/redigo/redis" )  // listenPubSubChannels listens for messages on Redis pubsub channels. The // onStart function is called after the channels are subscribed. The onMessage // function is called for each message. func listenPubSubChannels(ctx context.Context, redisServerAddr string,    onStart func() error,    onMessage func(channel string, data []byte) error,    channels ...string) error {    // A ping is set to the server with this period to test for the health of    // the connection and server.    const healthCheckPeriod = time.Minute     c, err := redis.Dial("tcp", redisServerAddr,       // Read timeout on server should be greater than ping period.       redis.DialReadTimeout(healthCheckPeriod+10*time.Second),       redis.DialWriteTimeout(10*time.Second))    if err != nil {       return err    }    defer c.Close()     psc := redis.PubSubConn{Conn: c}     if err := psc.Subscribe(redis.Args{}.AddFlat(channels)...); err != nil {       return err    }     done := make(chan error, 1)     // Start a goroutine to receive notifications from the server.    go func() {       for {          switch n := psc.Receive().(type) {          case error:             done &lt;- n             return          case redis.Message:             if err := onMessage(n.Channel, n.Data); err != nil {                done &lt;- err                return             }          case redis.Subscription:             switch n.Count {             case len(channels):                // Notify application when all channels are subscribed.                if err := onStart(); err != nil {                   done &lt;- err                   return                }             case 0:                // Return from the goroutine when all channels are unsubscribed.                done &lt;- nil                return             }          }       }    }()     ticker := time.NewTicker(healthCheckPeriod)    defer ticker.Stop() loop:    for err == nil {       select {       case &lt;-ticker.C:          // Send ping to test health of connection and server. If          // corresponding pong is not received, then receive on the          // connection will timeout and the receive goroutine will exit.          if err = psc.Ping(""); err != nil {             break loop          }       case &lt;-ctx.Done():          break loop       case err := &lt;-done:          // Return error from the receive goroutine.          return err       }    }     // Signal the receiving goroutine to exit by unsubscribing from all channels.    psc.Unsubscribe()     // Wait for goroutine to complete.    return &lt;-done }  func publish() {    c, err := redis.Dial("tcp", "127.0.0.1:6379")    if err != nil {       fmt.Println(err)       return    }    defer c.Close()     c.Do("PUBLISH", "c1", "hello")    c.Do("PUBLISH", "c2", "world")    c.Do("PUBLISH", "c1", "goodbye") }  // This example shows how receive pubsub notifications with cancelation and // health checks. func main() {    redisServerAddr := "127.0.0.1:6379"     ctx, cancel := context.WithCancel(context.Background())     err := listenPubSubChannels(ctx,       redisServerAddr,       func() error {          // The start callback is a good place to backfill missed          // notifications. For the purpose of this example, a goroutine is          // started to send notifications.          go publish()          return nil       },       func(channel string, message []byte) error {          fmt.Printf("channel: %s, message: %s\n", channel, message)           // For the purpose of this example, cancel the listener's context          // after receiving last message sent by publish().          if string(message) == "goodbye" {             cancel()          }          return nil       },       "c1", "c2")     if err != nil {       fmt.Println(err)       return    }  } </code></pre> <p>输出：</p> <pre><code>channel: c1, message: hello channel: c2, message: world channel: c1, message: goodbye </code></pre> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2959.htm">vue 遍历数组</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2961.htm">vue 使用echarts绘制折线图</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                        <li class="py-2"><a href="/html/category/article-3068.htm" title="KCP协议：从TCP到UDP家族QUIC/KCP/ENET">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></li>
+                        <li class="py-2"><a href="/html/category/article-3100.htm" title="docker system全新命令集">docker system全新命令集</a></li>
+                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
+                        <li class="py-2"><a href="/html/category/article-3075.htm" title="springboot Jar包 秒部署到Linux服务器运行">springboot Jar包 秒部署到Linux服务器运行</a></li>
+                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
+                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3074.htm" title="设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

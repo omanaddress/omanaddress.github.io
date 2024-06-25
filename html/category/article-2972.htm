@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2972.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>spring boot2 (28)-cache缓存 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">spring boot2 (28)-cache缓存</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p><span style="font-family:'Microsoft YaHei';"><span style="font-size:14px;">数据库的数据是存储在硬盘上的，频繁访问性能较低。而缓存数据存储在内存中，访问性能比硬盘快了一个数量级。如果将一些需要频繁查询的热数据放到缓存中，可以大大减轻数据库的访问压力。</span></span></p> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">pom.xml</span></h1> <pre><code class="language-html">&lt;dependency&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-starter-cache&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <h1><span style="font-family:'Microsoft YaHei';font-size:18px;color:rgb(204,0,0);font-weight:normal;">启用缓存</span></h1> <p><span style="font-family:'Microsoft YaHei';"><span style="font-size:14px;">在配置类中添加以下注解</span></span></p> <pre><code class="language-java">@EnableCaching</code></pre> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">使用缓存</span></h1> <p>出于方便，这里直接在控制层做缓存。</p> <pre><code class="language-java">	@GetMapping("/find") 	@Cacheable(cacheNames = "hello")  	public String find() { 		System.out.println("从数据库查询数据，并用return返回"); 		return "该数据会被缓存"; 	}</code></pre> <ul> <li>@Cacheable：指在执行find方法前，首先查找该方法是否有缓存，如果有则直接返回缓存，如果没有则执行方法。</li> <li>cacheNames：指定缓存的名称，不同缓存的数据是彼此隔离的。 </li> </ul> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">缓存的key</span></h1> <p>上面cacheNames指定了缓存名称，但是每个方法由于传参不同，其return数据也会不同，所以一个方法中可能会有多个缓存。要在同一个cacheNames中区别不同的缓存，就需要使用key。修改前两行代码，给find方法传入了一个User，这是我自定义的类，其中有一个id参数。同时指定了key为"#user.id"，这是SpEL表达示，指使用user的id作为当前缓存的key。关于SpEL更多 语法可自行百度。</p> <pre><code class="language-java">@GetMapping("/find")	 @Cacheable(cacheNames = "hello",key = "#user.id")  public String find(User user) {<!-- --></code></pre> <ul> <li>现在访问http://localhost:8080/find?id=1，此时id参数会传入user，最终该缓存的key为1。</li> <li>然后访问http://localhost:8080/find?id=2，此缓存的key为2，与上面的1不一样，所以它们不是同一个缓存。</li> </ul> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">修改缓存</span></h1> <pre><code class="language-java">	@GetMapping("/update") 	@CachePut(cacheNames = "hello", key = "#id")  	public String update(String id) { 		System.out.println("读取修改后的数据"); 		return "修改后的缓存数据"; 	}</code></pre> <ul> <li>@CachePut：无论是否存在缓存，它都会执行，而且用return数据刷新缓存。 </li> <li>cacheNames：指定要修改的key所属的cacheNames。 </li> <li>key：这里方法参数就是id，所以可以直接用#id。</li> </ul> <p>访问http://localhost:8080/update?id=1，此时key为1的缓存将被修改。之后再访问http://localhost:8080/find?id=1，都会得到修改后的数据，find方法中原有的数据被替换了。</p> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">删除缓存</span></h1> <p>访问http://localhost:8080/delete?id=1，即可删除key为1的缓存，和上面一样的原理。</p> <pre><code class="language-java">	@GetMapping("/delete") 	@CacheEvict(cacheNames = "hello", key = "#id")  	public String delete(String id) { 		return "删除成功"; 	}</code></pre> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">condition条件</span></h1> <p>如果只想将id为1的查询写入缓存，而其他数据不需要缓存。可以添加condition缓存条件，如下。这里id参数是个字符串型，所以加了单引号，否则1就是整数，条件不成立。</p> <pre><code class="language-java">@Cacheable(cacheNames = "hello",key="#user.id",condition ="#user.id=='1'" ) </code></pre> <p>此时，只有访问http://localhost:8080/find?id=1才会使用缓存，如果id为其他值将不使用缓存。</p> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">unless条件</span></h1> <p>condition是在调用方法之前判断条件，决定是否缓存。unless是在调用方法之后判断条件，决定是否不缓存。</p> <pre><code class="language-java">	@GetMapping("/find") 	@Cacheable(cacheNames = "hello",unless="#result.id.contains('1')" )  	public User find(String id) { 		System.out.println("从数据库查询数据"); 		User user = new User(); 		user.setId(id); 		return user; 	}</code></pre> <ul> <li>unless：如果SpEL条件成立，则不缓存。 </li> <li>#result.id.contains：result指方法return的数据，id指return的user的id参数，contains指id的值是否包含'1'，如果包含则unless条件成立，不进行缓存。</li> </ul> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">caffeine</span></h1> <p>spring boot支持多种不同的缓存供应商。在默认情况下使用的是简单缓存，不建议在正式环境使用。我们可以配置一些更加强大的缓存，比如Hibernate的默认缓存EhCache等，而caffeine则是基于java8新出的一个高性能缓存，官方称其接近完美。下面就来介绍在spring boot中集成caffeine。</p> <pre><code class="language-html">		&lt;dependency&gt; 			&lt;groupId&gt;com.github.ben-manes.caffeine&lt;/groupId&gt; 			&lt;artifactId&gt;caffeine&lt;/artifactId&gt; 		&lt;/dependency&gt;</code></pre> <h1 style="font-family:'Microsoft YaHei';"><span style="color:rgb(204,0,0);font-weight:normal;"></span></h1> <p><span style="font-size:14px;">在pom.xml中增加以上依赖，spring boot就会自动用caffeine替换默认的简单缓存，用法都是一样的。</span></p> <h1 style="font-family:'Microsoft YaHei';"><span style="font-size:18px;color:rgb(204,0,0);font-weight:normal;">properties参数配置</span></h1> <pre><code class="language-html">spring.cache.type=caffeine spring.cache.cache-names=hello,world spring.cache.caffeine.spec=maximumSize=1,expireAfterAccess=5s</code></pre> <ul> <li>spring.cache.type：指定使用哪个缓存供应商 </li> <li>spring.cache.cache-names：在启动时创建缓存名称，即前面的cacheNames，多个名称用逗号分隔。</li> <li>spring.cache.caffeine.spec：这是caffeine缓存的专用配置。 </li> <li>maximumSize=1：最大缓存数量，假如有缓存1，再写入缓存2时，就有2个缓存，超出最大数量，缓存1就会被清除。 </li> <li>expireAfterAccess=5s：缓存5秒，即缓存在5秒之内没有被使用，就会被清除。</li> </ul> <p>默认情况下，缓存的数据会一直保存在内存中，有些数据可能用一次后很长时间都不会再用，这样会有大量无用的数据长时间占用内存，通过配置properties可以及时清除不需要的缓存。</p> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2971.htm">uni-app 学习笔记</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2973.htm">MySQL GET_FORMAT()函数的用途是什么？</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3085.htm" title="MySQL在日期中添加“半年间隔”的不同方式是什么？">MySQL在日期中添加“半年间隔”的不同方式是什么？</a></li>
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3090.htm" title="Uniapp实现自定义组件">Uniapp实现自定义组件</a></li>
+                        <li class="py-2"><a href="/html/category/article-3087.htm" title="C# DataTable去重，根据列名去重保留其他列">C# DataTable去重，根据列名去重保留其他列</a></li>
+                        <li class="py-2"><a href="/html/category/article-3064.htm" title="Java NIO 选择器 Selector_在线工具">Java NIO 选择器 Selector_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3063.htm" title="kafka生产者发送消息可靠性">kafka生产者发送消息可靠性</a></li>
+                        <li class="py-2"><a href="/html/category/article-3089.htm" title="SpringMVC中RequestMapping注解【作用、出现的位置、属性】">SpringMVC中RequestMapping注解【作用、出现的位置、属性】</a></li>
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                        <li class="py-2"><a href="/html/category/article-3062.htm" title=".NET混合开发解决方案5 WebView2运行时与分发应用_在线工具">.NET混合开发解决方案5 WebView2运行时与分发应用_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3065.htm" title="JavaScript如何对二进制值数组进行排序">JavaScript如何对二进制值数组进行排序</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2926.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>SpringCloud Sleuth 分布式请求链路追踪 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">SpringCloud Sleuth 分布式请求链路追踪</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <div class="toc"> <h3>SpringCloud Sleuth 分布式请求链路追踪</h3> <ul> <li><a href="#SpringCloud_Sleuth__1" rel="nofollow">SpringCloud Sleuth 概念</a></li> <li><a href="#_10" rel="nofollow">搭建分布式请求链路</a></li> </ul> </div> <h1><a id="SpringCloud_Sleuth__1" rel="nofollow"></a>SpringCloud Sleuth 概念</h1> <p>1、为什么要使用SpringCloud Sleuth？当前面临什么问题？</p> <blockquote> <p>在微服务框架中，一个客户端发起的请求在后端系统中会经过多个不同的服务节点调用来协同产生最后的请求结果，每个前端请求都会形成一条复杂的分布式服务调用链路，链路中的任何一环出现高延迟或错误都会引起整个请求最后的失败。Spring Cloud Sleuth为Spring Cloud实现了<code>分布式跟踪解决方案</code>，<code>且兼容Zipkin，结合Zipkin做链路跟踪</code>。Spring Cloud Sleuth服务链路跟踪功能可以帮助我们快速的发现错误根源以及监控分析每条请求链路上的性能。</p> </blockquote> <p>2、SpringCloud Sleuth 是什么？</p> <blockquote> <p>（1）<code>SpringCloud Sleuth</code> 是一套提供了完整的服务追踪的解决方案，在分布式系统中提供追踪解决方案并且兼容支持<code>zipkin</code>。<br /> （2）<code>Zipkin</code>：Zipkin是一个<code>分布式跟踪系统</code>。 它有助于收集解决服务体系结构中的延迟问题所需的时序数据。 功能包括该数据的收集和查找。Zipkin最初是为了在Cassandra上存储数据而构建的，因为Cassandra是可扩展的，具有灵活的模式，并且在Twitter中大量使用。 除了支持Cassandra，还支持ElasticSearch和MySQL。如果日志文件中有跟踪ID，则可以直接跳至该跟踪ID。 还可以基于属性进行查询，例如服务，操作名称，标签和持续时间，服务中花费的时间百分比以及操作是否失败。</p> </blockquote> <p>3、解决问题：通过 zipkin 监控、追踪并记录请求调用经过的各个服务节点。</p> <h1><a id="_10" rel="nofollow"></a>搭建分布式请求链路</h1> <p><strong>一、Zipkin 的下载安装和概念</strong><br /> 1、<code>下载 zipkin</code>:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://repo1.maven.org/maven2/io/zipkin/zipkin-server/2.14.1/zipkin-server-2.14.1-exec.jar"  rel="nofollow">https://repo1.maven.org/maven2/io/zipkin/zipkin-server/2.14.1/zipkin-server-2.14.1-exec.jar</a><br /> 值得注意的是，SpringCloud 从 F 版起就已不需要自己构建 Zipkin Server 了，只需要调用 jar 包即可。</p> <p>2、运行下载好的 jar 包：<code>java -jar zipkin-server-2.14.1-exec.jar</code>。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/74b1aece270d5d11b9eeb2228f8d93df.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪"><br /> 3、访问：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://127.0.0.1:9411"  rel="nofollow">http://127.0.0.1:9411</a><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/5693687f52221fecf8f3a67d490e36b1.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪"><br /> 4、完整的调用链路图：表示一请求链路，一条链路通过<code>Trace Id 唯一标识</code>。<code>Span</code>表示发起的请求信息，各个 Span 通过<code>parent id</code>关联起来。</p> <blockquote> <p>（1）完整的调用链路图（原理图）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/e5a96687b690ffe36f788504d8f912bb.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪"><br /><code>Trace：</code>类似树结构的 Span 集合，表示一个调用链路存在的唯一标识。<br /><code>Span：</code>表示调用链路的来源，可以理解成每个一次请求或响应。</p> <p> （2）简化后如下图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/281ad187a1218c8bd1d47e4835e72363.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪"><br /> （3）整个链路的依赖关系如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/56526d499c7437267e117b8171b09a17.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪"></p> </blockquote> <p><strong>二、服务提供者</strong><br /> 1、修改<code>cloud-cloud-provider-ek-payment8001（cloud-provider-ek-payment8002）</code>负载均衡服务提供者。<br /> 2、引入 pom 文件</p> <pre><code class="prism language-xml"><span class="token comment">&lt;!--包含了sleuth+zipkin--&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-zipkin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre> <p>3、修改 yml 配置文件</p> <pre><code class="prism language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span><span class="token key atrule">port</span><span class="token punctuation">:</span><span class="token number">8001</span><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token key atrule">application</span><span class="token punctuation">:</span><span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service<span class="token key atrule">datasource</span><span class="token punctuation">:</span><span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource<span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> org.gjt.mm.mysql.Driver<span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/db2021<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-8&amp;useSSL=false</span><span class="token key atrule">username</span><span class="token punctuation">:</span> root<span class="token key atrule">password</span><span class="token punctuation">:</span><span class="token number">123456</span><span class="token comment"># Sleuth zipkin配置</span><span class="token key atrule">zipkin</span><span class="token punctuation">:</span><span class="token key atrule">base-url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">9411</span><span class="token key atrule">sleuth</span><span class="token punctuation">:</span><span class="token key atrule">sampler</span><span class="token punctuation">:</span><span class="token comment"># 采样率值介于 0 到 1 之间，1 则表示全部采集</span><span class="token key atrule">probability</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token key atrule">eureka</span><span class="token punctuation">:</span><span class="token key atrule">client</span><span class="token punctuation">:</span><span class="token comment">#表示收将自己注册到EurekaServer，默认为true</span><span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#是否从EurekaServer抓取已有的注册信息，默认为true，单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡</span><span class="token key atrule">fetchRegistry</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">service-url</span><span class="token punctuation">:</span><span class="token comment">#defaultZone: http://localhost:7001/eureka  #单机版</span><span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka<span class="token comment">#集群版</span><span class="token key atrule">instance</span><span class="token punctuation">:</span><span class="token key atrule">instance-id</span><span class="token punctuation">:</span> payment8001<span class="token comment">#访问路径可以显示IP地址</span><span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认为30秒）</span><span class="token key atrule">lease-renewal-interval-in-seconds</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token comment">#eureka服务端在收到最后一次心跳后等待时间上限，单位为秒（默认为90秒），超时将删除服务</span><span class="token key atrule">lease-expiration-duration-in-seconds</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token key atrule">mybatis</span><span class="token punctuation">:</span><span class="token key atrule">mapperLocations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>mapper/<span class="token important">*.xml</span><span class="token key atrule">type-aliases-package</span><span class="token punctuation">:</span> springcloud.atguigu.springcloud.entities<span class="token comment">#所有entity别名所在的包</span></code></pre> <p>4、controller</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@RestController</span><span class="token annotation punctuation">@Slf4j</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">PaymentController</span><span class="token punctuation">{<!-- --></span><span class="token comment">//SpringCloud Sleuth、Zipkin 请求链路跟踪测试</span><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/payment/zipkin"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token class-name">String</span><span class="token function">paymentZipkin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token string">"服务："</span><span class="token operator">+</span> serverPort<span class="token operator">+</span><span class="token string">"--》 Zipkin 请求链路跟踪测试"</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p><strong>三、服务消费者</strong><br /> 1、修改<code>cloud-consumer-ek-order80</code>服务消费者<br /> 2、引入 pom 依赖</p> <pre><code class="prism language-xml"><span class="token comment">&lt;!--包含了sleuth+zipkin--&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-zipkin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre> <p>3、修改 yml 配置文件</p> <pre><code class="prism language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span><span class="token key atrule">port</span><span class="token punctuation">:</span><span class="token number">8002</span><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token key atrule">application</span><span class="token punctuation">:</span><span class="token key atrule">name</span><span class="token punctuation">:</span> cloud<span class="token punctuation">-</span>payment<span class="token punctuation">-</span>service<span class="token key atrule">datasource</span><span class="token punctuation">:</span><span class="token key atrule">type</span><span class="token punctuation">:</span> com.alibaba.druid.pool.DruidDataSource<span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> org.gjt.mm.mysql.Driver<span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/db2021<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=utf-8&amp;useSSL=false</span><span class="token key atrule">username</span><span class="token punctuation">:</span> root<span class="token key atrule">password</span><span class="token punctuation">:</span><span class="token number">123456</span><span class="token comment"># Sleuth zipkin配置</span><span class="token key atrule">zipkin</span><span class="token punctuation">:</span><span class="token key atrule">base-url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">9411</span><span class="token key atrule">sleuth</span><span class="token punctuation">:</span><span class="token key atrule">sampler</span><span class="token punctuation">:</span><span class="token comment"># 采样率值介于 0 到 1 之间，1 则表示全部采集</span><span class="token key atrule">probability</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token key atrule">eureka</span><span class="token punctuation">:</span><span class="token key atrule">client</span><span class="token punctuation">:</span><span class="token comment">#表示收将自己注册到EurekaServer，默认为true</span><span class="token key atrule">register-with-eureka</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#是否从EurekaServer抓取已有的注册信息，默认为true，单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡</span><span class="token key atrule">fetchRegistry</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">service-url</span><span class="token punctuation">:</span><span class="token comment">#      defaultZone: http://localhost:7001/eureka  #单机版</span><span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001.com<span class="token punctuation">:</span>7001/eureka<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002.com<span class="token punctuation">:</span>7002/eureka<span class="token comment">#集群版</span><span class="token key atrule">instance</span><span class="token punctuation">:</span><span class="token key atrule">instance-id</span><span class="token punctuation">:</span> payment8002<span class="token comment">#访问路径可以显示IP地址</span><span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认为30秒）</span><span class="token key atrule">lease-renewal-interval-in-seconds</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token comment">#eureka服务端在收到最后一次心跳后等待时间上限，单位为秒（默认为90秒），超时将删除服务</span><span class="token key atrule">lease-expiration-duration-in-seconds</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token key atrule">mybatis</span><span class="token punctuation">:</span><span class="token key atrule">mapperLocations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>mapper/<span class="token important">*.xml</span><span class="token key atrule">type-aliases-package</span><span class="token punctuation">:</span> springcloud.atguigu.springcloud.entities<span class="token comment">#所有entity别名所在的包</span></code></pre> <p>4、controller</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@RestController</span><span class="token annotation punctuation">@Slf4j</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">OrderController</span><span class="token punctuation">{<!-- --></span><span class="token keyword">public</span><span class="token keyword">static</span><span class="token keyword">final</span><span class="token class-name">String</span> PAYMENT_URL<span class="token operator">=</span><span class="token string">"http://CLOUD-PAYMENT-SERVICE"</span><span class="token punctuation">;</span><span class="token annotation punctuation">@Resource</span><span class="token keyword">private</span><span class="token class-name">RestTemplate</span> restTemplate<span class="token punctuation">;</span><span class="token comment">//SpringCloud Sleuth、Zipkin 请求链路跟踪测试</span><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/consumer/payment/zipkin"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token class-name">String</span><span class="token function">paymentZipkin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span> restTemplate<span class="token punctuation">.</span><span class="token function">getForObject</span><span class="token punctuation">(</span>PAYMENT_URL<span class="token operator">+</span><span class="token string">"/payment/zipkin"</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p><strong>四、测试验证</strong><br /> 1、地址栏输入：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost/consumer/payment/zipkin"  rel="nofollow">http://localhost/consumer/payment/zipkin</a><br /> 2、刷新 Zipkin 监控：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:9411"  rel="nofollow">http://localhost:9411</a><br /> （1）<strong>查找：</strong> 可以看到微<code>服务数量</code>、<code>请求调用深度</code>、<code>Span总数</code>。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/4a0717a78b54b42b06539e7a40e5424d.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪">（1）<strong>依赖关系：</strong><code>cloud-order-server</code> 依赖于<code>cloud-payment-service</code><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221122/ea258f56a5256afc7ce48e908b9d2879.jpg" alt="SpringCloud Sleuth 分布式请求链路追踪"></p> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2925.htm">AndroidQ(10)黑暗模式适配</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2927.htm">已解决Python向数据库插入数据的字符串中含有单引号或双引号报错</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3076.htm" title="vue使用store">vue使用store</a></li>
+                        <li class="py-2"><a href="/html/category/article-3097.htm" title="vue 动态样式绑定">vue 动态样式绑定</a></li>
+                        <li class="py-2"><a href="/html/category/article-3110.htm" title="Vue刷新页面数据持久化">Vue刷新页面数据持久化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3098.htm" title="vue的自动化路由+分模块管理+路由懒加载">vue的自动化路由+分模块管理+路由懒加载</a></li>
+                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-3071.htm" title="springboot中emoji表情配置及springboot数据源配置区别">springboot中emoji表情配置及springboot数据源配置区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
+                        <li class="py-2"><a href="/html/category/article-3085.htm" title="MySQL在日期中添加“半年间隔”的不同方式是什么？">MySQL在日期中添加“半年间隔”的不同方式是什么？</a></li>
+                        <li class="py-2"><a href="/html/category/article-3084.htm" title="审视Scrum Master的检查清单">审视Scrum Master的检查清单</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

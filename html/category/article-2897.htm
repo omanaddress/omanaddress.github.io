@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2897.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>docker-compose常用命令及yml文件编写 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">docker-compose常用命令及yml文件编写</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h1><a id="dockercompose_0" rel="nofollow"></a>一、docker-compose安装</h1> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/doubiy/article/details/118448421"  rel="nofollow">docker常用命令、Dockerfile、docker仓库</a> 该篇文章最后有docker-compose的安装教程。<br /> docker-compose是一款单机多容器编排工具，在正常使用docker的时候会使用很多命令，在输入这些命令的时候容易出错，而且不便记录执行了哪些命令，如果需要在其他的服务器上也部署同样的一份容器的话又要将这些命令执行一遍，服务器过多工作量也不小；这时使用docker-compose单机部署多容器就非常适用了。</p> <h1><a id="dockercompose_3" rel="nofollow"></a>二、docker-compose常用命令</h1> <p><strong>docker-compose up</strong> 创建并启动容器<br /><strong>docker-compose up -d</strong> 以后台形式创建并启动容器<br /><strong>docker-compose -f yml文件 up</strong> 指定创建并启动容器使用的yml文件<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/6edb7df4fff2be72a4aab368ace0aa47.jpg" alt="docker-compose常用命令及yml文件编写"><br /><strong>docker-compose ps</strong>：查看通过docker-compose创建的容器，如果是docker run启动的容器不会显示，通过docker ps可以查看通过docker run和docker-compose启动的容器<br /><strong>docker-compose images</strong>：查看通过docker-compose得到的image，通过其他方式得到的image不会显示，通过docker images可以查看docker pull、docker run、docker-compose、docker build、docker commit得到的image<br /><strong>docker-compose stop/start</strong> 停止/启动docker-compose.yml文件中定义的容器<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/d3f92baf21b2b35d13fe9cdb3c42b64a.jpg" alt="docker-compose常用命令及yml文件编写"><br /><strong>docker-compose down</strong> 停止并删除docker-compose.yml文件中定义的容器及删除docker-compose.yml文件中定义的network，但是定义的volume不会删除。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/50e06a486aee204444755661ff35bf6d.jpg" alt="docker-compose常用命令及yml文件编写"><br /><strong>docker-compose logs docker-compose.yml文件中定义的容器名称</strong> 查看某个容器的日志<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/3b3afd0721e3899991c4f0969e712f69.jpg" alt="docker-compose常用命令及yml文件编写"><br /> 其他命令及参数可以通过<strong>docker-compose help</strong>查看<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/a64876a64a043cee42c137e130c8e85d.jpg" alt="docker-compose常用命令及yml文件编写"><br /><strong>注意：</strong><br /> 1、docker-compose的命令需要在有docker-compose.yml文件的目录才可以执行，否则使用docker-compose的命令会报错；并且只有该yml文件执行了up操作即创建了该docker-compose.yml定义的容器之后才可以看到对应的容器。<br /> 比如执行docker-compose ps查看通过docker-compose运行了哪些容器：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/f4024c1352a792c09403dfde3f20f8ef.jpg" alt="docker-compose常用命令及yml文件编写"><br /> 在没有docker-compose.yml文件的目录执行docker-compose的命令会报错，只有切换到有docker-compose.yml文件的目录方能正常执行docker-compose命令。<br /> 2、docker-compose命令，在哪个目录下执行，那么就是对于该目录下的docker-compose.yml文件的操作，比如docker-compose up就是使用当前目录的docker-compose.yml文件创建启动容器，docker-compose ps那么就是查看当前目录docker-compose.yml文件定义的容器(前提是执行了up操作才能看到定义的这些容器)。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/c71f8e4facb8e976ea68a7dd0ce8e033.jpg" alt="docker-compose常用命令及yml文件编写"><br /> 分别在docker1和docker两个目录执行相同的命令，查看到的结果不相同。</p> <h1><a id="dockercompose_yml_26" rel="nofollow"></a>三、docker-compose yml文件编写</h1> <p>version：指定版本<br /> services：该指令下面写该yml文件中需要定义的container信息，其中services的下面第一级指令就是指定的该容器的名称<br /> 如：</p> <pre><code>services:  #定义container   mysql: #container名称为mysql     image: "mysql:5.7" #image来源</code></pre> <p>image：指定该容器使用的image，和build二选一<br /> build：指定该容器使用的image通过哪个目录下的Dockerfile文件进行构建，<strong>.</strong> 表示当前目录的Dockerfile文件，和image二选一<br /> ports：指定宿主机和容器的端口映射关系，可指定多个<br /> networks：指定使用的网络信息，可指定多个<br /> ipv4_address：和networks配合使用，指定容器在该网络中的ip信息<br /> volumes：指定数据挂载信息，可以指定目录或文件的映射，也可以指定数据挂载记录和容器中目录的映射(这种一般指定的容器中目录是该容器Dockerfile文件中VOLUME指令指定的目录)，如果指定数据挂载记录的映射需要通过volumes定义数据挂载记录，可指定多个<br /> environment：指定容器可选参数的值信息<br /> networks：定义网络信息，相当于docker network create 命令，其中networks的下面第一级指令就是指定网络的名称，可以配合subnet指定网段信息<br /> volumes：定义数据挂载记录，相当于docker volume create 命令<br /> 如：</p> <pre><code>volumes:  #定义volume-相当于 docker volume create mysql   mysql: {} 或 volumes:  #定义volume-相当于 docker volume create mysql   mysql:</code></pre> <p>例如：</p> <pre><code>version: "3" #docker-compose版本 services:  #定义container   mysql: #container名称     image: "mysql:5.7" #image来源     ports:       - "3306:3306"     networks:       springboot:         ipv4_address: 172.20.0.2     volumes:       - mysql:/var/lib/mysql  #设置持久化映射关系，其中mysql是下面volumes中定义的名称为mysql的数据挂载记录名称     environment:       MYSQL_ROOT_PASSWORD: root@123456Y #设置root账号密码   sb01:   #container名称-相当于--name web     build: . #image来源，build . 表示使用当前目录的Dockerfile文件进行构建image     ports:   #指定端口映射       - "9001:9989"   #端口映射关系 和ports一起相当于-p 9001:9989     networks:  #指定network-相当于--network springboot       springboot:         ipv4_address: 172.20.0.6  #指定容器ip地址-相当于--ip 172.20.0.6   sb02:   #container名称-相当于--name web     build: . #image来源，build . 表示使用当前目录的Dockerfile文件进行构建image     ports:   #指定端口映射       - "9002:9989"   #端口映射关系 和ports一起相当于-p 9002:9989     networks:  #指定network-相当于--network springboot       springboot:         ipv4_address: 172.20.0.7   sb03:   #container名称-相当于--name web     build: . #image来源，build . 表示使用当前目录的Dockerfile文件进行构建image     ports:   #指定端口映射       - "9003:9989"   #端口映射关系 和ports一起相当于-p 9003:9989     networks:  #指定network-相当于--network springboot       springboot:         ipv4_address: 172.20.0.8   nginx:   #container名称-相当于--name web     image: nginx #image来源，build . 表示使用当前目录的Dockerfile文件进行构建image     ports:   #指定端口映射       - "80:80"   #端口映射关系 和ports一起相当于-p 80:80     networks:  #指定network-相当于--network springboot       springboot:         ipv4_address: 172.20.0.3     volumes:       - "/usr/nginx/nginx.conf:/etc/nginx/nginx.conf" #指定nginx使用的配置文件  networks:  #定义network-相当于 docker network create --subnet=172.20.0.0/24 springboot 该命令创建的network默认也是桥接模式   springboot: #network名称     driver: bridge #定义network类型为桥接模式     ipam:       driver: default       config:         - subnet: 172.20.0.0/24 #指定网段信息 volumes:  #定义volume-相当于 docker volume create mysql   mysql: {}</code></pre> <p>上面的docker-compose.yaml文件内容就是启动了三个springboot项目分别是sb01、sb02、sb03，以及一个mysql和nginx，并且指定了mysql的数据持久化映射，nginx使用的配置文件，以及这五个容器都使用名称为springboot的网络。<br /> 我这里通过docker-compose启动项目之后，访问接口效果如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/24dad2c255892c69641caab0c9defc04.jpg" alt="docker-compose常用命令及yml文件编写"><br /><strong>注意：</strong><br /> 1、yml文件的格式层级关系是缩进两个英文状态的空格，不能用缩进符等替代空格<br /> 2、如果指令后面需要写值必须是英文冒号+英文空格方可写值，如：image: “mysql:5.7”<br /> 3、如果是可以写多个值的指令(一般这样的指令都是这个单词的复数格式，如volumes、networks、ports等)，对于这些指令的值需要冒号换行后使用 - 指定一个值，如果有多个值，使用多个 - 指定；如：</p> <pre><code>ports:   #指定端口映射   - "9003:9989"   #端口映射关系 和ports一起相当于-p 9003:9989   - "8080:8080"</code></pre> <p>4、docker-compose文件的名称只能是以下四个之一：docker-compose.yml、docker-compose.yaml、 compose.yml、compose.yaml<br /> 5、services下面定义的container的名称只能docker-compose的命令使用，docker命令无法使用该名称；docker要操作的话只能使用docker ps查看的container的名称，而这个名称的规则一般是docker-compose.yml文件所在目录的名称_docker-compose.yml文件中定义的容器名称_序号，如docker_sb01_1，其中docker是docker-compose.yml文件所在目录名称，sb01是docker-compose.yml文件中services指令下定义的container的名称，1是序号；而对应的image的名称如果该image是build得到的那么就是docker-compose.yml文件所在目录的名称_yml文件中定义的容器名称，如：docker_sb01，其中docker是docker-compose.yml文件所在目录名称，sb01是docker-compose.yml文件中services指令下定义的container的名称，如果这个image不是build而是通过image指定的话那么就是本身的image名称。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220817/6d863e318ab02881124477d92e953231.jpg" alt="docker-compose常用命令及yml文件编写"></p> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2896.htm">在Datatable，DataView和DataGridView中不显示重复的记录</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2898.htm">Python笔记：元组的概念和使用</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3085.htm" title="MySQL在日期中添加“半年间隔”的不同方式是什么？">MySQL在日期中添加“半年间隔”的不同方式是什么？</a></li>
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3098.htm" title="vue的自动化路由+分模块管理+路由懒加载">vue的自动化路由+分模块管理+路由懒加载</a></li>
+                        <li class="py-2"><a href="/html/category/article-3113.htm" title="java计算器页面的实现">java计算器页面的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-3073.htm" title="R语言学习笔记之lm函数">R语言学习笔记之lm函数</a></li>
+                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3078.htm" title="pandas的apply函数常见用法总结">pandas的apply函数常见用法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3066.htm" title="源码级别的广播与监听实现">源码级别的广播与监听实现</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

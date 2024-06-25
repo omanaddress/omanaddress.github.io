@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2858.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<p data-track="1" data-pm-slice="0 0 []">一、驱动软件准备：从nvidia网站下载驱动，注意，和普通显卡下载驱动地址不同。</p> <div class="pgc-img"><img decoding="async" src="https://p6.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/60b670d5529340429e61dd9b75609df7~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="2041" data-height="1329" data-ic-uri=""/></div> <p data-track="2">按照ESXi对应版本不同下载不同的安装包。安装包内含ESXi主机驱动和虚拟机驱动。</p> <p data-track="3">GPU显卡和物理服务器兼容查询：（重要：一定要查兼容，最近遇到一客户反馈安装驱动后运行nvidia-smi各种报错，最后查询是因为不兼容导致。）<br />https://www.nvidia.com/zh-cn/data-center/resources/vgpu-certified-servers/</p> <p data-track="4">二、安装显卡驱动</p> <p data-track="5">1、将驱动vib上传到主机的/tmp目录下，开启SSH服务，并将主机进入维护模式，使用如下命令</p> <pre><code>esxcli software vib install -v /tmp/****.vib #安装驱动注意使用绝对路径</code></pre> <div class="pgc-img"><img decoding="async" src="https://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/696909f4ea8442b2b88b3a6f5fc850d8~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1322" data-height="836" data-ic-uri=""/></div> <p data-track="7">虽然安装完毕后提示Reboot required: false，但是还是建议在这个时候将主机重启一下，使主机启动后正确的加载驱动程序文件。重启后将主机退出维护模式。</p> <p data-track="8">2、正确的安装并加载驱动程序以后，我们需要启动主机的xorg服务，xorg服务是ESXi主机为虚拟机提供3D硬件加速的服务，我们必须启动该服务后才能使GPU正常工作。</p> <p data-track="9">3、以下命令可以查看主机是否正确加载了驱动程序：</p> <pre><code>vmkload_mod -l | grep nvidia</code></pre> <p data-track="11">4、如下图所示：通过命令nvidia-smi来验证GPU卡是否正常工作，无报错，如图：</p> <div class="pgc-img"><img decoding="async" src="https://p6.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/45728f0d79814fd281642e345ba276de~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1354" data-height="1124" data-ic-uri=""/></div> <p data-track="12">5、修改图形设备活动类型：配置-图形-编辑</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/388d4a7cf15848c0b947a72c2449cfb6~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1156" data-height="900" data-ic-uri=""/></div> <p data-track="13">默认为共享，修改成直接共享，并重启xorg服务。</p> <p data-track="14">6、编辑虚拟机</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/88f1e460c6e24834a92e75720fe1b4eb~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1202" data-height="1256" data-ic-uri=""/></div> <div class="pgc-img"><img decoding="async" src="https://p6.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/cb319a49c48847c3b89f104e697e6d4f~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1204" data-height="1244" data-ic-uri=""/></div> <div class="pgc-img"><img decoding="async" src="https://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/1006d0433ce044d9b4ac76b838eaa5af~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1484" data-height="542" data-ic-uri=""/></div> <p data-track="22">GPU配置文件为GPU显存大小，具体显存大小参考说明文档。并勾选预留所有内存。</p> <p data-track="16">7、安装虚拟机驱动，注意一定要使用安装包内对应版本的驱动（使用不同版本可能会有问题）</p> <div class="pgc-img"><img decoding="async" src="https://p3.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/351b781a44ed440ea206daa5ba7af311~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1366" data-height="670" data-ic-uri=""/></div> <p data-track="17">安装驱动后，重启虚拟机，在控制台界面，看到“黑屏”，这是正常的。使用远程桌面RDP协议登录，或者Horizon连接服务器的方式登录。</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/a7c687ef1f0a4cf08c335e27d99b57bd~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="786" data-height="555" data-ic-uri=""/></div> <p data-track="18">设备管理器里面也能看到显卡已经安装成功了。</p> <p data-track="19">三、由于M60、RTX6000/RTX8000/A40显卡特殊，正式使用时，还需要额外安装许可证服务器，具体如下图所示！</p> <div class="pgc-img"><img decoding="async" src="https://p26.toutiaoimg.com/img/tos-cn-i-qvj2lq49k0/05de6cd1d1a8455492e67c9a7ff64dd4~tplv-obj.jpg" alt="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU" data-ic="false" data-width="1915" data-height="451" data-ic-uri=""/></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-2857.htm">SpringBoot 2.3.x 分层构建 Docker 镜像实践</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-2859.htm">kafka开机自启动配置</a></p>
+                                                                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3075.htm" title="springboot Jar包 秒部署到Linux服务器运行">springboot Jar包 秒部署到Linux服务器运行</a></li>
+                        <li class="py-2"><a href="/html/category/article-3087.htm" title="C# DataTable去重，根据列名去重保留其他列">C# DataTable去重，根据列名去重保留其他列</a></li>
+                        <li class="py-2"><a href="/html/category/article-3088.htm" title="JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化">JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3081.htm" title="你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。">你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。</a></li>
+                        <li class="py-2"><a href="/html/category/article-3071.htm" title="springboot中emoji表情配置及springboot数据源配置区别">springboot中emoji表情配置及springboot数据源配置区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-3070.htm" title="Unity怎么更换默认脚本编辑器VS">Unity怎么更换默认脚本编辑器VS</a></li>
+                        <li class="py-2"><a href="/html/category/article-3082.htm" title="vue elementui点击按钮新增输入框">vue elementui点击按钮新增输入框</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
+                        <li class="py-2"><a href="/html/category/article-3084.htm" title="审视Scrum Master的检查清单">审视Scrum Master的检查清单</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">50</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
