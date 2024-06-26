@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3142.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Git恢复之前版本的两种方法reset、revert（图文详解） - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Git恢复之前版本的两种方法reset、revert（图文详解）</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <blockquote> <p>2019/7/27 修改更新</p> </blockquote> <h2><a id="_2" rel="nofollow"></a><strong>一、问题描述</strong></h2> <blockquote> <p>在利用github实现多人合作程序开发的过程中，我们有时会出现<strong>错误提交</strong>的情况，此时我们希望能撤销提交操作，让程序回到提交前的样子，本文总结了两种解决方法：回退（reset）、反做（revert）。</p> </blockquote> <h2><a id="_5" rel="nofollow"></a><strong>二、背景知识</strong></h2> <blockquote> <h4><a id="gitHEAD_6" rel="nofollow"></a><strong>git的版本管理，及HEAD的理解</strong></h4> <p>使用git的每次提交，Git都会自动把它们串成一条时间线，这条时间线就是一个分支。如果没有新建分支，那么只有一条时间线，即只有一个分支，在Git里，这个分支叫主分支，即master分支。有一个HEAD指针指向当前分支（只有一个分支的情况下会指向master，而master是指向最新提交）。每个版本都会有自己的版本信息，如特有的版本号、版本名等。如下图，假设只有一个分支：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/425f6ae49755cf2ea1b2bb87efefec90.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"></p> </blockquote> <h2><a id="_10" rel="nofollow"></a><strong>三、解决方法</strong></h2> <h3><a id="git_reset_11" rel="nofollow"></a><strong>方法一：git reset</strong></h3> <p><strong>原理：</strong> git reset的作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本，如下图所示，假设我们要回退到版本一：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/4b4b9b048eccbb87490982686d3b3a6a.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>适用场景：</strong> 如果想恢复到之前某个提交的版本，且那个版本之后提交的版本我们都不要了，就可以用这种方法。</p> <h4><a id="_15" rel="nofollow"></a><strong>具体操作：</strong></h4> <p><strong>1. 查看版本号：</strong><br /> 可以使用命令“git log”查看：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/f3e3560d28836c1b7bd06586186f4e0b.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /> 也可以在github网站上查看：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/28bac5a5e5266849aef7764a912f1928.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>2. 使用“git reset --hard 目标版本号”命令将版本回退：</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/aea876c930cafab864fde89d37020e72.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /> 再用“git log”查看版本信息，此时本地的HEAD已经指向之前的版本：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/452eed4003d3171fce0f0b56a5b5f4c8.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>3. 使用“git push -f”提交更改：</strong><br /> 此时如果用“git push”会报错，因为我们本地库HEAD指向的版本比远程库的要旧：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/3e8d9c96fd67a5f31437f3cd6e7beb2a.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /> 所以我们要用“git push -f”强制推上去，就可以了：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/dddf76a3f679acba1ab4048960d66f64.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /> 在github图形化界面上看，远程库的HEAD也已经指向目标版本：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/fa4df6310c2477e1840afe671db78efc.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"></p> <h4><a id="_33" rel="nofollow"></a><strong>回退成功！</strong></h4> <h3><a id="git_revert_34" rel="nofollow"></a><strong>方法二：git revert</strong></h3> <p><strong>原理：</strong> git revert是用于“反做”某一个版本，以达到撤销该版本的修改的目的。比如，我们commit了三个版本（版本一、版本二、 版本三），突然发现版本二不行（如：有bug），想要撤销版本二，但又不想影响撤销版本三的提交，就可以用 git revert 命令来反做版本二，生成新的版本四，这个版本四里会保留版本三的东西，但撤销了版本二的东西。如下图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/57791136c6a218f6c202a843e51d525e.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>适用场景：</strong> 如果我们想撤销之前的某一版本，但是又想保留该目标版本后面的版本，记录下这整个版本变动流程，就可以用这种方法。</p> <h4><a id="_38" rel="nofollow"></a><strong>具体操作：</strong></h4> <p>举个例子，现在库里面有三个文件：READ.md、text.txt、text2.txt。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/865c088cfddda171cfdceafc612bc261.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>1. 查看版本号：</strong><br /> 可以通过命令行查看（输入git log）：<br /> 如图，最近的两个版本分别叫：“add text.txt”（即新增了文件text.txt）、“add text2.txt”（新增了文件text2.txt）。这个时候我们不需要text.txt这个文件了，那就是说不想要“add text.txt”那个版本的操作，那可以通过反做“add text.txt”这个版本来实现。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/027d4b2062e317493d845bfe0880425d.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /> 也可以通过github网站图形化界面查看版本号：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/d7028400198c55f9df20b0a31bfcf689.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>2.使用“git revert -n 版本号”反做，并使用“git commit -m 版本名”提交：</strong><br /> （1）反做，使用“git revert -n 版本号”命令。如下命令，我们反做版本号为8b89621的版本：</p> <pre><code class="prism language-sh">git revert -n 8b89621019c9adc6fc4d242cd41daeb13aeb9861</code></pre> <p><strong>注意：</strong> 这里可能会出现冲突，那么需要手动修改冲突的文件。而且要git add 文件名。<br /> （2）提交，使用“git commit -m 版本名”，如：</p> <pre><code class="prism language-sh">git commit -m "revert add text.txt"</code></pre> <p>此时可以用“git log”查看本地的版本信息，可见多生成了一个新的版本，该版本反做了“add text.txt”版本，但是保留了“add text2.txt”版本：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/609031c95332d64f1861b563e038d93d.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /><strong>3.使用“git push”推上远程库：</strong></p> <pre><code class="prism language-sh">git push</code></pre> <p>查看github上显示的远程库版本信息：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/03538b6b7b1e6058c312064072a733df.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"><br /> 此时查看仓库的文件，剩下两个：READ.md、text2.txt<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/79d9c5adaafec719d19ba24845cd65a9.jpg" alt="Git恢复之前版本的两种方法reset、revert（图文详解）"></p> <h4><a id="_73" rel="nofollow"></a><strong>反做成功！</strong></h4> </div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3141.htm">Android项目封装一个登录页隐私协议弹窗工具包(一)</a></p>
+                                                                                            </div>
+                                                                                        <div class="panel panel-default mt-5">
+                                                <div class="panel-heading">
+                                                    <h3 class="m-0">推荐文章</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <ul class="p-0 x-0">
+                                                                                                                <li class="py-2"><a href="/html/category/article-3118.htm">Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3099.htm">springboot docker 分层打包镜像，精减变动体积</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3097.htm">vue 动态样式绑定</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3088.htm">JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3068.htm">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3003.htm">springboot+layui有关分页问题</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2970.htm">vue实现用v-bind给src和href赋值_vue.js</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2957.htm">Element UI Upload 上传文件只能上传一次 ，再次点击上传后无反应的问题</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2907.htm">数据结构与算法知识点总结数组与链表</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2847.htm">virtualenv基本操作及使用</a></li>
+                                                                                                            </ul>
+                                                </div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
+                        <li class="py-2"><a href="/html/category/article-3086.htm" title="基于Apache Hudi和Debezium构建CDC入湖管道">基于Apache Hudi和Debezium构建CDC入湖管道</a></li>
+                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
+                        <li class="py-2"><a href="/html/category/article-3088.htm" title="JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化">JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3085.htm" title="MySQL在日期中添加“半年间隔”的不同方式是什么？">MySQL在日期中添加“半年间隔”的不同方式是什么？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">52</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>
