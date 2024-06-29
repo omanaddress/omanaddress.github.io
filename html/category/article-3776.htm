@@ -2,14 +2,14 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2889.htm" />
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3776.htm" />
     <!-- ========== Meta Tags ========== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- ========== Page Title ========== -->
-    <title>v-model.trim使用 - Oman Address</title>
+    <title>自定义指令拖拽el-dialog - Oman Address</title>
         <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
 
     <!-- ========== Start Stylesheet ========== -->
@@ -100,7 +100,7 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1 style="word-break: break-all;">v-model.trim使用</h1>
+                    <h1 style="word-break: break-all;">自定义指令拖拽el-dialog</h1>
                     <ul class="breadcrumb">
                         <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
                         <li><a href="/html/category/"> 文章分类</a></li>
@@ -124,10 +124,28 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="content_views" class="htmledit_views"> <h1>v-model.trim用于去掉输入框内首尾空格</h1> <p><strong>如下绑定的时候加上</strong>&nbsp;<strong>.trim 那么如果直接在开头输入空格，或者是在末尾输入空格，是不会显示有输入内容的，</strong></p> <pre class="has"><code class="language-html">&lt;el-input type="textarea" v-model.trim="deleNsbp" &gt;&lt;/el-input&gt;</code></pre> <p>之前看到有人问他赋值的时候，为什么不能去除前后的空格，当输入内容之后，前后空格就被解析了</p> <p><strong>原因：是因为这个解析的在输入事件发生之后才会执行的，赋值并没有触发他的输入事件，所以不会解析</strong></p> </p></div> 			                                            <div class="col-md-12 mt-5">
-                                                                                                <p>上一个：<a href="/html/category/article-2888.htm">c结构体的几种创建方法</a></p>
-                                                                                                <p>下一个：<a href="/html/category/article-2890.htm">IDEA启动报错：Internal error. Please refer to http://jb.gg/ide/critical-startup-errors</a></p>
+                                              				  				  				<div id="content_views" class="htmledit_views"> <p>vue项目中使用el-dialog弹框时会提一些大大小小的要求，比如需要再窗口中拖拽弹窗。现在使用自定义指令的形式来实现拖拽功能。</p> <h2>一、自定义指令拖拽代码</h2> <pre><code class="language-javascript">export default {   bind(el, binding, vnode) {     const dialogHeaderEl = el.querySelector('.el-dialog__header')     const dragDom = el.querySelector('.el-dialog')     dialogHeaderEl.style.cssText += ';cursor:move;'     dialogHeaderEl.style.cssText += ';user-select:none;'     dragDom.style.cssText += ';top:0px;'     const getStyle = (function() {       if (window.document.currentStyle) {         return (dom, attr) =&gt; dom.currentStyle[attr]       } else {         return (dom, attr) =&gt; getComputedStyle(dom, false)[attr]       }     })()      dialogHeaderEl.onmousedown = e =&gt; {       // 鼠标按下，计算当前元素距离可视区的距离       const disX = e.clientX - dialogHeaderEl.offsetLeft       const disY = e.clientY - dialogHeaderEl.offsetTop        const dragDomWidth = dragDom.offsetWidth       const dragDomheight = dragDom.offsetHeight        const screenWidth = document.body.clientWidth       const screenHeight = document.body.clientHeight        const minDragDomLeft = dragDom.offsetLeft       const maxDragDomLeft = screenWidth - dragDom.offsetLeft - dragDomWidth        const minDragDomTop = dragDom.offsetTop       const maxDragDomTop = screenHeight - dragDom.offsetTop - dragDomheight        // 获取到的值带px 正则匹配替换       let styL = getStyle(dragDom, 'left')       let styT = getStyle(dragDom, 'top')        if (styL.includes('%')) {         styL = Number(document.body.clientWidth) * (Number(styL.replace(/%/g, '')) / 100)         styT = Number(document.body.clientHeight) * (Number(styT.replace(/%/g, '')) / 100)       } else {         styL = Number(styL.replace(/px/g, ''))         styT = Number(styT.replace(/px/g, ''))       }        document.onmousemove = function(e) {         // 通过事件委托，计算移动的距离         let left = e.clientX - disX         let top = e.clientY - disY          // 边界处理         if (-(left) &gt; minDragDomLeft) {           left = -minDragDomLeft         } else if (left &gt; maxDragDomLeft) {           left = maxDragDomLeft         }          if (-(top) &gt; minDragDomTop) {           top = -minDragDomTop         } else if (top &gt; maxDragDomTop) {           top = maxDragDomTop         }          // 移动当前元素         dragDom.style.cssText += `;left:${left + styL}px;top:${top + styT}px;`          // emit onDrag event         vnode.child.$emit('dragDialog')       }        document.onmouseup = function() {         document.onmousemove = null         document.onmouseup = null       }     }   } } </code></pre> <h2>二、在main.js中引用创建写好的指令</h2> <p>在自己的vue项目中的main.js文件中将已经写好的指令逻辑引入，然后使用Vue.directive来创建指令，其中指令名称可以自己定义修改。</p> <pre><code class="language-javascript">import dragDialog from '@/directive/dragDialog/drag' Vue.directive('dragDialog', dragDialog)</code></pre> <p>最后在你的el-dialog组件中将已经创建好的指令写入，如：</p> <pre><code class="language-javascript">&lt;el-dialog title="标题" width="80%" v-drag-dialog :close-on-click-modal="false" :visible.sync="false"&gt;  &lt;/el-dialog&gt;</code></pre> </p></div> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3775.htm">python 对论文插图制作局部放大图并在原图中相同位置加边框</a></p>
                                                                                             </div>
+                                                                                        <div class="panel panel-default mt-5">
+                                                <div class="panel-heading">
+                                                    <h3 class="m-0">推荐文章</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <ul class="p-0 x-0">
+                                                                                                                <li class="py-2"><a href="/html/category/article-3102.htm">redis笔记补充 &#8211; wang03</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3092.htm">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3074.htm">设计模式学习笔记命令模式及在Spring JdbcTemplate 中的实现</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3064.htm">Java NIO 选择器 Selector_在线工具</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3012.htm">Vue3 学习笔记&#8211;组合式 API</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2999.htm">ElasticSearch基础学习（SpringBoot集成ES）</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2952.htm">Group velocity and phase velocity(群速度与相速度)</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2923.htm">C ++中的搜索建议系统</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2921.htm">Redis常见面试问题分析</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2859.htm">kafka开机自启动配置</a></li>
+                                                                                                            </ul>
+                                                </div>
+                                            </div>
                                                                                     </div>
                                     </div>
                                 </div>
@@ -142,16 +160,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
-                        <li class="py-2"><a href="/html/category/article-3096.htm" title="win11系统如何修改日期格式">win11系统如何修改日期格式</a></li>
-                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
-                        <li class="py-2"><a href="/html/category/article-3776.htm" title="自定义指令拖拽el-dialog">自定义指令拖拽el-dialog</a></li>
-                        <li class="py-2"><a href="/html/category/article-3087.htm" title="C# DataTable去重，根据列名去重保留其他列">C# DataTable去重，根据列名去重保留其他列</a></li>
-                        <li class="py-2"><a href="/html/category/article-3078.htm" title="pandas的apply函数常见用法总结">pandas的apply函数常见用法总结</a></li>
-                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
-                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3081.htm" title="你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。">你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。</a></li>
-                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3097.htm" title="vue 动态样式绑定">vue 动态样式绑定</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3749.htm" title="Python用re模块实现简易tokenizer_在线工具">Python用re模块实现简易tokenizer_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
+                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
+                        <li class="py-2"><a href="/html/category/article-3443.htm" title="C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具">C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3118.htm" title="Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。">Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。</a></li>
+                        <li class="py-2"><a href="/html/category/article-3109.htm" title="C++内存泄漏的定位方法总结">C++内存泄漏的定位方法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
                     </ul>
     </div>
 </div>
