@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-4088.htm" />
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- ========== Page Title ========== -->
+    <title>Amazing巧用 CSS 视差实现酷炫交互动效详解 - Oman Address</title>
+        <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="/assets/addons/xcblog/css/omanaddress/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/themify-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/flaticon-set.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/elegant-icons.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/magnific-popup.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/animate.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/bootsnav.css" rel="stylesheet" />
+    <link href="/assets/addons/xcblog/css/omanaddress/style.css" rel="stylesheet">
+    <link href="/assets/addons/xcblog/css/omanaddress/responsive.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/html5shiv.min.js"></script>
+      <script src="/assets/addons/xcblog/js/frontend/omanaddress/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?afd972d72a67e62884759c9ecd23c891";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default attr-border navbar-sticky dark bootsnav">
+
+            <div class="container-full">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                            <img src="/assets/addons/xcblog/img/omanaddress/logo-s.png" class="logo" alt="Logo">
+                            Oman Address
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                                <li>
+                            <a href="/">首页</a>
+                        </li>
+                                                <li>
+                            <a href="/html/category/">文章分类</a>
+                        </li>
+                                                <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">联系</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area bg-gray text-center shadow dark text-light bg-cover" style="background-image: url(/assets/addons/xcblog/img/omanaddress/banner/26.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 style="word-break: break-all;">Amazing巧用 CSS 视差实现酷炫交互动效详解</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="/html/category/"> 文章分类</a></li>
+                        <li class="active">正文</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+    <!-- Start Blog
+    ============================================= -->
+    <div class="blog-area single full-blog full-blog default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-items">
+                        <div class="row">
+                            <div class="blog-content col-lg-10 offset-lg-1 col-md-12">
+                                <div class="item">
+                                    <div class="blog-item-box">
+                                        <!-- Start Post Thumb -->
+                                        <div class="content">
+                                              				  				  				<p>本文将介绍利用 CSS 实现滚动视差效果的一个小技巧，并且，利用这个技巧来制作一些有意思的交互特效。</p> <p>关于使用 CSS 实现滚动视差效果，在之前有一篇文章详细描述过具体方案 -<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chokcoco/iCSS/issues/37"  target="_blank" rel="nofollow">CSS 实现视差效果</a>，感兴趣的同学可以先看看这篇文章。</p> <p>这里，会运用上这样一种纯 CSS 的视差技巧：</p> <h2 id="使用-transform-translate3d-实现滚动视差">使用<code>transform: translate3d</code> 实现滚动视差</h2> <p>这里利用的是 CSS 3D，实现滚动视差效果。</p> <p>原理就是：</p> <ol> <li> <p>我们给容器设置上<code>transform-style: preserve-3d</code> 和<code>perspective: xpx</code>，那么处于这个容器的子元素就将位于3D空间中，</p> </li> <li> <p>再给子元素设置不同的<code>transform: translateZ()</code>，这个时候，不同元素在 3D Z轴方向距离屏幕（我们的眼睛）的距离也就不一样</p> </li> <li> <p>滚动滚动条，由于子元素设置了不同的<code>transform: translateZ()</code>，那么他们滚动的上下距离<code>translateY</code> 相对屏幕（我们的眼睛），也是不一样的，这就达到了滚动视差的效果。</p> </li> </ol> <blockquote> <p>关于<code>transform-style: preserve-3d</code> 以及<code>perspective</code> 本文不做过多篇幅展开，默认读者都有所了解，还不是特别清楚的，可以先了解下 CSS 3D。</p> </blockquote> <p>核心代码表示就是：</p> <pre><code class="language-HTML">&lt;div class="g-container"&gt;     &lt;div class="section-one"&gt;translateZ(-1)&lt;/div&gt;     &lt;div class="section-two"&gt;translateZ(-2)&lt;/div&gt;     &lt;div class="section-three"&gt;translateZ(-3)&lt;/div&gt; &lt;/div&gt;</code></pre> <pre><code class="language-CSS">html {     height: 100%;     overflow: hidden; }  body {     perspective: 1px;     transform-style: preserve-3d;     height: 100%;     overflow-y: scroll;     overflow-x: hidden; }  .g-container {     height: 150%;      .section-one {         transform: translateZ(-1px);     }     .section-two {         transform: translateZ(-2px);     }     .section-three {         transform: translateZ(-3px);     } }</code></pre> <p>总结就是父元素设置<code>transform-style: preserve-3d</code> 和<code>perspective: 1px</code>，子元素设置不同的<code>transform: translateZ</code>，滚动滚动条，效果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/71c85ebd999d1ea15a90c6e873fcd85d.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://codepen.io/Chokcoco/pen/EpOeRm"  target="_blank" rel="nofollow">CodePen Demo -- CSS 3D parallax</a></p> <p>很明显，当滚动滚动条时，不同子元素的位移程度从视觉上看是不一样的，也就达到了所谓的滚动视差效果。</p> <h2 id="借助-css-视差实现酷炫交互动效">借助 CSS 视差实现酷炫交互动效</h2> <p>OK，有了上面的铺垫，我们来看看这样两个有趣的交互效果。由群里的<strong>日服第一切图仔</strong> wheatup 友情提供。</p> <p>先来看第一个效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e222bd27c137ae83f41cab2b25d745ee.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>效果是一种文本交替在不同高度的层展示，并且在滚动的过程中，会有明显的 3D 视差效果。</p> <p>这个效果并不困难，核心就在于：</p> <ol> <li>利用了<code>transform-style: preserve-3d</code> 和<code>perspective</code> 构建不同的层次效果，制作视差效果</li> <li>利用元素的<code>::before</code>，<code>::after</code> 构建了 3D 的效果</li> </ol> <p>我们看一个最小化 DEMO：</p> <pre><code class="language-HTML">&lt;div class="g-container"&gt;     &lt;div class="g-box"&gt;&lt;/div&gt;     &lt;div class="g-box"&gt;&lt;/div&gt;     &lt;div class="g-box"&gt;&lt;/div&gt; &lt;/div&gt;</code></pre> <pre><code class="language-CSS">.g-container {     height: 150vh;     perspective: 600px; }  .g-box {     width: 200px;     height: 200px;     background: #999;     transform-style: preserve-3d;      &amp;::before,     &amp;::after {         content: "";         position: absolute;         right: 0;         left: 0;         transform-style: preserve-3d;         height: 200px;         background-color: #ccc;     }     &amp;::before {         transform-origin: top center;         top: 0;         transform: rotateX(-90deg);     }     &amp;::after {         transform-origin: bottom center;         bottom: 0;         transform: rotateX(90deg);     } }</code></pre> <p>滚动<code>g-container</code> 容器，即可得到一种 3D 效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/1cec1e386c0e9572dfac62077ab72d37.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>由于还需要视差效果，我们需要给不同的层赋予不同的<code>translateZ()</code>，我们稍微改造下代码，给每个<code>g-box</code> 中间，再加多一层正常的<code>div</code>，再给每个<code>g-box</code> 加上一个<code>translateZ()</code>。</p> <pre><code class="language-HTML">&lt;div class="g-container"&gt;     &lt;div class="g-box"&gt;&lt;/div&gt;     &lt;div class="g-normal"&gt;&lt;/div&gt;     &lt;div class="g-box"&gt;&lt;/div&gt;     &lt;div class="g-normal"&gt;&lt;/div&gt;     &lt;div class="g-box"&gt;&lt;/div&gt; &lt;/div&gt;</code></pre> <pre><code class="language-CSS">.g-container {     width: 400px;     height: 150vh;     perspective: 800px; }  .g-normal {     width: 200px;     height: 200px;     background: #666;     transform-style: preserve-3d; }  .g-box {     width: 200px;     height: 200px;     background: #999;     transform-style: preserve-3d;     transform: translate3d(0, 0, 200px);      &amp;::before,     &amp;::after {         // ... 保持不变     } }</code></pre> <ol> <li>由于<code>g-box</code> 和<code>g-normal</code> 的 translateZ 值不同，所以滚动的过程中会出现视差效果</li> <li>由于<code>g-box</code> 的<code>translateZ</code> 值为<code>translateZ(200px)</code>，两个伪元素的<code>rotateX</code> 为正负<code>90deg</code>，且高度为<code>200px</code>，因此<code>g-box</code> 和<code>g-normal</code> 刚好可以通过<code>g-box</code> 的两个伪元素衔接起来</li> </ol> <p>最终，效果就是如上所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/91600166cf2b123c937305778491efcf.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>DEMO 的完整代码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://codepen.io/Chokcoco/pen/NWXymNZ"  target="_blank" rel="nofollow">CodePen Demo - 3D Parallax Scroll</a></p> <h2 id="css-滚动视差动画-2">CSS 滚动视差动画 2</h2> <p>OK，下面第二个滚动视差动画，也非常的有意思，想看看原版，也是来自于<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://codepen.io/wheatup"  target="_blank" rel="nofollow">wheatup</a> 的 CodePen：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/03d307c8d8ae3ecf61e204e57cf11a4a.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://codepen.io/wheatup/pen/LYLqLpJ"  target="_blank" rel="nofollow">CodePen Demo -- 3D Chat Viewer</a></p> <p>这里核心还是借助了 CSS 3D 的能力，但是由于使用的是滚动触发动画效果，并且有一定的从模糊到清晰的渐现效果，因此还是有一定的 JavaScript 代码。</p> <p>感兴趣的可以看看上述的源码。</p> <p>本文将尝试使用 CSS @Property 和 CSS 最新的特性 @scroll-timeline 还原该效果借助 JavaScript 实现的部分。</p> <p>当然，首先不管是否需要借助 JavaScript，核心的 3D 部分使用的都是 CSS。</p> <p>我们首先需要这样一个结构：</p> <pre><code class="language-HTML">&lt;div class="g-wrapper"&gt;     &lt;div class="g-inner"&gt;         &lt;div class="g-item"&gt;&lt;/div&gt;         &lt;div class="g-item"&gt;&lt;/div&gt;         // ... 重复 N 个     &lt;/div&gt; &lt;/div&gt;</code></pre> <pre><code class="language-CSS">.g-wrapper {     width: 100vw;     height: 100vh; } .g-inner {     position: relative;     height: 100%;     display: flex;     flex-direction: column;     justify-content: center;     align-items: center;     gap: 10px; } .g-item {     width: 300px;     height: 100px;     background: #000; }</code></pre> <p>大概是这个效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/adcce2821260a3936b718f021df9b311.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>然后，我们添加一些 CSS 3D 变换：</p> <pre><code class="language-CSS">.g-wrapper {     // ... 与上述代码保持一致     perspective: 200px;     transform-style: preserve-3d; } .g-inner {     // ... 与上述代码保持一致     transform-style: preserve-3d;     transform: translateY(calc(-50% + 100px)) translateZ(0) rotateX(90deg);     transform-origin: bottom center; }</code></pre> <p>就能得到这样一种视角的效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/2255acb45f77b274dce83e625c28cf89.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>由于容器<code>g-inner</code> 进行了一个绕 X 轴的 90deg 翻转，也就是<code>rotateX(90deg)</code>，所以，我们再给<code>g-item</code> 一个反向的旋转，把卡片翻转回来：</p> <pre><code class="language-CSS">.g-wrapper {     // ... 与上述代码保持一致     perspective: 200px;     transform-style: preserve-3d; } .g-inner {     // ... 与上述代码保持一致     transform-style: preserve-3d;     transform: translateY(calc(-50% + 100px)) translateZ(0) rotateX(90deg);     transform-origin: bottom center; } .g-item {     // ... 与上述代码保持一致     transform: rotateX(-90deg); }</code></pre> <p>就能得到这样一种视角的效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/2d66ac2f00be5f001a705133230f5b62.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>此时，我们给容器一个赋予一个 translateZ 的动画：</p> <pre><code class="language-CSS">.g-inner {     animation: move 10s infinite linear; } @keyframes move {     100% {         transform: translateY(calc(-50% + 100px)) translateZ(calc(100vh + 120px)) rotateX(90deg);     } }</code></pre> <p>这样，整个动画的雏形就完成了，通过控制父元素的<code>perspective</code> 大小和容器的 translateZ，得到了一种不断向视角面前位移的动画效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d8c5fb3ff876b15aa6c7de4a851c1733.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://codepen.io/Chokcoco/pen/NWXaoPy"  target="_blank" rel="nofollow">CodePen Demo -- CSS 3D Effect Demo</a></p> <h2 id="结合-css-scroll-timeline利用-css-控制滚动与动画">结合 CSS @scroll-timeline，利用 CSS 控制滚动与动画</h2> <p>那怎么利用 CSS 再把这个动画和滚动操作结合起来呢？</p> <p>在前不久，我介绍过 CSS 的一个重磅特性<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chokcoco/iCSS/issues/166"  target="_blank" rel="nofollow">来了来了，它终于来了，动画杀手锏 @scroll-timeline</a>，利用它可以实现 CSS 动画与滚动操作的结合，我们利用它改造一下代码：</p> <pre><code class="language-HTML">&lt;div class="g-scroll" id="g-scroll"&gt;&lt;/div&gt; &lt;div class="g-wrapper"&gt;     &lt;div class="g-inner"&gt;         &lt;div class="g-item"&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/div&gt;         // ... 重复 N 个     &lt;/div&gt; &lt;/div&gt;</code></pre> <pre><code class="language-CSS">@property --phase {   syntax: '&lt;length&gt;';   inherits: false;   initial-value: 15px; } .g-scroll {     width: 100%;     height: 1000vh; } .g-wrapper {     position: fixed;     width: 100vw;     height: 100vh;     perspective: 200px;     transform-style: preserve-3d; } .g-inner {     position: relative;     height: 100%;     // 省略一些 flex 布局代码，与上文一致     transform-style: preserve-3d;     transform: translateY(calc(-50% + 100px)) translateZ(var(--phase)) rotateX(90deg);     transform-origin: bottom center;     animation-name: move;     animation-duration: 1s;     animation-timeline: box-move; } .g-item {     width: 300px;     height: 200px;     color: #fff;     background: #000;     transform: rotateX(-90deg); } @scroll-timeline box-move {     source: selector("#g-scroll");     orientation: "vertical"; } @keyframes move {     0% {         --phase: 0;     }     100% {         --phase: calc(100vh + 100px);     } }</code></pre> <p>这里相比上述的 DEMO，主要添加了<code>@scroll-timeline</code> 的代码，我们增加了一个超长容器<code>.g-scroll</code>，并且把它的滚动动作使用<code>@scroll-timeline box-move {}</code> 规则和<code>animation-timeline: box-move</code> 绑定了起来，这样，我们可以使用滚动去触发<code>@keyframes move {}</code> CSS 动画。</p> <p>效果如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/bee53db3ef32c97db9c7de7a4018f10e.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p>在原效果中，还有一些使用 JavaScript 结合滚动距离控制的模糊的变化，这个，我们使用<code>backdrop-filter: blur()</code> 也可以简单模拟。我们再简单添加一层<code>g-mask</code>：</p> <pre><code class="language-HTML">&lt;div class="g-scroll" id="g-scroll"&gt;&lt;/div&gt; &lt;div class="g-wrapper"&gt;     &lt;div class="g-mask"&gt;&lt;/div&gt;     &lt;div class="g-inner"&gt;         &lt;div class="g-item"&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/div&gt;         // ... 重复 N 个     &lt;/div&gt; &lt;/div&gt;</code></pre> <pre><code class="language-CSS">// 其他保持一致 .g-mask {     position: fixed;     width: 100vw;     height: 100vh;     backdrop-filter: blur(5px);     transform: translateZ(0); }</code></pre> <p>这样，基本就还原了原效果，并且，我们用且仅使用了 CSS：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a0b3a92bf0ce2d1d400424947b77cf74.jpg" alt="Amazing巧用 CSS 视差实现酷炫交互动效详解"></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://codepen.io/Chokcoco/pen/XWVBbER"  target="_blank" rel="nofollow">CodePen Demo -- Pure CSS Scroll Animation 2（Chrome Only &amp;&amp; Support ScrollTimeline）</a></p> <h2 id="总结一下">总结一下</h2> <p>当然，本文后一个效果中，使用了非常多目前兼容性还非常差的 CSS 属性，尤其是 @scroll-timeline，仍然处于非常早期的阶段，兼容性一片红。但是不妨碍我们学习、感受 CSS 的美好。</p> <p>要完全读懂本文，可能有一些前置知识需要了解，根据需要，你可以延伸阅读下：</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chokcoco/iCSS/issues/37"  target="_blank" rel="nofollow">CSS 实现视差效果</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chokcoco/iCSS/issues/109"  target="_blank" rel="nofollow">CSS @property，让不可能变可能</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chokcoco/iCSS/issues/166"  target="_blank" rel="nofollow">来了来了，它终于来了，动画杀手锏 @scroll-timeline</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/chokcoco/iCSS/issues/147"  target="_blank" rel="nofollow">深入探讨 filter 与 backdrop-filter 的异同</a></li> </ul> <p>好了，本文到此结束，希望对你有帮助</p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-4087.htm">win11系统怎么安装TPM诊断</a></p>
+                                                                                            </div>
+                                                                                        <div class="panel panel-default mt-5">
+                                                <div class="panel-heading">
+                                                    <h3 class="m-0">推荐文章</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <ul class="p-0 x-0">
+                                                                                                                <li class="py-2"><a href="/html/category/article-3103.htm">Oracle with使用方法以及递归</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3067.htm">SpringBoot如何整合spring-retry来实现接口请求重试</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2996.htm">正则表达式-匹配ip及rtsp</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2991.htm">Spring Security OAuth 笔记</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2964.htm">Wireshark入门到超神-第一章-过滤器-数据包解析</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2951.htm">java高级用法之:JNA类型映射应该注意的一些问题</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2949.htm">6.0 vue3 watch监听函数（reactive篇）</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2936.htm">在Java中可以重载或覆盖静态方法吗</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2912.htm">Hibernate框架的使用(二)</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2910.htm">UVM如何处理out-of-order乱序传输</a></li>
+                                                                                                            </ul>
+                                                </div>
+                                            </div>
+                                                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3083.htm" title="kafka消费者执行异常重复消费_Kafka消费者的使用和原理">kafka消费者执行异常重复消费_Kafka消费者的使用和原理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3142.htm" title="Git恢复之前版本的两种方法reset、revert（图文详解）">Git恢复之前版本的两种方法reset、revert（图文详解）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3110.htm" title="Vue刷新页面数据持久化">Vue刷新页面数据持久化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3079.htm" title="在Git中进行忽略文件操作详解_在线工具">在Git中进行忽略文件操作详解_在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3086.htm" title="基于Apache Hudi和Debezium构建CDC入湖管道">基于Apache Hudi和Debezium构建CDC入湖管道</a></li>
+                        <li class="py-2"><a href="/html/category/article-3078.htm" title="pandas的apply函数常见用法总结">pandas的apply函数常见用法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
+                        <li class="py-2"><a href="/html/category/article-3112.htm" title="30秒急速配置mybatis-plus多租户配置">30秒急速配置mybatis-plus多租户配置</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">44</span> <a href="/html/date/2024-02/" title="2024-02 归档">2024-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Blog -->
+        <!-- Star Footer
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            Oman Address 版权所有
+                            <br />
+                            Powered by WordPress
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer-->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery-1.12.4.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/popper.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootstrap.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.appear.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.easing.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/modernizr.custom.13711.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/owl.carousel.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/wow.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/progress-bar.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/isotope.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/count-to.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/YTPlayer.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/jquery.nice-select.min.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/loopcounter.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/bootsnav.js"></script>
+    <script src="/assets/addons/xcblog/js/frontend/omanaddress/main.js"></script>
+    <script>
+    $(function() {
+        $('.js_to').click(function() {
+            var url = $(this).data('url');
+            var code = $(this).data('code');
+            url += code;
+
+            window.open(url);
+        })
+    });
+    </script>
+</body>
+
+</html>

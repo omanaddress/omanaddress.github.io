@@ -2,14 +2,14 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-3092.htm" />
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-4087.htm" />
     <!-- ========== Meta Tags ========== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- ========== Page Title ========== -->
-    <title>linux安装离线docker包教程,Centos7离线安装Docker - Oman Address</title>
+    <title>win11系统怎么安装TPM诊断 - Oman Address</title>
         <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
 
     <!-- ========== Start Stylesheet ========== -->
@@ -100,7 +100,7 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1 style="word-break: break-all;">linux安装离线docker包教程,Centos7离线安装Docker</h1>
+                    <h1 style="word-break: break-all;">win11系统怎么安装TPM诊断</h1>
                     <ul class="breadcrumb">
                         <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
                         <li><a href="/html/category/"> 文章分类</a></li>
@@ -124,10 +124,29 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>工作原因需要在客户现场离线安装docker，网上看了很多，官方文档也查了一下，总结如下：</p> <p>(已在客户现场成功安装，Centos7，其他linux版本没试过，感觉应该问题不大)</p> <p>1. 下载离线安装包</p> <p>提前找一台能上网的机器下载好离线安装包</p> <p>地址：https://download.docker.com/linux/static/stable/</p> <p>选择合适自己的版本。我这里用的是x86-64/docker-18.03.1-ce.tgz</p> <p>2. 安装</p> <p>安装包上传至服务器，解压缩：</p> <p>tar -zxvf docker-18.03.1-ce.tgz</p> <p>解压缩后的文件拷贝到对应目录：</p> <p>cp docker/* /usr/bin/</p> <p>3.注册docker服务</p> <p>新建一个文件vi&nbsp;docker.service 内容如下:</p> <p>[Unit]</p> <p>Description=Docker Application Container Engine</p> <p>Documentation=https://docs.docker.com</p> <p>After=network-online.target firewalld.service</p> <p>Wants=network-online.target</p> <p>[Service]</p> <p>Type=notify</p> <p># the default is not to use systemd for cgroups because the delegate issues still</p> <p># exists and systemd currently does not support the cgroup feature set required</p> <p># for containers run by docker</p> <p>ExecStart=/usr/bin/dockerd</p> <p>ExecReload=/bin/kill -s HUP $MAINPID</p> <p># Having non-zero Limit*s causes performance problems due to accounting overhead</p> <p># in the kernel. We recommend using cgroups to do container-local accounting.</p> <p>LimitNOFILE=infinity</p> <p>LimitNPROC=infinity</p> <p>LimitCORE=infinity</p> <p># Uncomment TasksMax if your systemd version supports it.</p> <p># Only systemd 226 and above support this version.</p> <p>#TasksMax=infinity</p> <p>TimeoutStartSec=0</p> <p># set delegate yes so that systemd does not reset the cgroups of docker containers</p> <p>Delegate=yes</p> <p># kill only the docker process, not all processes in the cgroup</p> <p>KillMode=process</p> <p># restart the docker process if it exits prematurely</p> <p>Restart=on-failure</p> <p>StartLimitBurst=3</p> <p>StartLimitInterval=60s</p> <p>[Install]</p> <p>WantedBy=multi-user.target</p> <p>将docker.service 拷贝到对应目录下：</p> <p>cp docker.service /usr/lib/systemd/system/</p> <p>4.启动和验证</p> <p>启动docker服务：</p> <p>systemctl start docker</p> <p>验证是否成功:</p> <p>##这里就比较随意，用一些常用的docker命令</p> <p>docker -v</p> <p>docker --help</p> <p>5. docker 常用命令</p> <p># 查看docker 镜像</p> <p>docker images</p> <p># 查看docker所有容器</p> <p>docker ps -a</p> <p># 运行中的容器</p> <p>docker ps</p> <p># 运行一个新容器</p> <p>docker run</p> <p># 启动|停止|重启 已经存在的容器</p> <p>docker start|stop|restart</p> <p># 导出镜像</p> <p>docker save –o myapp.tar imageName (–o输出到文件)</p> <p># 导入镜像</p> <p>docker load –i myapp.tar</p> <p># 删除镜像</p> <p>docker rmi [镜像名称或ID]</p> <p># 删除容器</p> <p>docker rm [容器名称]</p> <p># 进入容器</p> <p>docker exec –it [容器名称] /bin/bash</p> <p># 查看容器日志</p> <p>docker logs –f [容器名称]</p> <p>来源：oschina</p> <p>链接：https://my.oschina.net/u/3477333/blog/3081526</p> </div> </div> 			                                            <div class="col-md-12 mt-5">
-                                                                                                <p>上一个：<a href="/html/category/article-3091.htm">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></p>
-                                                                                                <p>下一个：<a href="/html/category/article-3093.htm">Android 自定义方形验证码输入框，仿滴滴、小篮单车</a></p>
+                                              				  				  				<p><span style="font-size:14px;">&nbsp; &nbsp;在win11系统当中附带了一个名为TPM诊断工具的新应用程序，用来提取TPM的信息，最近有位win11系统用户在使用电脑的过程当中，想要安装TPM诊断，但是却不知道应该怎么操作，为此非常苦恼，那么win11系统怎么安装TPM诊断呢?下面为大家分享win11系统安装TPM诊断操作教程。</span></p> <p><span style="font-size:14px;"><strong>Win11安装TPM诊断的操作方法：</strong></span></p> <p><span style="font-size:14px;">&nbsp; &nbsp;1、首先，按键盘上的 Windows徽标 + X 组合键，或右键点击任务栏底部的开始图标，打开的隐藏菜单项中，选择设置;如图所示：</span></p> <p style="text-align: center;"><span style="font-size:14px;"><img decoding="async" alt="怎么安装TPM诊断" src="http://img.555519.xyz/uploads/20231126/0ad189a51c0c9f3d59e1b48a200e572e.jpg"></span></p> <p><span style="font-size:14px;"><br /> 	&nbsp; &nbsp; &nbsp; &nbsp;2、Windows 设置窗口，左侧边栏，点击应用，右侧点击可选功能(你的设备的额外功能);如图所示：</span></p> <p style="text-align: center;"><span style="font-size:14px;"><img decoding="async" alt="怎么安装TPM诊断" src="http://img.555519.xyz/uploads/20231126/62232e3a9b5619a97cfdc71683e91e90.jpg"></span></p> <p><span style="font-size:14px;"><br /> 	&nbsp; &nbsp; &nbsp; &nbsp;3、当前路径为：应用&gt;可选功能，添加可选功能旁，点击查看功能;如图所示：</span></p> <p style="text-align: center;"><span style="font-size:14px;"><img decoding="async" alt="怎么安装TPM诊断" src="http://img.555519.xyz/uploads/20231126/329d729fc486d0458226f479cbf30dab.jpg"></span></p> <p><span style="font-size:14px;"><br /> 	&nbsp; &nbsp; &nbsp; &nbsp;4、添加可选功能下，搜索框，输入TPM，找到并勾选TPM 诊断，然后点击下一步;如图所示：</span></p> <p style="text-align: center;"><span style="font-size:14px;"><img decoding="async" alt="怎么安装TPM诊断" src="http://img.555519.xyz/uploads/20231126/7588a54da9145750fed8558d2135332a.jpg"></span></p> <p><span style="font-size:14px;"><br /> 	&nbsp; &nbsp; &nbsp; &nbsp;5、确定要安装的内容是TPM 诊断，点击安装;如图所示：</span></p> <p style="text-align: center;"><span style="font-size:14px;"><img decoding="async" alt="怎么安装TPM诊断" src="http://img.555519.xyz/uploads/20231126/a1623aea53cf972a2b73fd67c6e6f022.jpg"></span></p> <p><span style="font-size:14px;"><br /> 	&nbsp; &nbsp; &nbsp; &nbsp;6、返回可选功能界面，最近操作下，可以查看到TPM 诊断已安装。如图所示：</span></p> <p style="text-align: center;"><span style="font-size:14px;"><img decoding="async" alt="怎么安装TPM诊断" src="http://img.555519.xyz/uploads/20231126/88399c25cf315108e1a36101e88fd0a7.jpg"></span></p> <p><span style="font-size:14px;"><br /> 	&nbsp; &nbsp; &nbsp; &nbsp;关于win11系统安装TPM诊断操作教程就为用户们详细分享到这里了，如果用户们使用电脑的时候想要安装TPM诊断，可以参考以上方法步骤进行操作哦，希望本篇教程对大家有所帮助，更多精彩教程请本站。</span></p> 			                                            <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-3776.htm">自定义指令拖拽el-dialog</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-4088.htm">Amazing巧用 CSS 视差实现酷炫交互动效详解</a></p>
                                                                                             </div>
+                                                                                        <div class="panel panel-default mt-5">
+                                                <div class="panel-heading">
+                                                    <h3 class="m-0">推荐文章</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <ul class="p-0 x-0">
+                                                                                                                <li class="py-2"><a href="/html/category/article-3444.htm">关于Android安装apk出现解析包异常问题情况总结</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3142.htm">Git恢复之前版本的两种方法reset、revert（图文详解）</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3119.htm">Cpp的异常处理Exception Handling-笔记</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3089.htm">SpringMVC中RequestMapping注解【作用、出现的位置、属性】</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3061.htm">Bootstrap Blazor Table 组件手动刷新组件数据详解</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3060.htm">TENSORFLOW：TENSORS</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3048.htm">在Windows Service中托管ASP.NET Core并指定端口</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-3019.htm">CRUSE: Convolutional Recurrent U-net for Speech Enhancement &#8211; WenzheLiu</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2948.htm">springboot中restTemplate请求时的异常处理以及编码格式</a></li>
+                                                                                                                <li class="py-2"><a href="/html/category/article-2848.htm">pytorch定义新的自动求导函数</a></li>
+                                                                                                            </ul>
+                                                </div>
+                                            </div>
                                                                                     </div>
                                     </div>
                                 </div>
@@ -142,16 +161,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/html/category/article-3141.htm" title="Android项目封装一个登录页隐私协议弹窗工具包(一)">Android项目封装一个登录页隐私协议弹窗工具包(一)</a></li>
                         <li class="py-2"><a href="/html/category/article-3775.htm" title="python 对论文插图制作局部放大图并在原图中相同位置加边框">python 对论文插图制作局部放大图并在原图中相同位置加边框</a></li>
-                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
-                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4087.htm" title="win11系统怎么安装TPM诊断">win11系统怎么安装TPM诊断</a></li>
-                        <li class="py-2"><a href="/html/category/article-3088.htm" title="JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化">JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化</a></li>
-                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
-                        <li class="py-2"><a href="/html/category/article-3089.htm" title="SpringMVC中RequestMapping注解【作用、出现的位置、属性】">SpringMVC中RequestMapping注解【作用、出现的位置、属性】</a></li>
-                        <li class="py-2"><a href="/html/category/article-3083.htm" title="kafka消费者执行异常重复消费_Kafka消费者的使用和原理">kafka消费者执行异常重复消费_Kafka消费者的使用和原理</a></li>
+                        <li class="py-2"><a href="/html/category/article-3111.htm" title="vue实现拖拽窗口功能_vue.js">vue实现拖拽窗口功能_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3082.htm" title="vue elementui点击按钮新增输入框">vue elementui点击按钮新增输入框</a></li>
                         <li class="py-2"><a href="/html/category/article-3443.htm" title="C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具">C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3078.htm" title="pandas的apply函数常见用法总结">pandas的apply函数常见用法总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-3088.htm" title="JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化">JavaScript秒表开始、暂停、继续、重置功能的实现及连击的优化</a></li>
+                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
                     </ul>
     </div>
 </div>

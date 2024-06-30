@@ -126,6 +126,7 @@ var _hmt = _hmt || [];
                                         <div class="content">
                                               				  				  				<div id="content_views" class="htmledit_views"> <p>vue项目中使用el-dialog弹框时会提一些大大小小的要求，比如需要再窗口中拖拽弹窗。现在使用自定义指令的形式来实现拖拽功能。</p> <h2>一、自定义指令拖拽代码</h2> <pre><code class="language-javascript">export default {   bind(el, binding, vnode) {     const dialogHeaderEl = el.querySelector('.el-dialog__header')     const dragDom = el.querySelector('.el-dialog')     dialogHeaderEl.style.cssText += ';cursor:move;'     dialogHeaderEl.style.cssText += ';user-select:none;'     dragDom.style.cssText += ';top:0px;'     const getStyle = (function() {       if (window.document.currentStyle) {         return (dom, attr) =&gt; dom.currentStyle[attr]       } else {         return (dom, attr) =&gt; getComputedStyle(dom, false)[attr]       }     })()      dialogHeaderEl.onmousedown = e =&gt; {       // 鼠标按下，计算当前元素距离可视区的距离       const disX = e.clientX - dialogHeaderEl.offsetLeft       const disY = e.clientY - dialogHeaderEl.offsetTop        const dragDomWidth = dragDom.offsetWidth       const dragDomheight = dragDom.offsetHeight        const screenWidth = document.body.clientWidth       const screenHeight = document.body.clientHeight        const minDragDomLeft = dragDom.offsetLeft       const maxDragDomLeft = screenWidth - dragDom.offsetLeft - dragDomWidth        const minDragDomTop = dragDom.offsetTop       const maxDragDomTop = screenHeight - dragDom.offsetTop - dragDomheight        // 获取到的值带px 正则匹配替换       let styL = getStyle(dragDom, 'left')       let styT = getStyle(dragDom, 'top')        if (styL.includes('%')) {         styL = Number(document.body.clientWidth) * (Number(styL.replace(/%/g, '')) / 100)         styT = Number(document.body.clientHeight) * (Number(styT.replace(/%/g, '')) / 100)       } else {         styL = Number(styL.replace(/px/g, ''))         styT = Number(styT.replace(/px/g, ''))       }        document.onmousemove = function(e) {         // 通过事件委托，计算移动的距离         let left = e.clientX - disX         let top = e.clientY - disY          // 边界处理         if (-(left) &gt; minDragDomLeft) {           left = -minDragDomLeft         } else if (left &gt; maxDragDomLeft) {           left = maxDragDomLeft         }          if (-(top) &gt; minDragDomTop) {           top = -minDragDomTop         } else if (top &gt; maxDragDomTop) {           top = maxDragDomTop         }          // 移动当前元素         dragDom.style.cssText += `;left:${left + styL}px;top:${top + styT}px;`          // emit onDrag event         vnode.child.$emit('dragDialog')       }        document.onmouseup = function() {         document.onmousemove = null         document.onmouseup = null       }     }   } } </code></pre> <h2>二、在main.js中引用创建写好的指令</h2> <p>在自己的vue项目中的main.js文件中将已经写好的指令逻辑引入，然后使用Vue.directive来创建指令，其中指令名称可以自己定义修改。</p> <pre><code class="language-javascript">import dragDialog from '@/directive/dragDialog/drag' Vue.directive('dragDialog', dragDialog)</code></pre> <p>最后在你的el-dialog组件中将已经创建好的指令写入，如：</p> <pre><code class="language-javascript">&lt;el-dialog title="标题" width="80%" v-drag-dialog :close-on-click-modal="false" :visible.sync="false"&gt;  &lt;/el-dialog&gt;</code></pre> </p></div> 			                                            <div class="col-md-12 mt-5">
                                                                                                 <p>上一个：<a href="/html/category/article-3775.htm">python 对论文插图制作局部放大图并在原图中相同位置加边框</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-4087.htm">win11系统怎么安装TPM诊断</a></p>
                                                                                             </div>
                                                                                         <div class="panel panel-default mt-5">
                                                 <div class="panel-heading">
@@ -160,16 +161,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-3097.htm" title="vue 动态样式绑定">vue 动态样式绑定</a></li>
-                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3087.htm" title="C# DataTable去重，根据列名去重保留其他列">C# DataTable去重，根据列名去重保留其他列</a></li>
+                        <li class="py-2"><a href="/html/category/article-4087.htm" title="win11系统怎么安装TPM诊断">win11系统怎么安装TPM诊断</a></li>
+                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3081.htm" title="你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。">你的编程能力从什么时候开始突飞猛进? 我的回答：2013年，我开始喜欢编程了。</a></li>
+                        <li class="py-2"><a href="/html/category/article-3116.htm" title="Kafka 单机（集群）安装部署（自带zookeeper）">Kafka 单机（集群）安装部署（自带zookeeper）</a></li>
                         <li class="py-2"><a href="/html/category/article-3749.htm" title="Python用re模块实现简易tokenizer_在线工具">Python用re模块实现简易tokenizer_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-3069.htm" title="Spring 4 中使用 Scheduled 任务调度">Spring 4 中使用 Scheduled 任务调度</a></li>
-                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
-                        <li class="py-2"><a href="/html/category/article-3080.htm" title="通过覆盖的HTML元素<div>传递鼠标单击">通过覆盖的HTML元素<div>传递鼠标单击</a></li>
-                        <li class="py-2"><a href="/html/category/article-3443.htm" title="C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具">C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-3118.htm" title="Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。">Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。</a></li>
-                        <li class="py-2"><a href="/html/category/article-3109.htm" title="C++内存泄漏的定位方法总结">C++内存泄漏的定位方法总结</a></li>
-                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
+                        <li class="py-2"><a href="/html/category/article-3071.htm" title="springboot中emoji表情配置及springboot数据源配置区别">springboot中emoji表情配置及springboot数据源配置区别</a></li>
+                        <li class="py-2"><a href="/html/category/article-3077.htm" title="企业应用架构研究系列十九：Docker开发环境">企业应用架构研究系列十九：Docker开发环境</a></li>
                     </ul>
     </div>
 </div>
@@ -181,7 +182,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">58</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+                <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">62</span> <a href="/html/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
