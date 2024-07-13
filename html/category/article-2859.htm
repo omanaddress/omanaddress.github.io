@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="content_views" class="htmledit_views"> <h2><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/fengkang511/article/details/107737494"  rel="nofollow">Centos7 部署kafka</a></h2> <h2><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/fengkang511/article/details/108187169"  rel="nofollow">kafka开机自启动配置</a></h2> <p>把zookeeper和kafka配置成开机自启动，主要是配置服务文件（里边有服务的描述、启动顺序、服务类型、启动指令、停止指令等等），系统服务的配置文件在“/usr/lib/systemd/system/”目录里边：</p> <p>添加zookeeper服务的配置文件，配置内容如下</p> <pre><code>vim /usr/lib/systemd/system/zookeeper.service</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="291" src="http://img.555519.xyz/uploads3/20220823/04fdd2d5a67e81d9e83aef69d53a6ad9.jpg"></p> <p>&nbsp;添加kafka服务的配置文件，配置内容如下（也可以偷个懒，复制zookeeper的配置文件，简单修改几个地方就行）</p> <pre><code>vim /usr/lib/systemd/system/kafka.service</code></pre> <p><img decoding="async" alt="" height="288" src="http://img.555519.xyz/uploads3/20220823/91c25d97c4593df62d1c1709f971b03a.jpg"></p> <p><strong>注意环境变量中java路径（此处是本机的java的安装目录），然后kafka在keeper后启动</strong></p> <p>刷新配置文件</p> <pre><code>systemctl daemon-reload</code></pre> <p>zookeeper启动，并配置开机启动</p> <pre><code>#启动服务 systemctl start zookeeper #设置开机启动 sysetmctl enable zookeeper</code></pre> <p>查看zookeeper的运行状态</p> <pre><code>systemctl status zookeeper</code></pre> <p><img decoding="async" alt="" height="304" src="http://img.555519.xyz/uploads3/20220823/b153ba07ca94b66d0ccdfc06f3a0392a.jpg"></p> <p>kafka启动，配置开机启动</p> <pre><code>#启动kafka服务 systemctl start kafka #设置kafka开机自启动 systemctl enable kafka</code></pre> <p>查看kafka的运行状态</p> <pre><code>systemctl status kafka</code></pre> <p><img loading="lazy" decoding="async" alt="" height="305" src="http://img.555519.xyz/uploads3/20220823/4c354002317fcde7412bddc31ea34c6b.jpg"></p> <p>使用jps指令查看zookeeper和kafka的进程状态</p> <p><img loading="lazy" decoding="async" alt="" height="68" src="http://img.555519.xyz/uploads3/20220823/49fa39aa623e9c0f24a76f7de060c673.jpg"></p> </div> 			                                            <div class="col-md-12 mt-5">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <h2>Centos7 部署kafka</h2> <h2>kafka开机自启动配置</h2> <p>把zookeeper和kafka配置成开机自启动，主要是配置服务文件（里边有服务的描述、启动顺序、服务类型、启动指令、停止指令等等），系统服务的配置文件在“/usr/lib/systemd/system/”目录里边：</p> <p>添加zookeeper服务的配置文件，配置内容如下</p> <pre><code>vim /usr/lib/systemd/system/zookeeper.service</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="291" src="http://img.555519.xyz/uploads3/20220823/04fdd2d5a67e81d9e83aef69d53a6ad9.jpg"></p> <p>&nbsp;添加kafka服务的配置文件，配置内容如下（也可以偷个懒，复制zookeeper的配置文件，简单修改几个地方就行）</p> <pre><code>vim /usr/lib/systemd/system/kafka.service</code></pre> <p><img decoding="async" alt="" height="288" src="http://img.555519.xyz/uploads3/20220823/91c25d97c4593df62d1c1709f971b03a.jpg"></p> <p><strong>注意环境变量中java路径（此处是本机的java的安装目录），然后kafka在keeper后启动</strong></p> <p>刷新配置文件</p> <pre><code>systemctl daemon-reload</code></pre> <p>zookeeper启动，并配置开机启动</p> <pre><code>#启动服务 systemctl start zookeeper #设置开机启动 sysetmctl enable zookeeper</code></pre> <p>查看zookeeper的运行状态</p> <pre><code>systemctl status zookeeper</code></pre> <p><img decoding="async" alt="" height="304" src="http://img.555519.xyz/uploads3/20220823/b153ba07ca94b66d0ccdfc06f3a0392a.jpg"></p> <p>kafka启动，配置开机启动</p> <pre><code>#启动kafka服务 systemctl start kafka #设置kafka开机自启动 systemctl enable kafka</code></pre> <p>查看kafka的运行状态</p> <pre><code>systemctl status kafka</code></pre> <p><img loading="lazy" decoding="async" alt="" height="305" src="http://img.555519.xyz/uploads3/20220823/4c354002317fcde7412bddc31ea34c6b.jpg"></p> <p>使用jps指令查看zookeeper和kafka的进程状态</p> <p><img loading="lazy" decoding="async" alt="" height="68" src="http://img.555519.xyz/uploads3/20220823/49fa39aa623e9c0f24a76f7de060c673.jpg"></p> </div> 			                                            <div class="col-md-12 mt-5">
                                                                                                 <p>上一个：<a href="/html/category/article-2858.htm">VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU</a></p>
                                                                                                 <p>下一个：<a href="/html/category/article-2860.htm">django之使用supervisord 后台启动celery 服务(worker/beat)</a></p>
                                                                                             </div>
@@ -142,16 +142,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-3118.htm" title="Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。">Internet Explorer无法为 <m​​ain>元素呈现任何类型的背景颜色。</a></li>
-                        <li class="py-2"><a href="/html/category/article-4422.htm" title="大中型饲料颗粒机（大中型颗粒饲料机价格）">大中型饲料颗粒机（大中型颗粒饲料机价格）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4534.htm" title="鱼子怎么做最好吃?(鱼子怎么做简单又好吃视频)">鱼子怎么做最好吃?(鱼子怎么做简单又好吃视频)</a></li>
-                        <li class="py-2"><a href="/html/category/article-3775.htm" title="python 对论文插图制作局部放大图并在原图中相同位置加边框">python 对论文插图制作局部放大图并在原图中相同位置加边框</a></li>
-                        <li class="py-2"><a href="/html/category/article-4088.htm" title="Amazing巧用 CSS 视差实现酷炫交互动效详解">Amazing巧用 CSS 视差实现酷炫交互动效详解</a></li>
-                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-4342.htm" title="动物医院实务的教学目的是什么内容（动物医院实践心得2000）">动物医院实务的教学目的是什么内容（动物医院实践心得2000）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
                         <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
-                        <li class="py-2"><a href="/html/category/article-3749.htm" title="Python用re模块实现简易tokenizer_在线工具">Python用re模块实现简易tokenizer_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
-                        <li class="py-2"><a href="/html/category/article-4463.htm" title="动物医院上班时间是多久啊（动物医院地址）">动物医院上班时间是多久啊（动物医院地址）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3775.htm" title="python 对论文插图制作局部放大图并在原图中相同位置加边框">python 对论文插图制作局部放大图并在原图中相同位置加边框</a></li>
+                        <li class="py-2"><a href="/html/category/article-4570.htm" title="寓意八方来财的店名（寓意八方来财的店名大全）">寓意八方来财的店名（寓意八方来财的店名大全）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4144.htm" title="Java中File类方法详解以及实践_java">Java中File类方法详解以及实践_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3105.htm" title="elasticsearch7.2深度分页实现(查询全部数据)">elasticsearch7.2深度分页实现(查询全部数据)</a></li>
+                        <li class="py-2"><a href="/html/category/article-4422.htm" title="大中型饲料颗粒机（大中型颗粒饲料机价格）">大中型饲料颗粒机（大中型颗粒饲料机价格）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3100.htm" title="docker system全新命令集">docker system全新命令集</a></li>
+                        <li class="py-2"><a href="/html/category/article-4116.htm" title="我们如何借助组函数COUNT（*）和GROUP BY子句知道列中值的重复？">我们如何借助组函数COUNT（*）和GROUP BY子句知道列中值的重复？</a></li>
                     </ul>
     </div>
 </div>
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>

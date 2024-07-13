@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>参考 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/chichung/p/9873425.html"  rel="nofollow">https://www.cnblogs.com/chichung/p/9873425.html</a></p> <ol> <li> <p>路径中的参数<br /> 需求：假设用户访问127.0.0.1/user/1/2，你想获取1，2。应该怎么操作呢？<br /> 两种方法<br /> (1)未命名参数(位置参数)</p> <pre><code>url(r'^user/(\d+)/(\d+)$',views.index) def index(request,a,b):            # 接受的参数按顺序的    return HttpResponse("获得数据 %s %s"%(a,b)) </code></pre> <p>(2)命名参数（就是给参数定义了变量名）</p> <pre><code>url(r'^user/(?P&lt;category&gt;\d+)/(?P&lt;id&gt;\d+)$',views.index) def index(request,id,category):            # 接受的参数可以不用按顺序的     return HttpResponse("获得数据 %s %s"%(category,id)) </code></pre> </li> <li> <p>问号后面的参数</p> <pre><code># 在项目下的urls.py下增加设置： url(r'^user/$',views.index) def index(request):     id = request.GET.get("id")     pid = request.GET.get("pid")     return HttpResponse("获得数据 %s %s"%(id,pid)) </code></pre> </li> </ol> </div> 			                                            <div class="col-md-12 mt-5">
+                                              				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>参考 https://www.cnblogs.com/chichung/p/9873425.html</p> <ol> <li> <p>路径中的参数<br /> 需求：假设用户访问127.0.0.1/user/1/2，你想获取1，2。应该怎么操作呢？<br /> 两种方法<br /> (1)未命名参数(位置参数)</p> <pre><code>url(r'^user/(\d+)/(\d+)$',views.index) def index(request,a,b):            # 接受的参数按顺序的    return HttpResponse("获得数据 %s %s"%(a,b)) </code></pre> <p>(2)命名参数（就是给参数定义了变量名）</p> <pre><code>url(r'^user/(?P<category>\d+)/(?P<id>\d+)$',views.index) def index(request,id,category):            # 接受的参数可以不用按顺序的     return HttpResponse("获得数据 %s %s"%(category,id)) </code></pre> </li> <li> <p>问号后面的参数</p> <pre><code># 在项目下的urls.py下增加设置： url(r'^user/$',views.index) def index(request):     id = request.GET.get("id")     pid = request.GET.get("pid")     return HttpResponse("获得数据 %s %s"%(id,pid)) </code></pre> </li> </ol> </div> 			                                            <div class="col-md-12 mt-5">
                                                                                                 <p>上一个：<a href="/html/category/article-3010.htm">pandas读取CSV文件报错：编码错误 ，无法读取</a></p>
                                                                                                 <p>下一个：<a href="/html/category/article-3012.htm">Vue3 学习笔记&#8211;组合式 API</a></p>
                                                                                             </div>
@@ -142,16 +142,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-4388.htm" title="动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）">动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4535.htm" title="聊斋志异之田七郎（顾佳）一看就会，">聊斋志异之田七郎（顾佳）一看就会，</a></li>
-                        <li class="py-2"><a href="/html/category/article-3091.htm" title="进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观">进程,内核线程,用户线程,协程,纤程&#8230;&#8230;操作系统世界观</a></li>
-                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
-                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
-                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
-                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                        <li class="py-2"><a href="/html/category/article-4499.htm" title="微单相机哪个品牌的比较好">微单相机哪个品牌的比较好</a></li>
+                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
+                        <li class="py-2"><a href="/html/category/article-3142.htm" title="Git恢复之前版本的两种方法reset、revert（图文详解）">Git恢复之前版本的两种方法reset、revert（图文详解）</a></li>
                         <li class="py-2"><a href="/html/category/article-3750.htm" title="SpringCloudAlibaba微服务docker容器打包和部署示例实战">SpringCloudAlibaba微服务docker容器打包和部署示例实战</a></li>
-                        <li class="py-2"><a href="/html/category/article-3444.htm" title="关于Android安装apk出现解析包异常问题情况总结">关于Android安装apk出现解析包异常问题情况总结</a></li>
-                        <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3776.htm" title="自定义指令拖拽el-dialog">自定义指令拖拽el-dialog</a></li>
+                        <li class="py-2"><a href="/html/category/article-4115.htm" title="Mac电脑配置maven，idea配置maven">Mac电脑配置maven，idea配置maven</a></li>
+                        <li class="py-2"><a href="/html/category/article-3106.htm" title="我们如何使用单个MySQL UPDATE语句更新多行上的列值？">我们如何使用单个MySQL UPDATE语句更新多行上的列值？</a></li>
+                        <li class="py-2"><a href="/html/category/article-4462.htm" title="24小时动物医院龙泉（龙泉宠物医院）">24小时动物医院龙泉（龙泉宠物医院）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3098.htm" title="vue的自动化路由+分模块管理+路由懒加载">vue的自动化路由+分模块管理+路由懒加载</a></li>
+                        <li class="py-2"><a href="/html/category/article-4388.htm" title="动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）">动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）</a></li>
                     </ul>
     </div>
 </div>
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>

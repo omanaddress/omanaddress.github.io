@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">关于Key值重复问题</a></li> <li><a href="#_label1" rel="nofollow">v-for key值重复报错</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>关于Key值重复问题</h2> <p>今天用jeecg-boot 做从页面传时间到modal表格中查询数据时报错，只要后台多表连接另一个时间表前端就报错，显示key值重复。</p> <p>下面展示一些 报错信息。</p> <blockquote> <p>Duplicate keys detected: ‘1’. This may cause an update error.</p> </blockquote> <p>网上百度后显示我 table表格的key重复了 ，</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220424/15d4e72ca9c0b60b2bdb020083c51e96.jpg"></p> <p>然后我改了 rowKey 给他加了唯一标识 rowKey=“id+‘s’” 后就不再重复了，但是在查询的时候又出来另一个错，没条数据都要有同样的Key值，于是我再初始加载的方法里加了下面展示一些 内联代码片。</p> <div class="ay1code"> <pre class="brush:js;">  created() {       data.forEach((item, index) =&gt; {          item.key = index + 1;        })      }  </pre> </div> <p>但是这样就会显示data找不到 dataSource 在jeecgboot中是封装了的所以得把方法拿到页面上来。</p> <p>我试了许久无果后，就看了看数据库才发现数据库id 因为我查时间的原因很多重复，于是我做了按时间一个分组发现就不报错了。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>v-for key值重复报错</h2> <div class="ay1code"> <pre class="brush:xhtml;">&lt;li    v-for="(item,i) in infoDatac.notice.admitted"    :key="'A'+ i"  &gt;    &lt;div&gt;申请单号：{{ item.applyCode }}&lt;/div&gt;    &lt;div&gt;使用时间：{{ item.useTime }}&lt;/div&gt;    &lt;span&gt;{{ item.title }}&lt;/span&gt;  &lt;/li&gt;  &lt;li    v-for="(item,i) in infoDatac.notice.waybillTimeout"    :key="'B'+ i"  &gt;    &lt;div&gt;运单号：{{ item.waybillCode }}&lt;/div&gt;    &lt;div&gt;申请单号：{{ item.applyCode }}&lt;/div&gt;    &lt;div&gt;物料名称：&lt;span class="tooltip short"&gt;      &lt;Tooltip :content="item.materialName" placement="top"&gt;  {{ item.materialName }}      &lt;/Tooltip&gt;&lt;/span    &gt;&lt;/div&gt;    &lt;div&gt;所超时长：{{ item.timeOut }}&lt;/div&gt;    &lt;span&gt;{{ item.title }}&lt;/span&gt;  &lt;/li&gt;</pre> </div> <p>这里例子中的 A,B 字符可以替换成你自己定义的任意字符，只是为了保证key的唯一性 </p> 			                                            <div class="col-md-12 mt-5">
+                                              				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li>关于Key值重复问题</li> <li>v-for key值重复报错</li> </ul> </div> <p class="maodian"></p> <h2>关于Key值重复问题</h2> <p>今天用jeecg-boot 做从页面传时间到modal表格中查询数据时报错，只要后台多表连接另一个时间表前端就报错，显示key值重复。</p> <p>下面展示一些 报错信息。</p> <blockquote> <p>Duplicate keys detected: ‘1’. This may cause an update error.</p> </blockquote> <p>网上百度后显示我 table表格的key重复了 ，</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220424/15d4e72ca9c0b60b2bdb020083c51e96.jpg"></p> <p>然后我改了 rowKey 给他加了唯一标识 rowKey=“id+‘s’” 后就不再重复了，但是在查询的时候又出来另一个错，没条数据都要有同样的Key值，于是我再初始加载的方法里加了下面展示一些 内联代码片。</p> <div class="ay1code"> <pre class="brush:js;">  created() {       data.forEach((item, index) => {          item.key = index + 1;        })      }  </pre> </div> <p>但是这样就会显示data找不到 dataSource 在jeecgboot中是封装了的所以得把方法拿到页面上来。</p> <p>我试了许久无果后，就看了看数据库才发现数据库id 因为我查时间的原因很多重复，于是我做了按时间一个分组发现就不报错了。</p> <p class="maodian"></p> <h2>v-for key值重复报错</h2> <div class="ay1code"> <pre class="brush:xhtml;"><li    v-for="(item,i) in infoDatac.notice.admitted"    :key="'A'+ i"  >    <div>申请单号：{{ item.applyCode }}</div>    <div>使用时间：{{ item.useTime }}</div>    <span>{{ item.title }}</span>  </li>  <li    v-for="(item,i) in infoDatac.notice.waybillTimeout"    :key="'B'+ i"  >    <div>运单号：{{ item.waybillCode }}</div>    <div>申请单号：{{ item.applyCode }}</div>    <div>物料名称：<span class="tooltip short">      <Tooltip :content="item.materialName" placement="top">  {{ item.materialName }}      </Tooltip></span    ></div>    <div>所超时长：{{ item.timeOut }}</div>    <span>{{ item.title }}</span>  </li></pre> </div> <p>这里例子中的 A,B 字符可以替换成你自己定义的任意字符，只是为了保证key的唯一性 </p> 			                                            <div class="col-md-12 mt-5">
                                                                                                 <p>上一个：<a href="/html/category/article-2986.htm">关于vue中api统一管理的那些事_vue.js_</a></p>
                                                                                                 <p>下一个：<a href="/html/category/article-2988.htm">设计模式：单例模式 C++实现</a></p>
                                                                                             </div>
@@ -142,16 +142,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-3103.htm" title="Oracle with使用方法以及递归">Oracle with使用方法以及递归</a></li>
-                        <li class="py-2"><a href="/html/category/article-4343.htm" title="开宠物店的进货渠道（开宠物店进货渠道怎么找）">开宠物店的进货渠道（开宠物店进货渠道怎么找）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
-                        <li class="py-2"><a href="/html/category/article-4389.htm" title="宠物主粮品牌排行榜最新（宠物主粮品牌排行榜最新名单）">宠物主粮品牌排行榜最新（宠物主粮品牌排行榜最新名单）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
-                        <li class="py-2"><a href="/html/category/article-3117.htm" title="redis在CentOs服务器上的安装和设置开机自启动">redis在CentOs服务器上的安装和设置开机自启动</a></li>
+                        <li class="py-2"><a href="/html/category/article-3444.htm" title="关于Android安装apk出现解析包异常问题情况总结">关于Android安装apk出现解析包异常问题情况总结</a></li>
+                        <li class="py-2"><a href="/html/category/article-4534.htm" title="鱼子怎么做最好吃?(鱼子怎么做简单又好吃视频)">鱼子怎么做最好吃?(鱼子怎么做简单又好吃视频)</a></li>
+                        <li class="py-2"><a href="/html/category/article-3113.htm" title="java计算器页面的实现">java计算器页面的实现</a></li>
+                        <li class="py-2"><a href="/html/category/article-4313.htm" title="猫怎么驱虫正确方法（猫怎样驱虫?）">猫怎么驱虫正确方法（猫怎样驱虫?）</a></li>
                         <li class="py-2"><a href="/html/category/article-3111.htm" title="vue实现拖拽窗口功能_vue.js">vue实现拖拽窗口功能_vue.js</a></li>
-                        <li class="py-2"><a href="/html/category/article-4342.htm" title="动物医院实务的教学目的是什么内容（动物医院实践心得2000）">动物医院实务的教学目的是什么内容（动物医院实践心得2000）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4499.htm" title="微单相机哪个品牌的比较好">微单相机哪个品牌的比较好</a></li>
-                        <li class="py-2"><a href="/html/category/article-3092.htm" title="linux安装离线docker包教程,Centos7离线安装Docker">linux安装离线docker包教程,Centos7离线安装Docker</a></li>
+                        <li class="py-2"><a href="/html/category/article-4143.htm" title="Kafka群起时报错：kafka-run-class.sh: line 258: exec: java: not found的解决办法">Kafka群起时报错：kafka-run-class.sh: line 258: exec: java: not found的解决办法</a></li>
+                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
+                        <li class="py-2"><a href="/html/category/article-4144.htm" title="Java中File类方法详解以及实践_java">Java中File类方法详解以及实践_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-3108.htm" title="【远程文件浏览器】Unity+Lua开发调试利器">【远程文件浏览器】Unity+Lua开发调试利器</a></li>
+                        <li class="py-2"><a href="/html/category/article-4498.htm" title="斗鱼剧情（斗鱼的大结局）">斗鱼剧情（斗鱼的大结局）</a></li>
                     </ul>
     </div>
 </div>
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>

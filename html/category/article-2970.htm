@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">v-bind给src和href赋值</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">示例</a></li> </ul> <li><a href="#_label1" rel="nofollow">v-bind:src无效问题</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_1" rel="nofollow">附上代码</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>v-bind给src和href赋值</h2> <p>用v-bind给src和href赋值其实很简单，即 v-bind:属性名="name"，其中name就是data里json数据的键值，其简写形式为 :属性名="name"。</p> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>示例</h3> <div class="ay1code"> <pre class="brush:xhtml;"> &lt;div id="app"&gt;          &lt;a v-bind:href="link"  &gt;link&lt;/a&gt;          &lt;hr&gt;          &lt;a v-bind:href="link1"  &gt;link1&lt;/a&gt;          &lt;hr&gt;          &lt;a v-bind:href="link2"  &gt;link2&lt;/a&gt;          &lt;hr&gt;          &lt;a href="linkyou.html"  &gt;啦啦啦&lt;/a&gt;          &lt;hr&gt;          &lt;img :src="img" alt=""&gt;      &lt;/div&gt;      &lt;script src="vue.js"&gt;&lt;/script&gt;      &lt;script src="base.js"&gt;&lt;/script&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">var ve2 = new Vue({      el: '#app',      data: {          link: "linkyou.html",          link1: "https//www.baidu.com",          link2: "www.baidu.com",          img: '8.jpg'      }  })  </pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>v-bind:src无效问题</h2> <p><strong>vue中v-bind:src，图片无法正常显示</strong></p> <p>自己没事敲点代码，准备激发激发灵感，做一个好项目，顺便复习下vue, 发现当我在data中模拟json数据的时候，图片链接在页面上无法正常显示</p> <p>用了各种方法，都无法正常使用，最后上网才发现是需要引入的问题。</p> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>附上代码</h3> <div class="ay1code"> <pre class="brush:js;">// template  &lt;img :src="imgLink" alt=""&gt;  // script  data () {      return {          // 注：引入之后，相对路径及绝对路径均可以使用        imgLink: require("../../assets/img/home/recommend_bg.jpg")        }  },</pre> </div> 			                                            <div class="col-md-12 mt-5">
+                                              				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li>v-bind给src和href赋值</li> <ul class="second_class_ul"> <li>示例</li> </ul> <li>v-bind:src无效问题</li> <ul class="second_class_ul"> <li>附上代码</li> </ul> </ul> </div> <p class="maodian"></p> <h2>v-bind给src和href赋值</h2> <p>用v-bind给src和href赋值其实很简单，即 v-bind:属性名="name"，其中name就是data里json数据的键值，其简写形式为 :属性名="name"。</p> <p class="maodian"></p> <h3>示例</h3> <div class="ay1code"> <pre class="brush:xhtml;"> <div id="app">          link          <hr>          link1          <hr>          link2          <hr>          啦啦啦          <hr>          <img :src="img" alt="">      </div>      <script src="vue.js"></script>      <script src="base.js"></script></pre> </div> <div class="ay1code"> <pre class="brush:js;">var ve2 = new Vue({      el: '#app',      data: {          link: "linkyou.html",          link1: "https//www.baidu.com",          link2: "www.baidu.com",          img: '8.jpg'      }  })  </pre> </div> <p class="maodian"></p> <h2>v-bind:src无效问题</h2> <p><strong>vue中v-bind:src，图片无法正常显示</strong></p> <p>自己没事敲点代码，准备激发激发灵感，做一个好项目，顺便复习下vue, 发现当我在data中模拟json数据的时候，图片链接在页面上无法正常显示</p> <p>用了各种方法，都无法正常使用，最后上网才发现是需要引入的问题。</p> <p class="maodian"></p> <h3>附上代码</h3> <div class="ay1code"> <pre class="brush:js;">// template  <img :src="imgLink" alt="">  // script  data () {      return {          // 注：引入之后，相对路径及绝对路径均可以使用        imgLink: require("../../assets/img/home/recommend_bg.jpg")        }  },</pre> </div> 			                                            <div class="col-md-12 mt-5">
                                                                                                 <p>上一个：<a href="/html/category/article-2969.htm">ASP.NET Core使用Swagger/OpenAPI规范_实用技巧</a></p>
                                                                                                 <p>下一个：<a href="/html/category/article-2971.htm">uni-app 学习笔记</a></p>
                                                                                             </div>
@@ -142,16 +142,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-4388.htm" title="动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）">动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3110.htm" title="Vue刷新页面数据持久化">Vue刷新页面数据持久化</a></li>
-                        <li class="py-2"><a href="/html/category/article-3098.htm" title="vue的自动化路由+分模块管理+路由懒加载">vue的自动化路由+分模块管理+路由懒加载</a></li>
-                        <li class="py-2"><a href="/html/category/article-3443.htm" title="C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具">C#语法糖系列 —— 第三篇：聊聊闭包的底层玩法_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-4312.htm" title="泰安泰宠宠物食品有限公司电话（泰安泰宠康宠物医院）">泰安泰宠宠物食品有限公司电话（泰安泰宠康宠物医院）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3101.htm" title="Docker基础ONBUILD指令介绍">Docker基础ONBUILD指令介绍</a></li>
-                        <li class="py-2"><a href="/html/category/article-3094.htm" title="java实现简单三子棋游戏_java">java实现简单三子棋游戏_java</a></li>
-                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
-                        <li class="py-2"><a href="/html/category/article-4534.htm" title="鱼子怎么做最好吃?(鱼子怎么做简单又好吃视频)">鱼子怎么做最好吃?(鱼子怎么做简单又好吃视频)</a></li>
+                        <li class="py-2"><a href="/html/category/article-4422.htm" title="大中型饲料颗粒机（大中型颗粒饲料机价格）">大中型饲料颗粒机（大中型颗粒饲料机价格）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4343.htm" title="开宠物店的进货渠道（开宠物店进货渠道怎么找）">开宠物店的进货渠道（开宠物店进货渠道怎么找）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4463.htm" title="动物医院上班时间是多久啊（动物医院地址）">动物医院上班时间是多久啊（动物医院地址）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4087.htm" title="win11系统怎么安装TPM诊断">win11系统怎么安装TPM诊断</a></li>
+                        <li class="py-2"><a href="/html/category/article-4143.htm" title="Kafka群起时报错：kafka-run-class.sh: line 258: exec: java: not found的解决办法">Kafka群起时报错：kafka-run-class.sh: line 258: exec: java: not found的解决办法</a></li>
+                        <li class="py-2"><a href="/html/category/article-4462.htm" title="24小时动物医院龙泉（龙泉宠物医院）">24小时动物医院龙泉（龙泉宠物医院）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3099.htm" title="springboot docker 分层打包镜像，精减变动体积">springboot docker 分层打包镜像，精减变动体积</a></li>
+                        <li class="py-2"><a href="/html/category/article-4535.htm" title="聊斋志异之田七郎（顾佳）一看就会，">聊斋志异之田七郎（顾佳）一看就会，</a></li>
+                        <li class="py-2"><a href="/html/category/article-3102.htm" title="redis笔记补充 &#8211; wang03">redis笔记补充 &#8211; wang03</a></li>
+                        <li class="py-2"><a href="/html/category/article-3120.htm" title="PHP浮点数据类型详解">PHP浮点数据类型详解</a></li>
                     </ul>
     </div>
 </div>
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>

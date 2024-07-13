@@ -124,7 +124,7 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="content_views" class="htmledit_views"> <h1><strong>具体步骤：</strong></h1> <h2>1、首先将本地的Spring Boot 项目打包成Jar包</h2> <p>我们以SpringBootDemo项目为例，执行以下的 mvn 命令将项目进行打包</p> <pre><code>mvn clean package</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/734ff518f9a73d072ec0784233d5ea93.jpg"></p> <p>项目打包完成，打包完成以后Jar包会默认保存在该项目的target文件里，同时在控制台也会输出jar包所在的位置</p> <p><img decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/3528eb9feee5ca90f69284de27dccbeb.jpg"></p> <p>然后打开命令窗口，进入jar包所在的目录，执行以下命令 （在本地启动服务以检验服务能否正常运行），并激活开发环境（dev）的profiles</p> <p><img decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/a1853cefde06fbb87a5def0dfab183c8.jpg"></p> <pre><code>java -jar .\SpringBootDemo-1.0-SNAPSHOT.jar --spring.profiles.active=dev</code></pre> <p>以上命令中，--spring.profiles.active=dev 表示激活开发环境（dev）profile的命令行参数</p> <p>项目区启动成功的效果图：</p> <p><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/701926383c35f23f4a59fa05b6eeb943.jpg"></p> <p>项目启动成功以后，通过浏览器访问&nbsp; http://localhost:8081/资源地址 测试是否能够访问到服务，例如我的：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://localhost:8081/area/getAll"  title="&nbsp;http://localhost:8081/area/getAll" rel="nofollow">&nbsp;http://localhost:8081/area/getAll</a>&nbsp; ，如果能够正常访问到后台接口，那么即表示jar包打包成功</p> <p><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/f076d0c5da759fc42e4b9cb48b243b2d.jpg"></p> <h2>2、然后通过FileZilla将本地的Jar包上传到远程服务器，并启动服务一直在后台运行</h2> <p>打包完成以后，通过FileZilla将本地的Jar包上传到远程服务器中。</p> <pre><code>nohup java –jar jar包名称 &amp;</code></pre> <p>其中，nohup 表示运行前会新建一个nohup.out文件用来记录该项目的运行日志情况。&amp;表示一直在后台运行。如果没有加，那么表示临时运行，关闭窗口就会停止运行。</p> <p>如果想让jar包一直在后台运行，并且指定端口，那么通过如下命令来实现</p> <pre><code>nohup java -jar jar名称 --server.port=8090 &amp;</code></pre> </div> 			                                            <div class="col-md-12 mt-5">
+                                              				  				  				<div id="content_views" class="htmledit_views"> <h1><strong>具体步骤：</strong></h1> <h2>1、首先将本地的Spring Boot 项目打包成Jar包</h2> <p>我们以SpringBootDemo项目为例，执行以下的 mvn 命令将项目进行打包</p> <pre><code>mvn clean package</code></pre> <p><img fetchpriority="high" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/734ff518f9a73d072ec0784233d5ea93.jpg"></p> <p>项目打包完成，打包完成以后Jar包会默认保存在该项目的target文件里，同时在控制台也会输出jar包所在的位置</p> <p><img decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/3528eb9feee5ca90f69284de27dccbeb.jpg"></p> <p>然后打开命令窗口，进入jar包所在的目录，执行以下命令 （在本地启动服务以检验服务能否正常运行），并激活开发环境（dev）的profiles</p> <p><img decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/a1853cefde06fbb87a5def0dfab183c8.jpg"></p> <pre><code>java -jar .\SpringBootDemo-1.0-SNAPSHOT.jar --spring.profiles.active=dev</code></pre> <p>以上命令中，--spring.profiles.active=dev 表示激活开发环境（dev）profile的命令行参数</p> <p>项目区启动成功的效果图：</p> <p><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/701926383c35f23f4a59fa05b6eeb943.jpg"></p> <p>项目启动成功以后，通过浏览器访问&nbsp; http://localhost:8081/资源地址 测试是否能够访问到服务，例如我的：&nbsp;http://localhost:8081/area/getAll&nbsp; ，如果能够正常访问到后台接口，那么即表示jar包打包成功</p> <p><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220603/f076d0c5da759fc42e4b9cb48b243b2d.jpg"></p> <h2>2、然后通过FileZilla将本地的Jar包上传到远程服务器，并启动服务一直在后台运行</h2> <p>打包完成以后，通过FileZilla将本地的Jar包上传到远程服务器中。</p> <pre><code>nohup java –jar jar包名称 &</code></pre> <p>其中，nohup 表示运行前会新建一个nohup.out文件用来记录该项目的运行日志情况。&表示一直在后台运行。如果没有加，那么表示临时运行，关闭窗口就会停止运行。</p> <p>如果想让jar包一直在后台运行，并且指定端口，那么通过如下命令来实现</p> <pre><code>nohup java -jar jar名称 --server.port=8090 &</code></pre> </div> 			                                            <div class="col-md-12 mt-5">
                                                                                                 <p>上一个：<a href="/html/category/article-3041.htm">Zookeeper 基本概念</a></p>
                                                                                                 <p>下一个：<a href="/html/category/article-3043.htm">js下拉选框的二级三级联动</a></p>
                                                                                             </div>
@@ -142,16 +142,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-3749.htm" title="Python用re模块实现简易tokenizer_在线工具">Python用re模块实现简易tokenizer_在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-3113.htm" title="java计算器页面的实现">java计算器页面的实现</a></li>
-                        <li class="py-2"><a href="/html/category/article-3142.htm" title="Git恢复之前版本的两种方法reset、revert（图文详解）">Git恢复之前版本的两种方法reset、revert（图文详解）</a></li>
-                        <li class="py-2"><a href="/html/category/article-3095.htm" title="快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具">快速了解Spring，简明Spring使用流程 &#8211; FITA _在线工具</a></li>
-                        <li class="py-2"><a href="/html/category/article-3115.htm" title="JavaScript如何查找不同的元素">JavaScript如何查找不同的元素</a></li>
+                        <li class="py-2"><a href="/html/category/article-3141.htm" title="Android项目封装一个登录页隐私协议弹窗工具包(一)">Android项目封装一个登录页隐私协议弹窗工具包(一)</a></li>
                         <li class="py-2"><a href="/html/category/article-4388.htm" title="动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）">动物打过狂犬疫苗被咬还需要打吗（小动物打过狂犬疫苗）</a></li>
-                        <li class="py-2"><a href="/html/category/article-4312.htm" title="泰安泰宠宠物食品有限公司电话（泰安泰宠康宠物医院）">泰安泰宠宠物食品有限公司电话（泰安泰宠康宠物医院）</a></li>
+                        <li class="py-2"><a href="/html/category/article-5589.htm" title="广州宠物粮食批发进货渠道在哪里（广州狗粮猫粮批发市场）">广州宠物粮食批发进货渠道在哪里（广州狗粮猫粮批发市场）</a></li>
+                        <li class="py-2"><a href="/html/category/article-3111.htm" title="vue实现拖拽窗口功能_vue.js">vue实现拖拽窗口功能_vue.js</a></li>
+                        <li class="py-2"><a href="/html/category/article-3114.htm" title="springboot的poi导入和导出">springboot的poi导入和导出</a></li>
+                        <li class="py-2"><a href="/html/category/article-3107.htm" title="Netty之非阻塞处理">Netty之非阻塞处理</a></li>
                         <li class="py-2"><a href="/html/category/article-3104.htm" title="Java详细讲解不同版本的接口语法和抽象类与接口的区别_java">Java详细讲解不同版本的接口语法和抽象类与接口的区别_java</a></li>
-                        <li class="py-2"><a href="/html/category/article-3444.htm" title="关于Android安装apk出现解析包异常问题情况总结">关于Android安装apk出现解析包异常问题情况总结</a></li>
-                        <li class="py-2"><a href="/html/category/article-4423.htm" title="宠物养不了该送哪里去苏州（宠物养不了了怎么办）">宠物养不了该送哪里去苏州（宠物养不了了怎么办）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4462.htm" title="24小时动物医院龙泉（龙泉宠物医院）">24小时动物医院龙泉（龙泉宠物医院）</a></li>
+                        <li class="py-2"><a href="/html/category/article-4144.htm" title="Java中File类方法详解以及实践_java">Java中File类方法详解以及实践_java</a></li>
+                        <li class="py-2"><a href="/html/category/article-4535.htm" title="聊斋志异之田七郎（顾佳）一看就会，">聊斋志异之田七郎（顾佳）一看就会，</a></li>
                     </ul>
     </div>
 </div>
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/html/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">60</span> <a href="/html/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
