@@ -2,14 +2,15 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-2915.htm" />
+        <link rel="canonical" href="https://omanaddress.github.io/html/category/article-7554.htm" />
     <!-- ========== Meta Tags ========== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- ========== Page Title ========== -->
-    <title>在vue中手写一个文字的轮播功能 - Oman Address</title>
+    <title>宠物粮原料（宠物粮种类）</title>
+        <meta name="description" content="摘要：       本篇文章给大家谈谈宠物粮原料，以及宠物粮种类对应的知识点，希望对各位有所帮助，不要忘了收藏本站喔。本文目录一览：1、狗粮加工设备及配方2、...        本篇文章给大家谈谈宠" />
         <link rel="icon" href="/assets/addons/xcblog/img/omanaddress/favicon.ico" type="image/x-icon"/>
 
     <!-- ========== Start Stylesheet ========== -->
@@ -100,7 +101,7 @@ var _hmt = _hmt || [];
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1 style="word-break: break-all;">在vue中手写一个文字的轮播功能</h1>
+                    <h1 style="word-break: break-all;">宠物粮原料（宠物粮种类）</h1>
                     <ul class="breadcrumb">
                         <li><a href="/"><i class="fas fa-home"></i> 首页</a></li>
                         <li><a href="/html/category/"> 文章分类</a></li>
@@ -124,9 +125,9 @@ var _hmt = _hmt || [];
                                     <div class="blog-item-box">
                                         <!-- Start Post Thumb -->
                                         <div class="content">
-                                              				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; &nbsp; 最近在中控项目中遇到一个问题，就是需要轮播显示数据，网上给的教程都是定高的，所以就自己写了一个，效果如下：</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="331" src="http://img.555519.xyz/uploads/20230113/13fa9dade8c07ebeab9a2a9abd93fbcc.jpg"></p> <p>对于这种轮播的功能，其实应该根据是否定高去分为两种情况用不同的方案去处理。</p> <p>一、&nbsp;不定高轮播</p> <p>&nbsp; &nbsp; &nbsp; 我在看了很多博客之后发现他们给的方案都是定高的，这种你可能一搜一大把，我就只分享别人没有说过或者不容易找到的情况吧。我暂且将轮播的部分称为轮播区域，将轮播区域之外的地方成为外部吧。</p> <p>定高的情况下我选择的是使用vue中的:style动态改变轮播区域的transform属性，如果你需要上下滚动就调整translateY，如果需要左右滚动就调整translateX属性，然后在你从后台拉取数据之后设置一个定时器，每隔多久去改变多少的translateY(或translateX)的值,这一部分可以控制滚动的速度。代码如下：</p> <pre class="has"><code>&lt;div ref="scroll" :style="pos"&gt;     &lt;ul&gt;         &lt;li class="fcd7e" v-for="item in list" :key="item.index"&gt;             {<!-- -->{item}}         &lt;/li&gt;     &lt;/ul&gt; &lt;/div&gt;  // js部分 export default {     data() {         return: {             list: ['周杰伦','蔡徐坤','李现','马蓉','马云','马化腾'],             height: 0, // 轮播区域的高度             yPos: 0,  // 轮播到了多少距离         }     },     computed: {         pos() {           return { transform: `translateY(${this.yPos}px` }; // 计算属性改变style         }     }，     mounted() {         this.initScroll()  // 通常不是在mounted中调用initScroll()这个方法，而是获取list后     },     methods: {         initScroll() {            this.$nextTick(() =&gt; {                 this.height = this.$refs.scroll.offsetHeight;                 setInterval(() =&gt; {                     if (this.yPos &gt; -this.height / 2) {                         this.yPos = this.yPos - 1;                     } else {                     this.yPos = 0;                     }                 }, 50);            });         }     } }</code></pre> <p>&nbsp; &nbsp; &nbsp; 然后你需要调整一下外部样式，给其一个宽高，overflow设为hidden; 当然你可以将上面的代码微调一下，让其变成左右滑动，还可以改变速度，也可以添加鼠标移动到轮播上面时停止定时器，然后鼠标移出时打开定时器，这样做出一个鼠标移到上面停止的效果。</p> <p>二、&nbsp;定高轮播</p> <p>由于不定高轮播中，我们是需要一直改变transform的值，性能会不好。比如在我们公司的，为了图便宜买了一个配置很差的电视机，就感觉像滚不动一样。所以在定高轮播中，我们需要其他方案。这里我研究了三套方案，但其他作者可能都写过了，所以就简单记录一下吧。</p> <p>&nbsp; &nbsp; &nbsp; 1. 使用&lt;marquee&gt;标签，性能很好，但会存在滚了之后存在大量留白的情况，所以不推荐。</p> <p>&nbsp; &nbsp; &nbsp; 2.使用css原生动画</p> <p>&nbsp; &nbsp; &nbsp; 3.使用vue动画</p> </p></div> 			                                            <div class="col-md-12 mt-5">
-                                                                                                <p>上一个：<a href="/html/category/article-2914.htm">RMI反序列化学习</a></p>
-                                                                                                <p>下一个：<a href="/html/category/article-2916.htm">Java实现 LeetCode 733 图像渲染（DFS）</a></p>
+                                                <div class="article-zhaiyao">       <strong><img src="http://www.to3158.cn/zb_users/theme/koilee/style/images/favicon_example.ico" alt="宠物粮原料（宠物粮种类）">摘要：</strong>       本篇文章给大家谈谈宠物粮原料，以及宠物粮种类对应的知识点，希望对各位有所帮助，不要忘了收藏本站喔。本文目录一览：1、狗粮加工设备及配方2、...    </div>    <p>本篇文章给大家谈谈宠物粮原料，以及宠物粮种类对应的知识点，希望对各位有所帮助，不要忘了收藏本站喔。 </p><div style="text-align:center;"><img style="max-width: 100%;" alt="宠物粮原料（宠物粮种类）" src="https://img0.baidu.com/it/u=1528106676,1316200653&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"></div><div><div style="color:#999;text-align:center;">（图片来源网络，侵删）</div></div><h2>本文目录一览：</h2><ul><li style='margin-bottom: 3px;list-style: none'> 1、狗粮加工设备及配方 </li> <li style='margin-bottom: 3px;list-style: none'> 2、宠物狗粮配方大全 </li> <li style='margin-bottom: 3px;list-style: none'> 3、狗粮为什么这么贵 </li> <li style='margin-bottom: 3px;list-style: none'> 4、宠物粮配方 </li> </ul><h2 id='狗粮加工设备及配方'>狗粮加工设备及配方</h2> <p>设备配置：拌粉机→上料机→膨化机→风送机→烘干机→八角调味机→喷油机→包装机在设计配方时主要考虑包括原料成分和营养两方面的因素。在多数情况中，配方者只考虑主要的营养成分，比如蛋白质、钙、磷和能量。</p><p>狗粮的制作方法及设备1 狗粮的制作方法非常简单，只需要将各种肉类，蔬菜，谷物以及鸡蛋，虾皮等配料均匀的混合在一起，冷却分装即可。谷物、肉类、蔬菜是主要食材。</p><p>先配料后粉碎加工工艺则相反，是把粉碎工段放置在配料工段之后的工艺。</p><p>狗粮制作方法1 第一个配方：蒸窝头。这个是最简单的，而且营养价值也比较不错的。家长们如果，会蒸窝头，会蒸馒头，就会做这个自制狗粮。</p><div style="text-align:center;"><img style="max-width: 100%;" alt="宠物粮原料（宠物粮种类）" src="http://t13.baidu.com/it/u=1559091659,2907326862&fm=224&app=112&f=JPEG?w=500&h=500"></div><div><div style="color:#999;text-align:center;">（图片来源网络，侵删）</div></div><h2 id='宠物狗粮配方大全'>宠物狗粮配方大全</h2> <p>配方 1：鸡胸肉、牛肉、土豆、南瓜、紫薯、胡萝卜、卷心菜、小白菜、海带、大蒜、鸡蛋、橄榄油、玉米面、白面、绿豆面（谷物 4：1：1）。</p><p>以下是一些常见的狗粮配方，供您参考： 肉类主食配方：将鸡肉、牛肉或鱼肉作为主要蛋白质来源，搭配适量的蔬菜和谷物，如胡萝卜、米饭或燕麦。</p><p>狗粮的营养配方1  幼犬饲粮配方：配方1（1～3月龄）：肉150克、米100克、面食150克、牛乳400克、动物脂肪4克、鱼肝油3．0克、酵母2克、胡萝卜20克、绿色植物190克、盐5．0克、骨粉11．0克，隔日喂1枚鸡蛋。</p><p>自制狗粮配方2：配方：大白菜，卷心菜，小白菜，胡萝卜、菜苔（蔬菜类选择2种即可）；牛肉、猪肉；鸡蛋黄或者蒸熟了的鸡蛋）；米饭；冠能狗粮；8in1钙片（一天一颗）。</p><div style="text-align:center;"><img style="max-width: 100%;" alt="宠物粮原料（宠物粮种类）" src="https://img2.baidu.com/it/u=2523428502,1791512781&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=389"></div><div><div style="color:#999;text-align:center;">（图片来源网络，侵删）</div></div><p>以下是一些常用的狗粮配方：鸡肉、糙米、胡萝卜、蔬菜、水果、鱼油等。这种配方可以提供狗狗所需的蛋白质、碳水化合物、纤维和脂肪酸等，适用于成犬。糙米、鸡肉、鸡肝、鸡腿、红薯、南瓜、菠菜等。</p><h2 id='狗粮为什么这么贵'>狗粮为什么这么贵</h2> <p>1、狗粮的原材料的昂贵，有些狗粮中除了含有牛肉，鸡肉等肉外，还含有鹿肉等昂贵的肉类； 国内宠物市场不规范，宠物食品翻倍卖，可以选择一些国外的狗粮，价格适中； 狗粮中包含各种的营养物质，使狗更加健康，不易生病。</p><p>2、狗粮原料价格高昂狗粮的原料通常包括肉类、植物蛋白、谷类、蔬菜、果蔬等多种成分，其中肉类因为其高蛋白、高营养的特性，成为了许多狗粮品牌的主要原料。</p><p>3、狗粮的生产成本狗粮的生产成本也是决定价格的因素之一，主要包括生产设备、人工、运输、包装等多个方面。现代化的狗粮生产设备往往价格昂贵，而且需要定期维护，加大了企业的生产成本，从而推高产品价格。</p><p>4、狗粮的成分包括主要的肉类、谷物、大米、小麦等，不同的成分，产地、品质都会影响狗粮的价格。真正的好狗粮，不仅需要优质的原材料，而且需要特别的配方、工艺加工等多种要素的综合考虑，其成本自然更高，因此价格也就更贵。</p><h2 id='宠物粮配方'>宠物粮配方</h2> <p>配方 1：鸡胸肉、牛肉、土豆、南瓜、紫薯、胡萝卜、卷心菜、小白菜、海带、大蒜、鸡蛋、橄榄油、玉米面、白面、绿豆面（谷物 4：1：1）。</p><p>配方1 ：肉类50%，谷类40%克，蔬菜10%，盐10克/千克，将这些成分煮熟做成食团，分次喂给。配方2 ：肉类30%，米、麦、蔬菜等70%克，食盐10克/千克。</p><p>狗粮制作方法1 第一个配方：蒸窝头。这个是最简单的，而且营养价值也比较不错的。家长们如果，会蒸窝头，会蒸馒头，就会做这个自制狗粮。</p><p>宠物粮原料的介绍就聊到这里吧，感谢你花时间阅读本站内容，更多关于宠物粮种类、宠物粮原料的信息别忘了在本站进行查找喔。</p>                                              <div class="col-md-12 mt-5">
+                                                                                                <p>上一个：<a href="/html/category/article-7509.htm">动物医院叫什么医院名称呢英文（动物医院的名字）</a></p>
+                                                                                                <p>下一个：<a href="/html/category/article-7555.htm">蒋勤勤版风云（风云争霸剧情）这都可以，</a></p>
                                                                                             </div>
                                                                                     </div>
                                     </div>
@@ -142,16 +143,16 @@ var _hmt = _hmt || [];
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/html/category/article-7048.htm" title="宠物粮食加工厂设备生产厂家有哪些（宠物粮食加工厂设备生产厂家有哪些呢）">宠物粮食加工厂设备生产厂家有哪些（宠物粮食加工厂设备生产厂家有哪些呢）</a></li>
-                        <li class="py-2"><a href="/html/category/article-6772.htm" title="动物疫苗公司招聘（动物疫苗销售招聘2020）">动物疫苗公司招聘（动物疫苗销售招聘2020）</a></li>
-                        <li class="py-2"><a href="/html/category/article-6589.htm" title="茄子包饺子馅做法大全(茄子包饺子怎么做好吃呢)">茄子包饺子馅做法大全(茄子包饺子怎么做好吃呢)</a></li>
-                        <li class="py-2"><a href="/html/category/article-6957.htm" title="宠物医生需要什么学历和专业（宠物医生需要什么学历和专业的）">宠物医生需要什么学历和专业（宠物医生需要什么学历和专业的）</a></li>
-                        <li class="py-2"><a href="/html/category/article-6727.htm" title="狗粮猫粮加工设备什么牌子好一点（宠物狗粮加工设备）">狗粮猫粮加工设备什么牌子好一点（宠物狗粮加工设备）</a></li>
+                        <li class="py-2"><a href="/html/category/article-6634.htm" title="青岛动物医学招聘事业编（青岛兽医专业学校）">青岛动物医学招聘事业编（青岛兽医专业学校）</a></li>
+                        <li class="py-2"><a href="/html/category/article-6818.htm" title="妙三多疫苗间隔多久打一针最好（妙三多疫苗间隔多久打一针最好呢）">妙三多疫苗间隔多久打一针最好（妙三多疫苗间隔多久打一针最好呢）</a></li>
+                        <li class="py-2"><a href="/html/category/article-5975.htm" title="十大快递公司品牌是哪些公司(十大快递公司品牌是哪些牌子)">十大快递公司品牌是哪些公司(十大快递公司品牌是哪些牌子)</a></li>
+                        <li class="py-2"><a href="/html/category/article-6037.htm" title="成都宠物领养中心在哪（成都宠物领养中心免费）">成都宠物领养中心在哪（成都宠物领养中心免费）</a></li>
+                        <li class="py-2"><a href="/html/category/article-7555.htm" title="蒋勤勤版风云（风云争霸剧情）这都可以，">蒋勤勤版风云（风云争霸剧情）这都可以，</a></li>
+                        <li class="py-2"><a href="/html/category/article-6773.htm" title="动物疫苗对人体有害吗知乎文章（动物疫苗对人体有害吗知乎文章内容）">动物疫苗对人体有害吗知乎文章（动物疫苗对人体有害吗知乎文章内容）</a></li>
                         <li class="py-2"><a href="/html/category/article-7279.htm" title="到哪领养狗（到哪领养狗狗）">到哪领养狗（到哪领养狗狗）</a></li>
-                        <li class="py-2"><a href="/html/category/article-7278.htm" title="动物疫苗上市公司有哪些企业名称和地址（动物疫苗的上市公司有哪些）">动物疫苗上市公司有哪些企业名称和地址（动物疫苗的上市公司有哪些）</a></li>
-                        <li class="py-2"><a href="/html/category/article-6081.htm" title="广州市猫咪领养中心电话（广州去哪领养猫）">广州市猫咪领养中心电话（广州去哪领养猫）</a></li>
-                        <li class="py-2"><a href="/html/category/article-7325.htm" title="全国兽药30强企业 全国兽药30强企业排名">全国兽药30强企业 全国兽药30强企业排名</a></li>
                         <li class="py-2"><a href="/html/category/article-7094.htm" title="属马养猫运气会变差吗（属马的能养猫咪吗）">属马养猫运气会变差吗（属马的能养猫咪吗）</a></li>
+                        <li class="py-2"><a href="/html/category/article-7002.htm" title="动物疫苗使用方法视频（动物疫苗使用方法视频教程）">动物疫苗使用方法视频（动物疫苗使用方法视频教程）</a></li>
+                        <li class="py-2"><a href="/html/category/article-6957.htm" title="宠物医生需要什么学历和专业（宠物医生需要什么学历和专业的）">宠物医生需要什么学历和专业（宠物医生需要什么学历和专业的）</a></li>
                     </ul>
     </div>
 </div>
